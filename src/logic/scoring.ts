@@ -6,7 +6,7 @@ const ALL_TYPE_CODES: SBTITypeCode[] = [
   'BUG', '404', 'VIP', 'EMO', 'CPU', 'KFC', 'DNA', 'PDF', 'GIF', 'JPG',
   'FOMO', 'YOLO', 'FUDI', 'HODL', 'DYOR', 'SERF', 'GHOST', 'TROLL', 'WEEB', 'NORM',
   'DEEP', 'OPEN', 'GROK', 'CLAUD', 'DOUB', 'GEMI', 'PUZZ', 'MIDI', 'CODE', 'SORA',
-  'RUSHI', 'RAND'
+  'SHENJ', 'DAWEI', 'RUSHI', 'RAND'
 ];
 
 /**

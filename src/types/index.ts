@@ -2,13 +2,13 @@
  * SBTI-Engine 3.0 类型定义
  */
 
-// 42种人格类型代码
-export type SBTITypeCode = 
+// 44种人格类型代码
+export type SBTITypeCode =
   | 'SEXY' | 'IMFW' | 'HITER' | 'WONANG' | 'SLEEP' | 'GIVEU' | 'POET' | 'DOGE' | 'BOSS' | 'NPC'
   | 'BUG' | '404' | 'VIP' | 'EMO' | 'CPU' | 'KFC' | 'DNA' | 'PDF' | 'GIF' | 'JPG'
   | 'FOMO' | 'YOLO' | 'FUDI' | 'HODL' | 'DYOR' | 'SERF' | 'GHOST' | 'TROLL' | 'WEEB' | 'NORM'
   | 'DEEP' | 'OPEN' | 'GROK' | 'CLAUD' | 'DOUB' | 'GEMI' | 'PUZZ' | 'MIDI' | 'CODE' | 'SORA'
-  | 'RUSHI' | 'RAND';
+  | 'SHENJ' | 'DAWEI' | 'RUSHI' | 'RAND';
 
 // 题目类型
 export type QuestionType = 'single' | 'multi' | 'fill';

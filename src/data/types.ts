@@ -1,7 +1,7 @@
 import type { TypeProfile, SBTITypeCode } from '@/types';
 
 /**
- * 42种人格类型完整定义
+ * 44种人格类型完整定义
  */
 export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
   // === 经典亚文化型（30种）===
@@ -60,8 +60,14 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     keywords: ['战斗爽', '键盘成精', '逻辑暴力', '见人就哈', '防御性进攻', '行走的DDoS'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <rect fill="#1a0000" width="200" height="200"/>
-      <path d="M100 20 L130 80 L190 90 L145 130 L160 190 L100 160 L40 190 L55 130 L10 90 L70 80 Z" fill="#ff0000"/>
+      <path d="M100 20 L130 80 L190 90 L145 130 L160 190 L100 160 L40 190 L55 130 L10 90 L70 80 Z" fill="#ff0000">
+        <animate attributeName="fill" values="#ff0000;#ff4444;#ff0000" dur="0.5s" repeatCount="indefinite"/>
+      </path>
       <text x="100" y="105" text-anchor="middle" font-size="36" fill="#fff" font-weight="bold">战斗</text>
+      <text x="100" y="175" text-anchor="middle" font-size="14" fill="#ff0000" opacity="0.8">
+        爽
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="0.8s" repeatCount="indefinite"/>
+      </text>
     </svg>`
   },
   
@@ -77,19 +83,50 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
       <circle cx="120" cy="110" r="5" fill="#888"/>
       <path d="M85 135 Q100 125 115 135" stroke="#666" stroke-width="2" fill="none"/>
       <text x="100" y="60" text-anchor="middle" font-size="20" fill="#888">对不起...</text>
+      <circle cx="75" cy="115" r="3" fill="#58a6ff" opacity="0.8">
+        <animate attributeName="cy" values="115;145;115" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0;0.8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="125" cy="115" r="3" fill="#58a6ff" opacity="0.8">
+        <animate attributeName="cy" values="115;145;115" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
     </svg>`
   },
   
   SLEEP: {
     code: 'SLEEP',
-    name: '瞌睡者',
-    englishName: 'Sleep',
-    keywords: ['REM社交', '随时断电', '睁眼睡觉', '褪黑素依赖', '意识在平行宇宙加班', '禅睡大师'],
+    name: '胆小菇',
+    englishName: 'Scaredy-Shroom',
+    keywords: ['应激性软糯', '距离产生勇气', '靠近即融化', '远程输出王者', '近战废物', 'WiFi信号型人格'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0d1b2a" width="200" height="200"/>
-      <circle cx="100" cy="100" r="60" fill="#1b263b"/>
-      <path d="M70 90 Q85 85 100 90 Q115 85 130 90" stroke="#778da9" stroke-width="3" fill="none"/>
-      <text x="100" y="130" text-anchor="middle" font-size="16" fill="#778da9">Zzz...</text>
+      <defs>
+        <radialGradient id="shroomGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#4a306d"/>
+          <stop offset="100%" stop-color="#1a0a2e"/>
+        </radialGradient>
+      </defs>
+      <rect fill="url(#shroomGrad)" width="200" height="200"/>
+      <rect x="85" y="110" width="30" height="60" fill="#d4a574" rx="8"/>
+      <ellipse cx="100" cy="90" rx="45" ry="35" fill="#9b59b6">
+        <animate attributeName="ry" values="35;25;35" dur="2s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="85" cy="85" r="8" fill="#fff">
+        <animate attributeName="r" values="8;3;8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="115" cy="85" r="8" fill="#fff">
+        <animate attributeName="r" values="8;3;8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="85" cy="85" r="3" fill="#000">
+        <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="115" cy="85" r="3" fill="#000">
+        <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="75" cy="75" r="5" fill="#fff" opacity="0.3"/>
+      <circle cx="125" cy="75" r="5" fill="#fff" opacity="0.3"/>
+      <circle cx="100" cy="65" r="4" fill="#fff" opacity="0.3"/>
+      <text x="100" y="170" text-anchor="middle" font-size="10" fill="#bbb">别靠近，我会融化</text>
     </svg>`
   },
   
@@ -131,7 +168,13 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
       <ellipse cx="120" cy="95" rx="12" ry="15" fill="#fff"/>
       <circle cx="82" cy="98" r="6" fill="#8b4513"/>
       <circle cx="118" cy="98" r="6" fill="#8b4513"/>
+      <path d="M85 140 Q100 150 115 140" stroke="#333" stroke-width="2" fill="none"/>
       <text x="100" y="175" text-anchor="middle" font-size="12" fill="#d4a574">在吗？吃了吗？</text>
+      <g opacity="0.7">
+        <path d="M140 60 Q150 50 160 60 Q150 70 140 60" fill="#e74c3c"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,-15;0,0" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0;0.7" dur="1.5s" repeatCount="indefinite"/>
+      </g>
     </svg>`
   },
   
@@ -145,6 +188,18 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
       <rect x="70" y="60" width="60" height="80" fill="#2c3e50" rx="5"/>
       <circle cx="100" cy="45" r="20" fill="#f39c12"/>
       <text x="100" y="165" text-anchor="middle" font-size="14" fill="#f39c12">福报</text>
+      <g>
+        <text x="130" y="50" font-size="16" fill="#ffd700">💰
+          <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
+        </text>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,10;0,0" dur="1.5s" repeatCount="indefinite"/>
+      </g>
+      <g>
+        <text x="60" y="70" font-size="14" fill="#ffd700">💰
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite"/>
+        </text>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,8;0,0" dur="1.2s" repeatCount="indefinite"/>
+      </g>
     </svg>`
   },
   
@@ -584,6 +639,54 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     </svg>`
   },
   
+  SHENJ: {
+    code: 'SHENJ',
+    name: '神金',
+    englishName: 'Shenjin',
+    keywords: ['抽象大师', '胡言乱语', '行为艺术', '赛博精神病', '逻辑跳水运动员', '人类迷惑行为'],
+    svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#1a0a1a" width="200" height="200"/>
+      <g transform="translate(100,100)">
+        <path d="M-40,-30 Q-20,-50 0,-35 Q20,-50 40,-30 Q50,0 30,30 Q0,45 -30,30 Q-50,0 -40,-30" fill="#e74c3c" opacity="0.8">
+          <animateTransform attributeName="transform" type="rotate" values="0;15;-15;0" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+        <path d="M-10,-10 L5,-10 L-5,5 L10,5 L-5,20" stroke="#f1c40f" stroke-width="3" fill="none">
+          <animate attributeName="opacity" values="1;0.2;1" dur="0.3s" repeatCount="indefinite"/>
+        </path>
+        <text x="15" y="-5" font-size="20" fill="#fff" font-weight="bold">?</text>
+      </g>
+      <text x="100" y="165" text-anchor="middle" font-size="12" fill="#e74c3c">⚠️ 精神异常美丽</text>
+    </svg>`
+  },
+
+  DAWEI: {
+    code: 'DAWEI',
+    name: '大卫戴',
+    englishName: 'David Dai',
+    keywords: ['胃袋控制大脑', '碳水教父', '吃播成精', '情绪不够饭来凑', '嘴巴不停脑子不转', '万物皆可炫'],
+    svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#2d1b0f" width="200" height="200"/>
+      <ellipse cx="100" cy="110" rx="55" ry="50" fill="#f4a460"/>
+      <ellipse cx="100" cy="90" rx="20" ry="12" fill="#8b0000">
+        <animate attributeName="ry" values="12;18;12" dur="1s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="75" cy="70" r="6" fill="#000"/>
+      <circle cx="125" cy="70" r="6" fill="#000"/>
+      <g>
+        <rect x="120" y="134" width="20" height="4" fill="#f4a460"/>
+        <rect x="118" y="138" width="24" height="6" fill="#8b4513"/>
+        <rect x="120" y="144" width="20" height="4" fill="#f4a460"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;0,-5;0,0" dur="1.5s" repeatCount="indefinite"/>
+      </g>
+      <g transform="rotate(-30 60 150)">
+        <ellipse cx="60" cy="150" rx="8" ry="15" fill="#daa520"/>
+        <rect x="58" y="132" width="4" height="8" fill="#fff"/>
+        <animateTransform attributeName="transform" type="translate" values="60,150;60,145;60,150" dur="1.2s" repeatCount="indefinite"/>
+      </g>
+      <text x="100" y="185" text-anchor="middle" font-size="10" fill="#f4a460">胃袋控制大脑</text>
+    </svg>`
+  },
+
   RAND: {
     code: 'RAND',
     name: '随便者',

@@ -49,7 +49,7 @@ export const QUESTION_LIBRARY: Question[] = [
     type: "single",
     text: "你的外卖迟到了40分钟，骑手说路上有点事，你会？",
     options: [
-      { id: "A", text: "算了都不容易，五星好评", weights: {GIVEU: 4, SLEEP: 3, NORM: 2} },
+      { id: "A", text: "算了都不容易，五星好评", weights: {GIVEU: 4, SLEEP: 3, NORM: 2, DAWEI: 2} },
       { id: "B", text: "表面说没事，反手一个投诉", weights: {TROLL: 4, BUG: 3, CPU: 2} },
       { id: "C", text: "打开抖音拍外卖迟到挑战", weights: {DOGE: 4, GIF: 3, YOLO: 2} },
       { id: "D", text: "算好时间差要求退配送费", weights: {BOSS: 4, DYOR: 3, PDF: 2} },
@@ -111,7 +111,7 @@ export const QUESTION_LIBRARY: Question[] = [
     type: "single",
     text: "你理想中的周末是？",
     options: [
-      { id: "A", text: "睡到自然醒，然后继续睡", weights: {SLEEP: 5, GIVEU: 3, GHOST: 2} },
+      { id: "A", text: "睡到自然醒，然后继续睡", weights: {SLEEP: 5, GIVEU: 3, GHOST: 2, DAWEI: 2} },
       { id: "B", text: "打卡5家网红店发9图朋友圈", weights: {FOMO: 4, YOLO: 3, JPG: 2} },
       { id: "C", text: "一个人在家看番打游戏", weights: {WEEB: 4, DOGE: 3, GIF: 2} },
       { id: "D", text: "约朋友出来然后各自玩手机", weights: {NPC: 4, NORM: 3, CPU: 2} },
@@ -124,7 +124,7 @@ export const QUESTION_LIBRARY: Question[] = [
     text: "如果必须变成一种动物，你会选？",
     options: [
       { id: "A", text: "树懒——慢到没人对我有期待", weights: {SLEEP: 5, GIVEU: 3, '404': 2} },
-      { id: "B", text: "猫——被人类供养还不用上班", weights: {VIP: 4, SEXY: 3, EMO: 2} },
+      { id: "B", text: "猫——被人类供养还不用上班", weights: {VIP: 4, SEXY: 3, EMO: 2, DAWEI: 2} },
       { id: "C", text: "哈士奇——拆家但快乐", weights: {DOGE: 4, RAND: 3, TROLL: 2} },
       { id: "D", text: "变色龙——见人说人话", weights: {NPC: 4, SERF: 3, NORM: 2} },
       { id: "E", text: "渡渡鸟——已经灭绝，勿扰", weights: {GHOST: 5, BUG: 3, WONANG: 2} }
@@ -141,7 +141,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "B", text: "表面稳如老狗，内心慌得一批", weights: {NPC: 4, FUDI: 3, CPU: 2} },
       { id: "C", text: "每天都在思考人类存在的意义", weights: {DEEP: 4, PUZZ: 3, WONANG: 2} },
       { id: "D", text: "能活一天是一天，明天的事明天再说", weights: {YOLO: 4, SLEEP: 3, GIVEU: 2} },
-      { id: "E", text: "我很好啊我很好啊我很好啊（已黑化）", weights: {TROLL: 4, BUG: 3, HITER: 2} }
+      { id: "E", text: "我很好啊我很好啊我很好啊（已黑化）", weights: {TROLL: 4, BUG: 3, HITER: 2, SHENJ: 3} }
     ]
   },
   {
@@ -163,7 +163,7 @@ export const QUESTION_LIBRARY: Question[] = [
     options: [
       { id: "A", text: "高冷（其实只是社恐）", weights: {GHOST: 4, EMO: 3, WEEB: 2} },
       { id: "B", text: "热情（装的，累死了）", weights: {NPC: 4, SERF: 3, NORM: 2} },
-      { id: "C", text: "奇怪（这是夸奖对吧？）", weights: {RAND: 4, BUG: 3, TROLL: 2} },
+      { id: "C", text: "奇怪（这是夸奖对吧？）", weights: {RAND: 4, BUG: 3, TROLL: 2, SHENJ: 3} },
       { id: "D", text: "有钱（错觉，我只是会装）", weights: {VIP: 4, FUDI: 3, BOSS: 2} },
       { id: "E", text: "没什么印象（透明人实锤）", weights: {'404': 4, GHOST: 3, SLEEP: 2} }
     ]
@@ -235,7 +235,7 @@ export const QUESTION_LIBRARY: Question[] = [
     type: "single",
     text: "你觉得自己的大脑最像哪种AI模型？",
     options: [
-      { id: "A", text: "早期GPT——经常胡言乱语", weights: {BUG: 4, RAND: 3, DOGE: 2} },
+      { id: "A", text: "早期GPT——经常胡言乱语", weights: {BUG: 4, RAND: 3, DOGE: 2, SHENJ: 3} },
       { id: "B", text: "文心一言——努力但没用", weights: {WONANG: 4, SERF: 3, GIVEU: 2} },
       { id: "C", text: "Claude——过于谨慎什么都不敢说", weights: {CLAUD: 4, GHOST: 3, NORM: 2} },
       { id: "D", text: "Grok——口无遮拦经常被封", weights: {GROK: 4, HITER: 3, TROLL: 2} },
@@ -289,7 +289,7 @@ export const QUESTION_LIBRARY: Question[] = [
     options: [
       { id: "A", text: "选我觉得最酷的", weights: {VIP: 3, YOLO: 2} },
       { id: "B", text: "选最真实的", weights: {NORM: 3, GHOST: 2} },
-      { id: "C", text: "选最离谱的", weights: {BUG: 3, RAND: 2} },
+      { id: "C", text: "选最离谱的", weights: {BUG: 3, RAND: 2, SHENJ: 2} },
       { id: "D", text: "随机选", weights: {RAND: 4, IMFW: 2} },
       { id: "E", text: "不选，看系统怎么办", weights: {TROLL: 3, HITER: 2} }
     ],
