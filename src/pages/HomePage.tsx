@@ -420,7 +420,13 @@ export default function HomePage() {
             <QuoteRotator />
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="mt-10 text-center space-y-4">
+            <button
+              onClick={() => navigate('/types')}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl neu-convex neu-convex-hover neu-convex-active text-sm font-bold text-[var(--neu-text)]"
+            >
+              查看全部 127 种人格
+            </button>
             <p className="text-sm text-[var(--neu-text-soft)] neu-pressed inline-block px-5 py-3 rounded-full">
               还有 115 种人格等待你的发掘 · 包括「依托答辩」「史莱姆」「API 接口」「Git 冲突」等赛博奇行种
             </p>

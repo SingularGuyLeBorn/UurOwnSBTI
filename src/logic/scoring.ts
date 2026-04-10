@@ -369,7 +369,7 @@ export function generateRushiResult(
 ): TestResult {
   const scores = initializeScores();
   scores.RUSHI = 999; // 强制最高
-  
+
   return {
     primaryType: 'RUSHI',
     secondaryType: null,
@@ -381,7 +381,9 @@ export function generateRushiResult(
     isRushed: true,
     isRandom: false,
     hasContradiction: false,
-    hasConsistency: false
+    hasConsistency: false,
+    answered: _answered,
+    totalQuestions: _total
   };
 }
 

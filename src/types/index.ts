@@ -86,6 +86,8 @@ export interface TestResult {
   hasContradiction: boolean;
   hasConsistency: boolean;
   pseudoResult?: SBTITypeCode;
+  answered?: number;
+  totalQuestions?: number;
 }
 
 // 维度分组

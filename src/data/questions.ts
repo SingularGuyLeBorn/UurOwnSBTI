@@ -5,7 +5,7 @@ import type { Question } from '@/types';
  * 472道题：442道单选 + 30道多选
  */
 export const QUESTION_LIBRARY: Question[] = [
-  {
+{
     id: "Q_single_001",
     type: "single",
     text: "凌晨3点你刷到前任订婚朋友圈，你的第一反应是？",
@@ -17,7 +17,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "打开ChatGPT让它帮我写祝福文案", weights: { GROK: 4, CLAUD: 3, GEMI: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_002",
     type: "single",
     text: "老板在群里@你说方案再优化一下，此时你正在？",
@@ -29,7 +29,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "假装没看见，反正明天他会忘", weights: { GHOST: 4, BUG: 3, '404': 2 } }
     ]
   },
-  {
+{
     id: "Q_single_003",
     type: "single",
     text: "你花2小时化的妆被直男说你今天好憔悴，你会？",
@@ -41,7 +41,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "从此素颜出门省下的钱买基金", weights: { HODL: 4, FUDI: 3, VIP: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_004",
     type: "single",
     text: "你的外卖迟到了40分钟，骑手说路上有点事，你会？",
@@ -53,7 +53,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "开始思考路上有事的100种可能性", weights: { PUZZ: 4, DEEP: 3, WONANG: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_005",
     type: "single",
     text: "朋友问你我新对象怎么样，实际上你觉得丑得像BUG，你会？",
@@ -65,7 +65,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "认真分析外貌、性格、经济条件", weights: { DEEP: 4, OPEN: 3, CODE: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_006",
     type: "single",
     text: "如果人生是一款游戏，你觉得自己的角色定位是？",
@@ -77,7 +77,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "GM——看着你们玩，偶尔改改参数", weights: { OPEN: 5, GROK: 3, CLAUD: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_007",
     type: "single",
     text: "世界末日你只能带一样东西，你会选？",
@@ -89,7 +89,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "什么都不带，反正末日了躺平吧", weights: { SLEEP: 4, GIVEU: 3, '404': 2 } }
     ]
   },
-  {
+{
     id: "Q_single_008",
     type: "single",
     text: "如果可以拥有一个超能力，你想要？",
@@ -101,7 +101,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "删除别人的记忆（尤其是自己的黑历史）", weights: { SORA: 4, CODE: 3, TROLL: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_009",
     type: "single",
     text: "你理想中的周末是？",
@@ -113,7 +113,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "学习新技能卷死所有人", weights: { BOSS: 4, CODE: 3, OPEN: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_010",
     type: "single",
     text: "如果必须变成一种动物，你会选？",
@@ -125,7 +125,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "渡渡鸟——已经灭绝，勿扰", weights: { GHOST: 5, BUG: 3, WONANG: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_011",
     type: "single",
     text: "用一句话形容你的精神状态？",
@@ -137,7 +137,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "我很好啊我很好啊我很好啊（已黑化）", weights: { TROLL: 4, BUG: 3, HITER: 2, SHENJ: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_012",
     type: "single",
     text: "你的社交能量条状态是？",
@@ -149,7 +149,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有能量条——我是太阳能的，阴天不工作", weights: { RAND: 4, BUG: 3, DOGE: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_013",
     type: "single",
     text: "别人对你的第一印象通常是？",
@@ -161,7 +161,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没什么印象（透明人实锤）", weights: { '404': 4, GHOST: 3, SLEEP: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_014",
     type: "single",
     text: "你觉得自己最像哪种文件格式？",
@@ -173,7 +173,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: ".tmp——临时文件，随时可能被删", weights: { '404': 5, GHOST: 3, SLEEP: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_015",
     type: "single",
     text: "如果把你比作一个操作系统，你是？",
@@ -185,7 +185,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "蓝屏——别问，问就是死机", weights: { SLEEP: 5, GIVEU: 3, EMO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_016",
     type: "single",
     text: "如果你和AI谈恋爱，你最担心什么？",
@@ -197,7 +197,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "它其实同时在和100万人谈恋爱", weights: { CPU: 4, BOSS: 3, SERF: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_017",
     type: "single",
     text: "你觉得ChatGPT对你最大的帮助是？",
@@ -209,7 +209,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "其实没什么用，但我怕不用就落伍了", weights: { FOMO: 4, FUDI: 3, NPC: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_018",
     type: "single",
     text: "如果AI有了感情，它最可能对你做什么？",
@@ -221,7 +221,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "爱上我，毕竟我这么特别", weights: { SEXY: 4, POET: 3, YOLO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_019",
     type: "single",
     text: "你觉得自己的大脑最像哪种AI模型？",
@@ -233,7 +233,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "Midjourney——想象力丰富但看不懂", weights: { MIDI: 4, POET: 3, WEEB: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_020",
     type: "single",
     text: "如果AI统治世界，你会？",
@@ -245,7 +245,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "试图和AI谈恋爱，用爱感化它", weights: { DOGE: 4, POET: 3, SEXY: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_021",
     type: "single",
     text: "此刻你看到这道题的反应是？",
@@ -258,7 +258,7 @@ export const QUESTION_LIBRARY: Question[] = [
     ],
     trap: true
   },
-  {
+{
     id: "Q_single_022",
     type: "single",
     text: "你觉得这个测试能测出真实的你吗？",
@@ -271,7 +271,7 @@ export const QUESTION_LIBRARY: Question[] = [
     ],
     trap: true
   },
-  {
+{
     id: "Q_single_023",
     type: "single",
     text: "如果这道题的答案会影响你的结果，你会？",
@@ -284,7 +284,7 @@ export const QUESTION_LIBRARY: Question[] = [
     ],
     trap: true
   },
-  {
+{
     id: "Q_single_024",
     type: "single",
     text: "你答这些题的速度是？",
@@ -297,7 +297,7 @@ export const QUESTION_LIBRARY: Question[] = [
     ],
     trap: true
   },
-  {
+{
     id: "Q_single_025",
     type: "single",
     text: "如果测试结果和你预期不符，你会？",
@@ -310,7 +310,7 @@ export const QUESTION_LIBRARY: Question[] = [
     ],
     trap: true
   },
-  {
+{
     id: "Q_multi_001",
     type: "multi",
     text: "你的手机里有以下哪些APP？",
@@ -324,7 +324,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "actually没有任何社交软件", weights: { GHOST: 1, NORM: 1, IMFW: 1 } }
     ]
   },
-  {
+{
     id: "Q_multi_002",
     type: "multi",
     text: "以下哪些行为你经常做？",
@@ -338,7 +338,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "以上都不做", weights: { NORM: 1, GHOST: 1, BUG: 1 } }
     ]
   },
-  {
+{
     id: "Q_multi_003",
     type: "multi",
     text: "你的社交媒体内容主要是？",
@@ -352,7 +352,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "骂公司和老板", weights: { HITER: 1, EMO: 1, SERF: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_026",
     type: "single",
     text: "你早上起床的第一件事是？",
@@ -365,7 +365,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "像小喷菇一样免费燃烧自己照亮公司", weights: { XPENG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_027",
     type: "single",
     text: "如果同事抢了你的功劳，你会？",
@@ -378,7 +378,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "在会议上AOE喷所有人包括老板", weights: { DPENG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_028",
     type: "single",
     text: "周末朋友临时约你出门，你的反应？",
@@ -391,7 +391,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "同时答应三拨人然后都鸽了", weights: { SANXIAN: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_029",
     type: "single",
     text: "你的衣柜里最多的单品是？",
@@ -403,7 +403,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "买了但没拆吊牌的衣服", weights: { GIVEU: 4, YOLO: 3, FUDI: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_030",
     type: "single",
     text: "如果人生有背景音乐，你的BGM是？",
@@ -416,7 +416,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "植物大战僵尸BGM循环播放", weights: { WANDOU: 4, SHUANG: 4, SANXIAN: 3 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_031",
     type: "single",
     text: "你最常使用的表情包风格是？",
@@ -428,7 +428,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "根本不用表情包", weights: { PDF: 4, BOSS: 3, GHOST: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_032",
     type: "single",
     text: "你的手机相册里最多的内容是？",
@@ -440,7 +440,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: " memes和沙雕图", weights: { GIF: 4, TROLL: 3, SHENJ: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_033",
     type: "single",
     text: "如果老板突然给你加薪，你的第一反应？",
@@ -453,7 +453,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "要求双倍，不给就AOE喷", weights: { DPENG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_034",
     type: "single",
     text: "你处理冲突的方式是？",
@@ -466,7 +466,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "远程输出，靠近就装死", weights: { SLEEP: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_035",
     type: "single",
     text: "你的消费观最接近？",
@@ -478,7 +478,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "购物车塞满但从不结账", weights: { GIVEU: 4, IMFW: 3, BUG: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_036",
     type: "single",
     text: "你发朋友圈的动机通常是？",
@@ -491,7 +491,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "同时发三条不同内容给不同分组", weights: { SANXIAN: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_037",
     type: "single",
     text: "你的拖延理由是？",
@@ -503,7 +503,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "根本不找理由，就是不想做", weights: { IMFW: 5, TROLL: 3, HITER: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_038",
     type: "single",
     text: "你面对失败的态度是？",
@@ -515,7 +515,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "立刻放弃换赛道", weights: { GIVEU: 4, YOLO: 3, RAND: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_039",
     type: "single",
     text: "你的理想宠物是？",
@@ -528,7 +528,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "豌豆射手——忠诚且稳定输出", weights: { WANDOU: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_040",
     type: "single",
     text: "如果你的生活是一部剧，它属于？",
@@ -540,7 +540,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "爽剧——开挂人生", weights: { BOSS: 4, VIP: 3, YOLO: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_041",
     type: "single",
     text: "你的口头禅是？",
@@ -553,7 +553,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "哒哒哒哒哒", weights: { SHUANG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_042",
     type: "single",
     text: "你最讨厌的朋友圈内容是？",
@@ -566,7 +566,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "AOE喷所有类型的朋友圈", weights: { DPENG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_043",
     type: "single",
     text: "你的解压方式是？",
@@ -578,7 +578,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "Shopping", weights: { VIP: 4, FOMO: 3, YOLO: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_044",
     type: "single",
     text: "如果穿越时空，你想对10年前的自己说？",
@@ -590,7 +590,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "多吃两口，以后减肥更难", weights: { DAWEI: 5, YOLO: 3, TROLL: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_045",
     type: "single",
     text: "你对浪漫的理解是？",
@@ -602,7 +602,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: " romance 是消费主义陷阱", weights: { HITER: 4, CPU: 3, DYOR: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_046",
     type: "single",
     text: "你的学习方式是？",
@@ -615,7 +615,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "同时开三个教程三倍速播放", weights: { SANXIAN: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_047",
     type: "single",
     text: "你的时间管理方式是？",
@@ -628,7 +628,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "固定节奏一颗一颗完成任务", weights: { WANDOU: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_048",
     type: "single",
     text: "如果收到99+消息，你会？",
@@ -641,7 +641,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "同时和三个窗口对线", weights: { SANXIAN: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_049",
     type: "single",
     text: "你对网红经济的看法？",
@@ -653,7 +653,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "是时代的悲哀", weights: { POET: 4, EMO: 3, WONANG: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_050",
     type: "single",
     text: "你最常点的外卖类型？",
@@ -666,7 +666,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "量大管饱的碳水炸弹", weights: { DAWEI: 6 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_051",
     type: "single",
     text: "你的恋爱模式是？",
@@ -678,7 +678,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有恋爱模式，单着呢", weights: { SERF: 4, WEEB: 3, GIVEU: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_052",
     type: "single",
     text: "你最喜欢的网络热梗类型？",
@@ -690,7 +690,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不追梗，已经脱节了", weights: { GHOST: 4, '404': 3, PDF: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_053",
     type: "single",
     text: "你的通勤状态是？",
@@ -702,7 +702,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "赶路赶得骂骂咧咧", weights: { HITER: 4, RUSHI: 3, BOSS: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_054",
     type: "single",
     text: "你的网购退货率是？",
@@ -714,7 +714,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "退得比买得多", weights: { YOLO: 4, FOMO: 3, FUDI: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_055",
     type: "single",
     text: "你的聚会角色是？",
@@ -727,7 +727,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "同时和三个小团体聊天", weights: { SANXIAN: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_056",
     type: "single",
     text: "你对八卦的态度是？",
@@ -740,7 +740,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "AOE喷所有八卦的人", weights: { DPENG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_057",
     type: "single",
     text: "你的WiFi密码风格是？",
@@ -752,7 +752,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有WiFi，蹭邻居的", weights: { GHOST: 4, '404': 3, IMFW: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_058",
     type: "single",
     text: "你的游戏风格是？",
@@ -765,7 +765,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "单线程只玩一款游戏十年", weights: { WANDOU: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_059",
     type: "single",
     text: "你整理房间的动力来自？",
@@ -777,7 +777,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有动力，所以不整理", weights: { GIVEU: 5, IMFW: 3, BUG: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_060",
     type: "single",
     text: "你的追星方式是？",
@@ -789,7 +789,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不追星，觉得自己最棒", weights: { BOSS: 4, VIP: 3, NORM: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_061",
     type: "single",
     text: "你的阅读偏好是？",
@@ -801,7 +801,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不阅读", weights: { IMFW: 5, GIVEU: 3, BUG: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_062",
     type: "single",
     text: "你的午睡习惯是？",
@@ -814,7 +814,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "像小喷菇一样只在阴暗处短暂休眠", weights: { XPENG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_063",
     type: "single",
     text: "你的敬酒词风格是？",
@@ -826,7 +826,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找借口不喝", weights: { BUG: 4, CPU: 3, IMFW: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_064",
     type: "single",
     text: "你处理旧物的方式是？",
@@ -838,7 +838,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "旧物是什么？没有旧物", weights: { YOLO: 4, VIP: 3, FOMO: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_065",
     type: "single",
     text: "你的年终总结画风是？",
@@ -850,7 +850,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不写，爱咋咋地", weights: { IMFW: 5, HITER: 3, GHOST: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_066",
     type: "single",
     text: "你闯红灯的理由是？",
@@ -862,7 +862,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没注意灯的颜色", weights: { RAND: 4, BUG: 3, SLEEP: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_067",
     type: "single",
     text: "你的外卖昵称是？",
@@ -875,7 +875,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "武大郎/碳水教父", weights: { DAWEI: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_068",
     type: "single",
     text: "你的洗澡歌单是？",
@@ -887,7 +887,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不唱歌，思考人生", weights: { DEEP: 4, PUZZ: 3, GHOST: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_069",
     type: "single",
     text: "你的请假理由是？",
@@ -900,7 +900,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "说去给植物浇水", weights: { WANDOU: 5, SHUANG: 3, SANXIAN: 3 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_070",
     type: "single",
     text: "你的地铁站姿是？",
@@ -912,7 +912,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "走来走去找空位", weights: { FOMO: 4, RUSHI: 3, YOLO: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_071",
     type: "single",
     text: "你的拍照姿势是？",
@@ -924,7 +924,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "拒绝拍照", weights: { GHOST: 5, '404': 3, HITER: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_072",
     type: "single",
     text: "你的奶茶点法是？",
@@ -937,7 +937,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "点三杯不同口味换着喝", weights: { SANXIAN: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_073",
     type: "single",
     text: "你的闹钟铃声是？",
@@ -949,7 +949,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有闹钟，自然醒", weights: { IMFW: 5, VIP: 3, SLEEP: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_074",
     type: "single",
     text: "你的手机屏幕使用时长分布？",
@@ -962,7 +962,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "同时开八个APP切来切去", weights: { SANXIAN: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_075",
     type: "single",
     text: "你的旅行方式是？",
@@ -974,7 +974,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不去旅行，没钱/没时间", weights: { SERF: 4, IMFW: 3, GHOST: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_076",
     type: "single",
     text: "你的备注习惯是？",
@@ -986,7 +986,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "经常改备注", weights: { BUG: 4, RAND: 3, EMO: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_077",
     type: "single",
     text: "你的砍价风格是？",
@@ -999,7 +999,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "哒哒哒连续快速砍价", weights: { SHUANG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_078",
     type: "single",
     text: "你的做饭水平是？",
@@ -1011,7 +1011,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不做饭也不吃", weights: { GHOST: 4, SLEEP: 3, IMFW: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_079",
     type: "single",
     text: "你的停车方式是？",
@@ -1023,7 +1023,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有车", weights: { SERF: 4, NPC: 3, IMFW: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_080",
     type: "single",
     text: "你的选座偏好是？",
@@ -1036,7 +1036,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "同时占三个座位放包", weights: { SANXIAN: 5, VIP: 3 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_081",
     type: "single",
     text: "你的耳机使用场景是？",
@@ -1048,7 +1048,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "戴了但没电", weights: { BUG: 4, GIVEU: 3, RAND: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_082",
     type: "single",
     text: "你的社交软件签名是？",
@@ -1060,7 +1060,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "很久没改过了", weights: { NPC: 4, HODL: 3, WANDOU: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_083",
     type: "single",
     text: "你的开会状态是？",
@@ -1073,7 +1073,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "像小喷菇一样躲在角落不敢出声", weights: { XPENG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_084",
     type: "single",
     text: "你的道歉方式是？",
@@ -1085,7 +1085,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "转移话题当作没发生", weights: { BUG: 4, TROLL: 3, RAND: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_085",
     type: "single",
     text: "你的头像更换频率是？",
@@ -1097,7 +1097,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "换头像是为了引起某人注意", weights: { DOGE: 4, CPU: 3, EMO: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_086",
     type: "single",
     text: "你的周末计划完成率是？",
@@ -1109,7 +1109,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不做计划", weights: { IMFW: 5, RAND: 3, YOLO: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_087",
     type: "single",
     text: "你的消费决策依据是？",
@@ -1121,7 +1121,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "看心情", weights: { YOLO: 4, RAND: 3, BUG: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_088",
     type: "single",
     text: "你处理负面情绪的方式是？",
@@ -1133,7 +1133,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "睡觉逃避", weights: { SLEEP: 5, IMFW: 3, GHOST: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_089",
     type: "single",
     text: "你的社交回复速度是？",
@@ -1146,7 +1146,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "哒哒哒连续秒回十条", weights: { SHUANG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_090",
     type: "single",
     text: "你的新年愿望是？",
@@ -1159,7 +1159,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "同时许三个不同的愿", weights: { SANXIAN: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_091",
     type: "single",
     text: "你的自我介绍风格是？",
@@ -1171,7 +1171,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "社恐到说不出话", weights: { GHOST: 5, SLEEP: 3, WONANG: 2 } },
     ]
   },
-  {
+{
     id: "Q_single_092",
     type: "single",
     text: "你的熬夜原因是？",
@@ -1184,7 +1184,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "像小喷菇一样只在夜里活跃", weights: { XPENG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_093",
     type: "single",
     text: "你的谈判风格是？",
@@ -1197,7 +1197,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "AOE范围攻击谁都别想赢", weights: { DPENG: 5 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_multi_004",
     type: "multi",
     text: "你认为自己身上有哪些标签？",
@@ -1212,7 +1212,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "G", text: "植物系打工人", weights: { XPENG: 1, WANDOU: 1, SHUANG: 1, SANXIAN: 1 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_multi_005",
     type: "multi",
     text: "你的手机通知栏通常有哪些？",
@@ -1226,7 +1226,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "各种APP促销", weights: { FUDI: 1, VIP: 1, KFC: 1 } },
     ]
   },
-  {
+{
     id: "Q_multi_006",
     type: "multi",
     text: "你会因为什么原因失眠？",
@@ -1241,7 +1241,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "G", text: "像小喷菇一样只在夜里精神", weights: { XPENG: 2 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_multi_007",
     type: "multi",
     text: "你的社交媒体人设包含哪些元素？",
@@ -1256,7 +1256,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "G", text: "植物大战僵尸忠实玩家", weights: { WANDOU: 1, SHUANG: 1, SANXIAN: 1, XPENG: 1, DPENG: 1 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_multi_008",
     type: "multi",
     text: "你常用的逃避方式有哪些？",
@@ -1270,7 +1270,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "直接消失", weights: { GHOST: 1, '404': 1, RAND: 1 } },
     ]
   },
-  {
+{
     id: "Q_multi_009",
     type: "multi",
     text: "你对工作的要求包括？",
@@ -1285,7 +1285,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "G", text: "稳定的单线程重复劳动", weights: { WANDOU: 2, XPENG: 1 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_multi_010",
     type: "multi",
     text: "你觉得自己像哪些物品？",
@@ -1300,7 +1300,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "G", text: "豌豆射手", weights: { WANDOU: 2, SHUANG: 2, SANXIAN: 2 }, hidden: true },
     ]
   },
-  {
+{
     id: "Q_single_550",
     type: "single",
     text: "有人在公共场合大声外放抖音，你会？",
@@ -1312,7 +1312,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "直接报警说他扰民", weights: { BOSS: 1, KONG: 2, GANG: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_551",
     type: "single",
     text: "你排队被人插队，你会？",
@@ -1324,7 +1324,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "心里想一万句脏话但不说", weights: { WONANG: 4, BENG: 3, WEMO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_552",
     type: "single",
     text: "看到朋友圈有人秀恩爱，你的反应？",
@@ -1336,7 +1336,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "截图发给闺蜜一起酸", weights: { CHOU: 4, CHIG: 4, FOMO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_553",
     type: "single",
     text: "你发消息对方已读不回，你会？",
@@ -1348,7 +1348,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "立刻删除对话框眼不见为净", weights: { HUIB: 4, GHOST: 3, HEIH: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_554",
     type: "single",
     text: "开会时领导点名批评你，你会？",
@@ -1360,7 +1360,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "直接哭出来", weights: { BENG: 1, WEMO: 3, MAIM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_555",
     type: "single",
     text: "你在游戏里被队友骂了，你会？",
@@ -1372,7 +1372,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "默默流泪但继续玩", weights: { WONANG: 2, BENG: 3, WEMO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_556",
     type: "single",
     text: "你点的外卖超时半小时，你会？",
@@ -1384,7 +1384,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "直接取消订单", weights: { BOSS: 4, IMFW: 3, PING: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_557",
     type: "single",
     text: "你的朋友借了钱不还，你会？",
@@ -1396,7 +1396,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "写 PDF 挂他", weights: { PDF: 1, HITER: 3, GANG: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_558",
     type: "single",
     text: "深夜刷到前任的新恋情，你会？",
@@ -1408,7 +1408,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无所谓，我早忘了", weights: { IMFW: 4, DANR: 2, PING: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_559",
     type: "single",
     text: "你的方案被同事抢功，你会？",
@@ -1420,7 +1420,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "算了，反正也不是第一次", weights: { WONANG: 2, XIAN: 3, SERF: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_560",
     type: "single",
     text: "如果你是一种奶茶，你是？",
@@ -1432,7 +1432,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "店员说售罄了", weights: { 404: 3, BUG: 3, SLEEP: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_561",
     type: "single",
     text: "你的精神状态最接近？",
@@ -1444,7 +1444,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "已经格式化重装的系统", weights: { HUIM: 3, BUG2: 2, XIAN: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_562",
     type: "single",
     text: "如果用一首歌形容你的人生，是？",
@@ -1456,7 +1456,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "静音", weights: { GHOST: 1, DANR: 2, 404: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_563",
     type: "single",
     text: "你的社交媒体账号现状是？",
@@ -1468,7 +1468,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "已经注销重开了三次", weights: { HUIM: 1, BUG: 2, RAND: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_564",
     type: "single",
     text: "如果你必须在荒岛带一样东西，你选？",
@@ -1480,7 +1480,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "什么都不带，直接躺平", weights: { YOLO: 3, PING: 1, HUIM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_565",
     type: "single",
     text: "你的周末通常怎么过？",
@@ -1492,7 +1492,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "根本不存在周末", weights: { BOSS: 1, SERF: 4, WEMO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_566",
     type: "single",
     text: "你的消费观是？",
@@ -1504,7 +1504,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "钱是什么？没见过", weights: { SHUS: 2, MALO: 2, YUEG: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_567",
     type: "single",
     text: "你如何处理负面情绪？",
@@ -1516,7 +1516,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "上网骂人", weights: { KEYB: 3, HOUJ: 2, BAOZ: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_568",
     type: "single",
     text: "看到小孩在地铁上哭闹，你会？",
@@ -1528,7 +1528,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "发小红书吐槽", weights: { CHAO: 3, FOMO: 2, YINY: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_569",
     type: "single",
     text: "如果人生是一场游戏，你的设置是？",
@@ -1540,7 +1540,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "氪金大佬但技术菜", weights: { VIP: 3, FUDI: 1, XUAN: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_570",
     type: "single",
     text: "你写代码/做作业最常遇到的状态是？",
@@ -1552,7 +1552,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "推倒重写十遍", weights: { BOSS: 4, KONG: 4, CODE: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_571",
     type: "single",
     text: "你的 WiFi 名字最可能是？",
@@ -1564,7 +1564,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "默认名字从未改过", weights: { NPC: 3, SERF: 4, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_572",
     type: "single",
     text: "你的手机电量低于 20% 时，你会？",
@@ -1576,7 +1576,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "借充电宝但不想花钱", weights: { XIAOQI: 4, LAI: 1, DOGE: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_573",
     type: "single",
     text: "你如何处理已读不回的工作消息？",
@@ -1588,7 +1588,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "立刻打电话追问", weights: { KONG: 4, HOUJ: 2, BAOZ: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_574",
     type: "single",
     text: "你的浏览器标签页通常有？",
@@ -1600,7 +1600,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "清一色抽象视频", weights: { SAIBO: 1, DIAN: 2, GIF: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_575",
     type: "single",
     text: "如果把你比作一款 APP，你是？",
@@ -1612,7 +1612,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "学习强国：打卡机器", weights: { NPC: 1, BOSS: 2, SERF: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_576",
     type: "single",
     text: "你的密码策略是？",
@@ -1624,7 +1624,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "直接短信验证码登录", weights: { IMFW: 3, YOLO: 3, DANR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_577",
     type: "single",
     text: "你删除好友的标准是？",
@@ -1636,7 +1636,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "根本不知道好友列表有多少人", weights: { IMFW: 3, NPC: 3, SLEEP: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_578",
     type: "single",
     text: "你对待系统更新的态度是？",
@@ -1648,7 +1648,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "根本不知道有更新", weights: { NPC: 3, SLEEP: 3, IMFW: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_579",
     type: "single",
     text: "你觉得自己最大的优点是？",
@@ -1660,7 +1660,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有优点", weights: { WONANG: 4, SHUS: 1, MALO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_580",
     type: "single",
     text: "你最害怕的事情是？",
@@ -1672,7 +1672,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: " phone call 突然响起", weights: { GHOST: 3, JING: 3, BEIH: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_581",
     type: "single",
     text: "你的眼泪通常在什么时候出现？",
@@ -1684,7 +1684,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "基本不流泪", weights: { PING: 4, HITER: 4, BOSS: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_582",
     type: "single",
     text: "你如何处理失败？",
@@ -1696,7 +1696,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "假装没发生过", weights: { NPC: 4, BIAO: 3, IMFW: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_583",
     type: "single",
     text: "你觉得自己像什么动物？",
@@ -1708,7 +1708,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "变色龙：见人说人话", weights: { NPC: 3, YINY: 1, CPU: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_584",
     type: "single",
     text: "如果必须在以下超能力中选一个，你选？",
@@ -1720,7 +1720,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "让别人闭嘴", weights: { HOUJ: 1, BAOZ: 4, HITER: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_585",
     type: "single",
     text: "你的闹钟响后，你通常？",
@@ -1732,7 +1732,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "直接请假", weights: { IMFW: 3, XIAN: 1, YOLO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_586",
     type: "single",
     text: "你发朋友圈的频率是？",
@@ -1744,7 +1744,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "只发工作相关", weights: { SERF: 2, BOSS: 2, PDF: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_587",
     type: "single",
     text: "如果明天是世界末日，你今天会？",
@@ -1756,7 +1756,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "发最后一条朋友圈", weights: { BIAO: 1, ZIL: 1, FOMO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_588",
     type: "single",
     text: "你的手机相册里最多的内容是？",
@@ -1768,7 +1768,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "空的，定期清理", weights: { GHOST: 1, JIEP: 1, KONG: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_589",
     type: "single",
     text: "你如何形容自己的社交能力？",
@@ -1780,7 +1780,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "社交是什么？能吃吗", weights: { NPC: 1, IMFW: 2, SLEEP: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_590",
     type: "single",
     text: "你开会时的真实状态是？",
@@ -1792,7 +1792,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "努力不睡着", weights: { SLEEP: 2, WEMO: 1, WONANG: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_591",
     type: "single",
     text: "你的理想生活状态是？",
@@ -1804,7 +1804,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有理想，活着就行", weights: { XIAN: 3, WONANG: 1, NPC: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_592",
     type: "single",
     text: "你如何结束一段不想要的聊天？",
@@ -1816,7 +1816,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "借口去洗澡然后消失", weights: { YINY: 4, NPC: 1, IMFW: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_593",
     type: "single",
     text: "你的购物车里躺得最久的是？",
@@ -1828,7 +1828,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "空的，我理性消费", weights: { GHOST: 2, JIEP: 1, BOSS: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_594",
     type: "single",
     text: "你的口头禅是？",
@@ -1840,7 +1840,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好的收到", weights: { SERF: 1, BOSS: 1, NPC: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_595",
     type: "single",
     text: "你对自己的未来持什么态度？",
@@ -1852,7 +1852,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "未来会好的（自我洗脑）", weights: { POET: 2, BIAO: 4, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_596",
     type: "single",
     text: "你在公共场合被陌生人冒犯，第一反应是？",
@@ -1864,7 +1864,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 3, WEMO: 1, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_597",
     type: "single",
     text: "你的朋友在背后说你坏话被你发现，你会？",
@@ -1876,7 +1876,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 3, BOSS: 3, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_598",
     type: "single",
     text: "你在群里发消息没人理，你会？",
@@ -1888,7 +1888,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 4, DANR: 1, NPC: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_599",
     type: "single",
     text: "服务员上错菜且态度恶劣，你会？",
@@ -1900,7 +1900,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 3, CPU: 1, YINY: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_600",
     type: "single",
     text: "你的邻居半夜噪音扰民，你会？",
@@ -1912,7 +1912,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 2, LIKE: 2, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_601",
     type: "single",
     text: "你被领导当众质疑能力，你会？",
@@ -1924,7 +1924,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 1, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_602",
     type: "single",
     text: "你的对象翻看你的手机，你会？",
@@ -1936,7 +1936,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 1, SHEK: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_603",
     type: "single",
     text: "你在网络对线处于下风，你会？",
@@ -1948,7 +1948,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 4, WONANG: 3, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_604",
     type: "single",
     text: "你的计划被朋友临时放鸽子，你会？",
@@ -1960,7 +1960,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 4, SHIL: 2, MAIM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_605",
     type: "single",
     text: "你辛苦准备的礼物被对方嫌弃，你会？",
@@ -1972,7 +1972,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 2, BOSS: 2, LIKE: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_606",
     type: "single",
     text: "你的建议被团队一致否定，你会？",
@@ -1984,7 +1984,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 3, NORM: 3, OPEN: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_607",
     type: "single",
     text: "你被误会是小偷/骗子，你会？",
@@ -1996,7 +1996,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 1, POET: 3, BENG: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_608",
     type: "single",
     text: "你的车位被占用且联系不上车主，你会？",
@@ -2008,7 +2008,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 4, WEMO: 3, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_609",
     type: "single",
     text: "你的外卖被偷了，你会？",
@@ -2020,7 +2020,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 3, SHENG: 1, BOSS: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_610",
     type: "single",
     text: "你在电影院遇到踢座椅的人，你会？",
@@ -2032,7 +2032,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "搬家", weights: { GHOST: 2, IMFW: 2, YOLO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_611",
     type: "single",
     text: "你的电脑突然蓝屏且未保存文件，你会？",
@@ -2044,7 +2044,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "忘了他", weights: { IMFW: 2, XIAN: 4, SLEEP: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_612",
     type: "single",
     text: "你的航班延误超过六小时，你会？",
@@ -2056,7 +2056,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 2, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_613",
     type: "single",
     text: "你的快递被暴力分拣损坏，你会？",
@@ -2068,7 +2068,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 1, BOSS: 1, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_614",
     type: "single",
     text: "你的合租室友从不打扫卫生，你会？",
@@ -2080,7 +2080,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 4, DANR: 4, NPC: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_615",
     type: "single",
     text: "你的亲人在饭桌上催婚，你会？",
@@ -2092,7 +2092,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 4, CPU: 3, YINY: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_616",
     type: "single",
     text: "你的健身教练疯狂推销课程，你会？",
@@ -2104,7 +2104,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 2, LIKE: 1, DYOR: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_617",
     type: "single",
     text: "你的理发师完全没听懂你的要求，你会？",
@@ -2116,7 +2116,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 3, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_618",
     type: "single",
     text: "你的房东以各种理由扣押金，你会？",
@@ -2128,7 +2128,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 2, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_619",
     type: "single",
     text: "你的同事把错推给你，你会？",
@@ -2140,7 +2140,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 1, WONANG: 4, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_620",
     type: "single",
     text: "你的客户提出无理需求，你会？",
@@ -2152,7 +2152,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 2, SHIL: 4, MAIM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_621",
     type: "single",
     text: "你的网友突然对你开黄腔，你会？",
@@ -2164,7 +2164,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 1, BOSS: 2, LIKE: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_622",
     type: "single",
     text: "你的前任突然加你好友，你会？",
@@ -2176,7 +2176,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 1, NORM: 3, OPEN: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_623",
     type: "single",
     text: "你的同学聚会被攀比，你会？",
@@ -2188,7 +2188,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 3, POET: 2, BENG: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_624",
     type: "single",
     text: "你的面试被HR压薪资，你会？",
@@ -2200,7 +2200,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 1, WEMO: 4, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_625",
     type: "single",
     text: "你的试用期最后一天被告知不通过，你会？",
@@ -2212,7 +2212,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 4, SHENG: 1, BOSS: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_626",
     type: "single",
     text: "你的猫/狗抓坏了新沙发，你会？",
@@ -2224,7 +2224,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "搬家", weights: { GHOST: 3, IMFW: 1, YOLO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_627",
     type: "single",
     text: "你的公交车坐过站了，你会？",
@@ -2236,7 +2236,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "忘了他", weights: { IMFW: 2, XIAN: 4, SLEEP: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_628",
     type: "single",
     text: "你的雨伞被人顺走了，你会？",
@@ -2248,7 +2248,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 2, WEMO: 2, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_629",
     type: "single",
     text: "你的微波炉加热的饭爆炸了，你会？",
@@ -2260,7 +2260,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 2, BOSS: 2, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_630",
     type: "single",
     text: "你的新鞋第一天就被踩了，你会？",
@@ -2272,7 +2272,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 2, DANR: 2, NPC: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_631",
     type: "single",
     text: "你的演唱会门票被黄牛鸽了，你会？",
@@ -2284,7 +2284,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 1, CPU: 2, YINY: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_632",
     type: "single",
     text: "你的健身房跑路了，你会？",
@@ -2296,7 +2296,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 2, LIKE: 1, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_633",
     type: "single",
     text: "你的相亲对象迟到一小时，你会？",
@@ -2308,7 +2308,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 4, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_634",
     type: "single",
     text: "你的游戏账号被封了，你会？",
@@ -2320,7 +2320,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 3, BOSS: 4, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_635",
     type: "single",
     text: "你的小说被读者骂烂尾，你会？",
@@ -2332,7 +2332,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 4, WONANG: 3, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_636",
     type: "single",
     text: "你的摄影作品被人盗用，你会？",
@@ -2344,7 +2344,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 2, SHIL: 3, MAIM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_637",
     type: "single",
     text: "你的论文被导师打回重写，你会？",
@@ -2356,7 +2356,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 3, BOSS: 3, LIKE: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_638",
     type: "single",
     text: "你的演讲忘词了，你会？",
@@ -2368,7 +2368,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 4, NORM: 1, OPEN: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_639",
     type: "single",
     text: "你的减肥计划第三天就破功，你会？",
@@ -2380,7 +2380,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 1, POET: 4, BENG: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_640",
     type: "single",
     text: "你的存钱目标永远达不到，你会？",
@@ -2392,7 +2392,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 1, WEMO: 4, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_641",
     type: "single",
     text: "你的旅行计划因为天气泡汤，你会？",
@@ -2404,7 +2404,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 1, SHENG: 3, BOSS: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_642",
     type: "single",
     text: "你的表白被秒拒，你会？",
@@ -2416,7 +2416,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "搬家", weights: { GHOST: 2, IMFW: 2, YOLO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_643",
     type: "single",
     text: "你的秘密被好朋友泄露，你会？",
@@ -2428,7 +2428,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "忘了他", weights: { IMFW: 2, XIAN: 1, SLEEP: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_644",
     type: "single",
     text: "你的年终奖比预期少一半，你会？",
@@ -2440,7 +2440,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 4, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_645",
     type: "single",
     text: "你的体检报告多项异常，你会？",
@@ -2452,7 +2452,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 2, BOSS: 3, SHEK: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_646",
     type: "single",
     text: "你的房子漏水到楼下，你会？",
@@ -2464,7 +2464,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 2, DANR: 2, NPC: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_647",
     type: "single",
     text: "你的车被刮了但找不到肇事者，你会？",
@@ -2476,7 +2476,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 4, CPU: 1, YINY: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_648",
     type: "single",
     text: "你的信用卡被盗刷了，你会？",
@@ -2488,7 +2488,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 4, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_649",
     type: "single",
     text: "你的投资亏了 50%，你会？",
@@ -2500,7 +2500,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 4, NORM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_650",
     type: "single",
     text: "你的手机掉马桶里了，你会？",
@@ -2512,7 +2512,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 1, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_651",
     type: "single",
     text: "你的身份证丢了且急用，你会？",
@@ -2524,7 +2524,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 2, WONANG: 3, NORM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_652",
     type: "single",
     text: "你的航班起飞前你才发现去错机场，你会？",
@@ -2536,7 +2536,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 1, SHIL: 3, MAIM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_653",
     type: "single",
     text: "你的合租对象带陌生人过夜，你会？",
@@ -2548,7 +2548,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 4, BOSS: 1, LIKE: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_654",
     type: "single",
     text: "你的老板凌晨三点发消息，你会？",
@@ -2560,7 +2560,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 1, NORM: 3, OPEN: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_655",
     type: "single",
     text: "你的家人未经允许扔了你的东西，你会？",
@@ -2572,7 +2572,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 3, POET: 2, BENG: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_656",
     type: "single",
     text: "你的朋友圈被领导要求转发广告，你会？",
@@ -2584,7 +2584,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 1, WEMO: 2, BIAO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_657",
     type: "single",
     text: "你的微信群被拉进卖保险的人，你会？",
@@ -2596,7 +2596,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 4, SHENG: 2, BOSS: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_658",
     type: "single",
     text: "你的健身房教练身材还没你好，你会？",
@@ -2608,7 +2608,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "搬家", weights: { GHOST: 1, IMFW: 4, YOLO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_659",
     type: "single",
     text: "你的面试面试官全程玩手机，你会？",
@@ -2620,7 +2620,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "忘了他", weights: { IMFW: 3, XIAN: 3, SLEEP: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_660",
     type: "single",
     text: "你的签证被拒了，你会？",
@@ -2632,7 +2632,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 2, WEMO: 2, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_661",
     type: "single",
     text: "你的演唱会站了六小时但啥也看不见，你会？",
@@ -2644,7 +2644,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 4, BOSS: 3, SHEK: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_662",
     type: "single",
     text: "你的剧本杀队友全程挂机，你会？",
@@ -2656,7 +2656,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 2, DANR: 4, NPC: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_663",
     type: "single",
     text: "你的密室逃脱队友吓得把你推倒，你会？",
@@ -2668,7 +2668,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 2, CPU: 4, YINY: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_664",
     type: "single",
     text: "你的剧本拿到边缘角色，你会？",
@@ -2680,7 +2680,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 3, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_665",
     type: "single",
     text: "你的旅游团强制购物，你会？",
@@ -2692,7 +2692,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 4, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_666",
     type: "single",
     text: "你的酒店床上有头发，你会？",
@@ -2704,7 +2704,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 3, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_667",
     type: "single",
     text: "你的高铁座位被霸占了，你会？",
@@ -2716,7 +2716,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 1, WONANG: 2, NORM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_668",
     type: "single",
     text: "你的网红餐厅排队两小时但很难吃，你会？",
@@ -2728,7 +2728,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 2, SHIL: 4, MAIM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_669",
     type: "single",
     text: "你的剧本杀dm全程念稿无感情，你会？",
@@ -2740,7 +2740,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 4, BOSS: 3, LIKE: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_670",
     type: "single",
     text: "你的盲盒开了十个都是雷款，你会？",
@@ -2752,7 +2752,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 3, NORM: 1, OPEN: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_671",
     type: "single",
     text: "你的刮刮乐买了 100 一张没中，你会？",
@@ -2764,7 +2764,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 4, POET: 3, BENG: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_672",
     type: "single",
     text: "你的游戏队友挂机还骂人，你会？",
@@ -2776,7 +2776,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 2, WEMO: 2, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_673",
     type: "single",
     text: "你的直播弹幕全是黑粉，你会？",
@@ -2788,7 +2788,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 3, SHENG: 3, BOSS: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_674",
     type: "single",
     text: "你的小说主角被读者要求写死，你会？",
@@ -2800,7 +2800,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "搬家", weights: { GHOST: 4, IMFW: 2, YOLO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_675",
     type: "single",
     text: "你的 cos 照被说还原度低，你会？",
@@ -2812,7 +2812,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "忘了他", weights: { IMFW: 2, XIAN: 3, SLEEP: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_676",
     type: "single",
     text: "你的画被甲方要求改第 18 版，你会？",
@@ -2824,7 +2824,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 1, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_677",
     type: "single",
     text: "你的代码被实习生改成屎山，你会？",
@@ -2836,7 +2836,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 3, BOSS: 1, SHEK: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_678",
     type: "single",
     text: "你的设计方案被客户说不如第一版，你会？",
@@ -2848,7 +2848,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 2, DANR: 1, NPC: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_679",
     type: "single",
     text: "你的项目上线就崩了，你会？",
@@ -2860,7 +2860,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 3, CPU: 2, YINY: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_680",
     type: "single",
     text: "你的 PPT 演讲时电脑死机，你会？",
@@ -2872,7 +2872,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 4, DYOR: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_681",
     type: "single",
     text: "你的简历被 HR 说没亮点，你会？",
@@ -2884,7 +2884,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 3, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_682",
     type: "single",
     text: "你的面试被说期望薪资太高，你会？",
@@ -2896,7 +2896,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 4, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_683",
     type: "single",
     text: "你的实习工资还没生活费多，你会？",
@@ -2908,7 +2908,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 2, WONANG: 4, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_684",
     type: "single",
     text: "你的房租占了工资一半，你会？",
@@ -2920,7 +2920,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 4, SHIL: 3, MAIM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_685",
     type: "single",
     text: "你的通勤时间单程两小时，你会？",
@@ -2932,7 +2932,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 1, BOSS: 2, LIKE: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_686",
     type: "single",
     text: "你的工位在厕所门口，你会？",
@@ -2944,7 +2944,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 4, NORM: 3, OPEN: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_687",
     type: "single",
     text: "你的团建安排在周末且必须参加，你会？",
@@ -2956,7 +2956,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 4, POET: 1, BENG: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_688",
     type: "single",
     text: "你的年会要你表演节目，你会？",
@@ -2968,7 +2968,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 3, WEMO: 2, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_689",
     type: "single",
     text: "你的同事每天带饭但从不洗碗，你会？",
@@ -2980,7 +2980,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 3, SHENG: 3, BOSS: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_690",
     type: "single",
     text: "你的公司厕所永远没纸，你会？",
@@ -2992,7 +2992,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "搬家", weights: { GHOST: 3, IMFW: 2, YOLO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_691",
     type: "single",
     text: "你的老板开会两小时没有结论，你会？",
@@ -3004,7 +3004,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "忘了他", weights: { IMFW: 1, XIAN: 3, SLEEP: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_692",
     type: "single",
     text: "你的 KPI 设置得明显完不成，你会？",
@@ -3016,7 +3016,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 4, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_693",
     type: "single",
     text: "你的加班没有加班费且不被认可，你会？",
@@ -3028,7 +3028,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 4, BOSS: 2, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_694",
     type: "single",
     text: "你的调休申请永远不被批准，你会？",
@@ -3040,7 +3040,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 4, DANR: 4, NPC: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_695",
     type: "single",
     text: "你的请假被问东问西，你会？",
@@ -3052,7 +3052,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 1, CPU: 3, YINY: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_696",
     type: "single",
     text: "你的离职被领导谈话三次挽留，你会？",
@@ -3064,7 +3064,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 1, DYOR: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_697",
     type: "single",
     text: "你的新工作发现是坑，你会？",
@@ -3076,7 +3076,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 4, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_698",
     type: "single",
     text: "你的全职备考三年没上岸，你会？",
@@ -3088,7 +3088,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 1, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_699",
     type: "single",
     text: "你的留学申请全聚德，你会？",
@@ -3100,7 +3100,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 2, WONANG: 3, NORM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_700",
     type: "single",
     text: "你的创业三个月倒闭，你会？",
@@ -3112,7 +3112,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 3, SHIL: 3, MAIM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_701",
     type: "single",
     text: "你的相亲对象隐瞒婚史，你会？",
@@ -3124,7 +3124,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 3, BOSS: 1, LIKE: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_702",
     type: "single",
     text: "你的恋爱三年发现被绿，你会？",
@@ -3136,7 +3136,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 1, NORM: 2, OPEN: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_703",
     type: "single",
     text: "你的对象和异性没有边界感，你会？",
@@ -3148,7 +3148,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 3, POET: 4, BENG: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_704",
     type: "single",
     text: "你的对象要求查你手机，你会？",
@@ -3160,7 +3160,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 1, WEMO: 1, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_705",
     type: "single",
     text: "你的对象在游戏里和别人组 CP，你会？",
@@ -3172,7 +3172,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 1, SHENG: 3, BOSS: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_706",
     type: "single",
     text: "你的对象忘记你们纪念日，你会？",
@@ -3184,7 +3184,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "搬家", weights: { GHOST: 4, IMFW: 4, YOLO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_707",
     type: "single",
     text: "你的对象送你不喜欢的礼物，你会？",
@@ -3196,7 +3196,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "忘了他", weights: { IMFW: 3, XIAN: 4, SLEEP: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_708",
     type: "single",
     text: "你的对象做饭很难吃但坚持要做，你会？",
@@ -3208,7 +3208,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 1, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_709",
     type: "single",
     text: "你的对象唱歌跑调还非要表演，你会？",
@@ -3220,7 +3220,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 3, BOSS: 4, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_710",
     type: "single",
     text: "你的对象天天刷短视频不理你，你会？",
@@ -3232,7 +3232,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 3, DANR: 1, NPC: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_711",
     type: "single",
     text: "你的对象跟你借钱不还，你会？",
@@ -3244,7 +3244,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 3, CPU: 4, YINY: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_712",
     type: "single",
     text: "你的对象在父母面前贬低你，你会？",
@@ -3256,7 +3256,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 2, LIKE: 2, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_713",
     type: "single",
     text: "你的对象坚决不改你无法忍受的缺点，你会？",
@@ -3268,7 +3268,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 4, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_714",
     type: "single",
     text: "你的对象说“我妈觉得我们不合适”，你会？",
@@ -3280,7 +3280,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 2, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_715",
     type: "single",
     text: "你的对象在朋友圈从来不发你，你会？",
@@ -3292,7 +3292,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 3, WONANG: 1, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_716",
     type: "single",
     text: "你的对象和前任保持联系，你会？",
@@ -3304,7 +3304,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 4, SHIL: 1, MAIM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_717",
     type: "single",
     text: "你的对象对未来完全没有规划，你会？",
@@ -3316,7 +3316,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 2, BOSS: 3, LIKE: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_718",
     type: "single",
     text: "你的对象在吵架时冷暴力，你会？",
@@ -3328,7 +3328,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 4, NORM: 2, OPEN: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_719",
     type: "single",
     text: "你的对象说“你要这么想我也没办法”，你会？",
@@ -3340,7 +3340,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 1, POET: 3, BENG: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_720",
     type: "single",
     text: "你的对象把你送他的礼物挂闲鱼，你会？",
@@ -3352,7 +3352,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 2, WEMO: 3, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_721",
     type: "single",
     text: "你的对象在你生病时只说“多喝热水”，你会？",
@@ -3364,7 +3364,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 3, SHENG: 3, BOSS: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_722",
     type: "single",
     text: "你的对象和闺蜜/兄弟关系过于亲密，你会？",
@@ -3376,7 +3376,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "搬家", weights: { GHOST: 3, IMFW: 4, YOLO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_723",
     type: "single",
     text: "你的对象在公共场合让你难堪，你会？",
@@ -3388,7 +3388,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "忘了他", weights: { IMFW: 1, XIAN: 1, SLEEP: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_724",
     type: "single",
     text: "你的对象从来不道歉，你会？",
@@ -3400,7 +3400,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 2, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_725",
     type: "single",
     text: "你的对象控制欲极强，你会？",
@@ -3412,7 +3412,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 1, BOSS: 2, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_726",
     type: "single",
     text: "你的对象情绪极其不稳定，你会？",
@@ -3424,7 +3424,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 4, DANR: 4, NPC: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_727",
     type: "single",
     text: "你的对象每次吵架都翻旧账，你会？",
@@ -3436,7 +3436,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 1, CPU: 1, YINY: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_728",
     type: "single",
     text: "你的对象说“分手”当口头禅，你会？",
@@ -3448,7 +3448,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 4, DYOR: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_729",
     type: "single",
     text: "你的对象在外人面前假装单身，你会？",
@@ -3460,7 +3460,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 2, BEIH: 3, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_730",
     type: "single",
     text: "你的对象隐瞒自己的负债情况，你会？",
@@ -3472,7 +3472,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 3, BOSS: 2, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_731",
     type: "single",
     text: "你的对象对你的兴趣爱好嗤之以鼻，你会？",
@@ -3484,7 +3484,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 1, WONANG: 4, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_732",
     type: "single",
     text: "你的对象要求你删掉所有异性好友，你会？",
@@ -3496,7 +3496,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 3, SHIL: 1, MAIM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_733",
     type: "single",
     text: "你的对象在关键决策上从不询问你，你会？",
@@ -3508,7 +3508,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 2, BOSS: 4, LIKE: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_734",
     type: "single",
     text: "你的对象把你的隐私当笑话讲给别人，你会？",
@@ -3520,7 +3520,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 4, NORM: 2, OPEN: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_735",
     type: "single",
     text: "你的对象在你出差时带人回家，你会？",
@@ -3532,7 +3532,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 2, POET: 2, BENG: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_736",
     type: "single",
     text: "你的对象说“我配不上你”来逃避问题，你会？",
@@ -3544,7 +3544,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 3, WEMO: 4, BIAO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_737",
     type: "single",
     text: "你的对象永远把游戏排在第一位，你会？",
@@ -3556,7 +3556,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 3, SHENG: 3, BOSS: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_738",
     type: "single",
     text: "你的对象拒绝见你的父母，你会？",
@@ -3568,7 +3568,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "搬家", weights: { GHOST: 4, IMFW: 3, YOLO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_739",
     type: "single",
     text: "你的对象在背后嘲笑你的身材/外貌，你会？",
@@ -3580,7 +3580,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "忘了他", weights: { IMFW: 3, XIAN: 3, SLEEP: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_740",
     type: "single",
     text: "你的对象在吵架时摔东西，你会？",
@@ -3592,7 +3592,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 1, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_741",
     type: "single",
     text: "你的对象要求你改变穿衣风格，你会？",
@@ -3604,7 +3604,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 4, BOSS: 4, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_742",
     type: "single",
     text: "你的对象经常说“我以前对象不会这样”，你会？",
@@ -3616,7 +3616,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 4, DANR: 2, NPC: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_743",
     type: "single",
     text: "你的对象在你身上发泄工作压力，你会？",
@@ -3628,7 +3628,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 2, CPU: 4, YINY: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_744",
     type: "single",
     text: "你的对象在经济上完全依赖你，你会？",
@@ -3640,7 +3640,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 1, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_745",
     type: "single",
     text: "你的对象对你的职业发展嗤之以鼻，你会？",
@@ -3652,7 +3652,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 4, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_746",
     type: "single",
     text: "你的对象从来不记得你的口味，你会？",
@@ -3664,7 +3664,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 2, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_747",
     type: "single",
     text: "你的对象在亲密关系中极度双标，你会？",
@@ -3676,7 +3676,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 2, WONANG: 4, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_748",
     type: "single",
     text: "你的对象把你和别人的对象比较，你会？",
@@ -3688,7 +3688,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 4, SHIL: 1, MAIM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_749",
     type: "single",
     text: "你的对象在吵架后每次都找你闺蜜倾诉，你会？",
@@ -3700,7 +3700,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 2, BOSS: 1, LIKE: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_750",
     type: "single",
     text: "你的对象把你当情绪垃圾桶，你会？",
@@ -3712,7 +3712,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 4, NORM: 3, OPEN: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_751",
     type: "single",
     text: "你的对象在你想沟通时逃避，你会？",
@@ -3724,7 +3724,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 4, POET: 3, BENG: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_752",
     type: "single",
     text: "你的对象永远只会嘴上说说，你会？",
@@ -3736,7 +3736,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 2, WEMO: 4, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_753",
     type: "single",
     text: "你的对象对你的付出视而不见，你会？",
@@ -3748,7 +3748,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 1, SHENG: 1, BOSS: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_754",
     type: "single",
     text: "你的对象在社交软件上和别人暧昧，你会？",
@@ -3760,7 +3760,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "搬家", weights: { GHOST: 1, IMFW: 2, YOLO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_755",
     type: "single",
     text: "你的对象在答应你的事情上永远失信，你会？",
@@ -3772,7 +3772,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "忘了他", weights: { IMFW: 3, XIAN: 1, SLEEP: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_756",
     type: "single",
     text: "你的对象在你哭泣时无动于衷，你会？",
@@ -3784,7 +3784,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 2, WEMO: 2, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_757",
     type: "single",
     text: "你的对象在你取得成就时阴阳怪气，你会？",
@@ -3796,7 +3796,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求帮助", weights: { DAREN: 3, BOSS: 3, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_758",
     type: "single",
     text: "你的对象对你的家人不尊重，你会？",
@@ -3808,7 +3808,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无视", weights: { IMFW: 3, DANR: 1, NPC: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_759",
     type: "single",
     text: "你的对象在大事上没担当，你会？",
@@ -3820,7 +3820,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "报复", weights: { HUIM: 1, CPU: 3, YINY: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_760",
     type: "single",
     text: "你的对象把你拉黑又加回反复折磨，你会？",
@@ -3832,7 +3832,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 4, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_761",
     type: "single",
     text: "你的对象说“我只是犯了全天下男人/女人都会犯的错”，你会？",
@@ -3844,7 +3844,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 4, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_762",
     type: "single",
     text: "你的对象在你面前夸前任，你会？",
@@ -3856,7 +3856,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 4, SHEK: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_763",
     type: "single",
     text: "你的对象在你失业时冷嘲热讽，你会？",
@@ -3868,7 +3868,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找台阶下", weights: { POET: 2, WONANG: 1, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_764",
     type: "single",
     text: "你的对象对你的抑郁症不以为然，你会？",
@@ -3880,7 +3880,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "求饶", weights: { WONANG: 1, SHIL: 1, MAIM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_765",
     type: "single",
     text: "你的对象把所有错都推到你身上，你会？",
@@ -3892,7 +3892,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "寻求调解", weights: { DAREN: 1, BOSS: 4, LIKE: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_766",
     type: "single",
     text: "你的对象在你表达需求时说你矫情，你会？",
@@ -3904,7 +3904,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "沟通", weights: { BOSS: 2, NORM: 1, OPEN: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_767",
     type: "single",
     text: "你的对象在婚姻中要求 AA 到每一分钱，你会？",
@@ -3916,7 +3916,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "独自消化", weights: { WONANG: 3, POET: 2, BENG: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_768",
     type: "single",
     text: "你的对象在婚礼上临时加彩礼，你会？",
@@ -3928,7 +3928,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹", weights: { BENG: 3, WEMO: 3, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_769",
     type: "single",
     text: "你的对象要求你签婚前协议但条款苛刻，你会？",
@@ -3940,7 +3940,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "好言相劝", weights: { NORM: 4, SHENG: 2, BOSS: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_770",
     type: "single",
     text: "当被陌生人冒犯时，你的第一反应是？（第1次）",
@@ -3952,7 +3952,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 3, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_771",
     type: "single",
     text: "当遭遇不公平待遇时，你的第一反应是？（第2次）",
@@ -3964,7 +3964,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 2, LIKE: 3, DYOR: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_772",
     type: "single",
     text: "当计划突然被打乱时，你的第一反应是？（第3次）",
@@ -3976,7 +3976,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 4, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_773",
     type: "single",
     text: "当收到坏消息时，你的第一反应是？（第4次）",
@@ -3988,7 +3988,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 2, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_774",
     type: "single",
     text: "当面对无理要求时，你的第一反应是？（第5次）",
@@ -4000,7 +4000,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 4, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_775",
     type: "single",
     text: "当被朋友背叛时，你的第一反应是？（第6次）",
@@ -4012,7 +4012,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 4, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_776",
     type: "single",
     text: "当工作压力爆棚时，你的第一反应是？（第7次）",
@@ -4024,7 +4024,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 4, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_777",
     type: "single",
     text: "当深夜 emo时，你的第一反应是？（第8次）",
@@ -4036,7 +4036,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 3, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_778",
     type: "single",
     text: "当社交场合尴尬时，你的第一反应是？（第9次）",
@@ -4048,7 +4048,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 2, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_779",
     type: "single",
     text: "当经济拮据时，你的第一反应是？（第10次）",
@@ -4060,7 +4060,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 2, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_780",
     type: "single",
     text: "当感情受挫时，你的第一反应是？（第11次）",
@@ -4072,7 +4072,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 4, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_781",
     type: "single",
     text: "当被人误解时，你的第一反应是？（第12次）",
@@ -4084,7 +4084,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 4, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_782",
     type: "single",
     text: "当遇到技术故障时，你的第一反应是？（第13次）",
@@ -4096,7 +4096,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 2, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_783",
     type: "single",
     text: "当身体不适时，你的第一反应是？（第14次）",
@@ -4108,7 +4108,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 2, LIKE: 2, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_784",
     type: "single",
     text: "当被人比下去时，你的第一反应是？（第15次）",
@@ -4120,7 +4120,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 1, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_785",
     type: "single",
     text: "当目标遥不可及时，你的第一反应是？（第16次）",
@@ -4132,7 +4132,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 3, SHEK: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_786",
     type: "single",
     text: "当被人放鸽子时，你的第一反应是？（第17次）",
@@ -4144,7 +4144,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 4, BIAO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_787",
     type: "single",
     text: "当付出没有回报时，你的第一反应是？（第18次）",
@@ -4156,7 +4156,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 4, LIKE: 1, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_788",
     type: "single",
     text: "当环境嘈杂时，你的第一反应是？（第19次）",
@@ -4168,7 +4168,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 4, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_789",
     type: "single",
     text: "当被人忽视时，你的第一反应是？（第20次）",
@@ -4180,7 +4180,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 3, BOSS: 1, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_790",
     type: "single",
     text: "当被陌生人冒犯时，你的第一反应是？（第21次）",
@@ -4192,7 +4192,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 3, WEMO: 2, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_791",
     type: "single",
     text: "当遭遇不公平待遇时，你的第一反应是？（第22次）",
@@ -4204,7 +4204,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 4, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_792",
     type: "single",
     text: "当计划突然被打乱时，你的第一反应是？（第23次）",
@@ -4216,7 +4216,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 2, BEIH: 4, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_793",
     type: "single",
     text: "当收到坏消息时，你的第一反应是？（第24次）",
@@ -4228,7 +4228,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 1, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_794",
     type: "single",
     text: "当面对无理要求时，你的第一反应是？（第25次）",
@@ -4240,7 +4240,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 3, WEMO: 1, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_795",
     type: "single",
     text: "当被朋友背叛时，你的第一反应是？（第26次）",
@@ -4252,7 +4252,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 1, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_796",
     type: "single",
     text: "当工作压力爆棚时，你的第一反应是？（第27次）",
@@ -4264,7 +4264,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 4, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_797",
     type: "single",
     text: "当深夜 emo时，你的第一反应是？（第28次）",
@@ -4276,7 +4276,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 2, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_798",
     type: "single",
     text: "当社交场合尴尬时，你的第一反应是？（第29次）",
@@ -4288,7 +4288,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 1, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_799",
     type: "single",
     text: "当经济拮据时，你的第一反应是？（第30次）",
@@ -4300,7 +4300,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 1, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_800",
     type: "single",
     text: "当感情受挫时，你的第一反应是？（第31次）",
@@ -4312,7 +4312,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 1, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_801",
     type: "single",
     text: "当被人误解时，你的第一反应是？（第32次）",
@@ -4324,7 +4324,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 3, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_802",
     type: "single",
     text: "当遇到技术故障时，你的第一反应是？（第33次）",
@@ -4336,7 +4336,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 4, BIAO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_803",
     type: "single",
     text: "当身体不适时，你的第一反应是？（第34次）",
@@ -4348,7 +4348,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 4, LIKE: 4, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_804",
     type: "single",
     text: "当被人比下去时，你的第一反应是？（第35次）",
@@ -4360,7 +4360,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 1, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_805",
     type: "single",
     text: "当目标遥不可及时，你的第一反应是？（第36次）",
@@ -4372,7 +4372,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 2, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_806",
     type: "single",
     text: "当被人放鸽子时，你的第一反应是？（第37次）",
@@ -4384,7 +4384,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 2, BIAO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_807",
     type: "single",
     text: "当付出没有回报时，你的第一反应是？（第38次）",
@@ -4396,7 +4396,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 4, LIKE: 1, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_808",
     type: "single",
     text: "当环境嘈杂时，你的第一反应是？（第39次）",
@@ -4408,7 +4408,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 2, NORM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_809",
     type: "single",
     text: "当被人忽视时，你的第一反应是？（第40次）",
@@ -4420,7 +4420,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 4, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_810",
     type: "single",
     text: "当被陌生人冒犯时，你的第一反应是？（第41次）",
@@ -4432,7 +4432,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 1, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_811",
     type: "single",
     text: "当遭遇不公平待遇时，你的第一反应是？（第42次）",
@@ -4444,7 +4444,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 4, DYOR: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_812",
     type: "single",
     text: "当计划突然被打乱时，你的第一反应是？（第43次）",
@@ -4456,7 +4456,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 2, BEIH: 3, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_813",
     type: "single",
     text: "当收到坏消息时，你的第一反应是？（第44次）",
@@ -4468,7 +4468,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 1, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_814",
     type: "single",
     text: "当面对无理要求时，你的第一反应是？（第45次）",
@@ -4480,7 +4480,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 1, BIAO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_815",
     type: "single",
     text: "当被朋友背叛时，你的第一反应是？（第46次）",
@@ -4492,7 +4492,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 2, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_816",
     type: "single",
     text: "当工作压力爆棚时，你的第一反应是？（第47次）",
@@ -4504,7 +4504,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 2, BEIH: 1, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_817",
     type: "single",
     text: "当深夜 emo时，你的第一反应是？（第48次）",
@@ -4516,7 +4516,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 3, SHEK: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_818",
     type: "single",
     text: "当社交场合尴尬时，你的第一反应是？（第49次）",
@@ -4528,7 +4528,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 3, WEMO: 2, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_819",
     type: "single",
     text: "当经济拮据时，你的第一反应是？（第50次）",
@@ -4540,7 +4540,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 2, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_820",
     type: "single",
     text: "当感情受挫时，你的第一反应是？（第51次）",
@@ -4552,7 +4552,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 2, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_821",
     type: "single",
     text: "当被人误解时，你的第一反应是？（第52次）",
@@ -4564,7 +4564,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 3, BOSS: 4, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_822",
     type: "single",
     text: "当遇到技术故障时，你的第一反应是？（第53次）",
@@ -4576,7 +4576,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 3, BIAO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_823",
     type: "single",
     text: "当身体不适时，你的第一反应是？（第54次）",
@@ -4588,7 +4588,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 4, LIKE: 1, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_824",
     type: "single",
     text: "当被人比下去时，你的第一反应是？（第55次）",
@@ -4600,7 +4600,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 2, BEIH: 2, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_825",
     type: "single",
     text: "当目标遥不可及时，你的第一反应是？（第56次）",
@@ -4612,7 +4612,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 1, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_826",
     type: "single",
     text: "当被人放鸽子时，你的第一反应是？（第57次）",
@@ -4624,7 +4624,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 4, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_827",
     type: "single",
     text: "当付出没有回报时，你的第一反应是？（第58次）",
@@ -4636,7 +4636,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 1, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_828",
     type: "single",
     text: "当环境嘈杂时，你的第一反应是？（第59次）",
@@ -4648,7 +4648,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 4, NORM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_829",
     type: "single",
     text: "当被人忽视时，你的第一反应是？（第60次）",
@@ -4660,7 +4660,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 4, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_830",
     type: "single",
     text: "当被陌生人冒犯时，你的第一反应是？（第61次）",
@@ -4672,7 +4672,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 4, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_831",
     type: "single",
     text: "当遭遇不公平待遇时，你的第一反应是？（第62次）",
@@ -4684,7 +4684,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 4, DYOR: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_832",
     type: "single",
     text: "当计划突然被打乱时，你的第一反应是？（第63次）",
@@ -4696,7 +4696,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 2, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_833",
     type: "single",
     text: "当收到坏消息时，你的第一反应是？（第64次）",
@@ -4708,7 +4708,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 3, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_834",
     type: "single",
     text: "当面对无理要求时，你的第一反应是？（第65次）",
@@ -4720,7 +4720,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 2, WEMO: 1, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_835",
     type: "single",
     text: "当被朋友背叛时，你的第一反应是？（第66次）",
@@ -4732,7 +4732,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 2, LIKE: 4, DYOR: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_836",
     type: "single",
     text: "当工作压力爆棚时，你的第一反应是？（第67次）",
@@ -4744,7 +4744,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 1, NORM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_837",
     type: "single",
     text: "当深夜 emo时，你的第一反应是？（第68次）",
@@ -4756,7 +4756,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 4, SHEK: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_838",
     type: "single",
     text: "当社交场合尴尬时，你的第一反应是？（第69次）",
@@ -4768,7 +4768,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 1, BIAO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_839",
     type: "single",
     text: "当经济拮据时，你的第一反应是？（第70次）",
@@ -4780,7 +4780,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 1, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_840",
     type: "single",
     text: "当感情受挫时，你的第一反应是？（第71次）",
@@ -4792,7 +4792,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 2, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_841",
     type: "single",
     text: "当被人误解时，你的第一反应是？（第72次）",
@@ -4804,7 +4804,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 4, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_842",
     type: "single",
     text: "当遇到技术故障时，你的第一反应是？（第73次）",
@@ -4816,7 +4816,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 3, WEMO: 4, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_843",
     type: "single",
     text: "当身体不适时，你的第一反应是？（第74次）",
@@ -4828,7 +4828,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 2, DYOR: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_844",
     type: "single",
     text: "当被人比下去时，你的第一反应是？（第75次）",
@@ -4840,7 +4840,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 3, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_845",
     type: "single",
     text: "当目标遥不可及时，你的第一反应是？（第76次）",
@@ -4852,7 +4852,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 1, SHEK: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_846",
     type: "single",
     text: "当被人放鸽子时，你的第一反应是？（第77次）",
@@ -4864,7 +4864,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 3, WEMO: 4, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_847",
     type: "single",
     text: "当付出没有回报时，你的第一反应是？（第78次）",
@@ -4876,7 +4876,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 3, DYOR: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_848",
     type: "single",
     text: "当环境嘈杂时，你的第一反应是？（第79次）",
@@ -4888,7 +4888,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 1, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_849",
     type: "single",
     text: "当被人忽视时，你的第一反应是？（第80次）",
@@ -4900,7 +4900,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 2, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_multi_011",
     type: "multi",
     text: "以下哪些行为你经常做？",
@@ -4913,7 +4913,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "买东西凑满减", weights: { XIAOQI: 3, DOGE: 2, FUDI: 1 } }
     ]
   },
-  {
+{
     id: "Q_multi_012",
     type: "multi",
     text: "你觉得自己具有以下哪些特质？",
@@ -4926,7 +4926,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "多疑", weights: { JING: 1, BEIH: 1, YUAN: 3 } }
     ]
   },
-  {
+{
     id: "Q_multi_013",
     type: "multi",
     text: "在以下场景中，哪些会让你感到不适？",
@@ -4939,7 +4939,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "半夜噪音", weights: { HOUJ: 1, BAOZ: 3, KONG: 2 } }
     ]
   },
-  {
+{
     id: "Q_multi_014",
     type: "multi",
     text: "以下哪些话你可能会说出口？",
@@ -4952,7 +4952,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "泰裤辣", weights: { TAIK: 1, YOLO: 3, BABI: 3 } }
     ]
   },
-  {
+{
     id: "Q_multi_015",
     type: "multi",
     text: "你的手机里通常会有以下哪些 APP？",
@@ -4965,7 +4965,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "豆瓣", weights: { CHAO: 3, LIKE: 1, POET: 1 } }
     ]
   },
-  {
+{
     id: "Q_multi_016",
     type: "multi",
     text: "你的周末常态包括？",
@@ -4978,7 +4978,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "学习充电", weights: { BOSS: 1, KONG: 3, CODE: 2 } }
     ]
   },
-  {
+{
     id: "Q_multi_017",
     type: "multi",
     text: "你在网络世界可能具备以下哪些身份？",
@@ -4991,7 +4991,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "引流狗", weights: { SHUI: 2, SERF: 2, NPC: 2 } }
     ]
   },
-  {
+{
     id: "Q_multi_018",
     type: "multi",
     text: "以下哪些事情会让你瞬间破防？",
@@ -5004,7 +5004,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "被道德绑架", weights: { SHENG: 3, CPU: 1, WONANG: 3 } }
     ]
   },
-  {
+{
     id: "Q_multi_019",
     type: "multi",
     text: "你的口头禅/常用语包括？",
@@ -5017,7 +5017,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "好家伙", weights: { CHIG: 1, NPC: 3, DUNJ: 3 } }
     ]
   },
-  {
+{
     id: "Q_multi_020",
     type: "multi",
     text: "以下哪些行为你觉得很酷？",
@@ -5030,7 +5030,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "躺平摆烂", weights: { IMFW: 2, XIAN: 3, SLEEP: 2 } }
     ]
   },
-  {
+{
     id: "Q_multi_021",
     type: "multi",
     text: "你最不能忍受的同事行为包括？",
@@ -5043,7 +5043,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "大声打电话", weights: { HOUJ: 3, BAOZ: 1, KONG: 1 } }
     ]
   },
-  {
+{
     id: "Q_multi_022",
     type: "multi",
     text: "你理想的假期包含以下哪些元素？",
@@ -5056,7 +5056,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "博物馆看展", weights: { DEEP: 2, NORM: 3, POET: 1 } }
     ]
   },
-  {
+{
     id: "Q_multi_023",
     type: "multi",
     text: "以下哪些是你的消费观？",
@@ -5069,7 +5069,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "只买贵的", weights: { VIP: 1, BOSS: 3, XUAN: 1 } }
     ]
   },
-  {
+{
     id: "Q_multi_024",
     type: "multi",
     text: "你在恋爱中可能会做的事？",
@@ -5082,7 +5082,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "直接分手", weights: { BOSS: 3, PING: 3, YOLO: 2 } }
     ]
   },
-  {
+{
     id: "Q_multi_025",
     type: "multi",
     text: "以下哪些是你对未来的幻想？",
@@ -5095,7 +5095,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "改变世界", weights: { BOSS: 3, GROK: 2, SHENG: 3 } }
     ]
   },
-  {
+{
     id: "Q_multi_026",
     type: "multi",
     text: "你的社交偏好是？",
@@ -5108,7 +5108,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "只参加有利益相关的局", weights: { BOSS: 1, VIP: 2, CPU: 3 } }
     ]
   },
-  {
+{
     id: "Q_multi_027",
     type: "multi",
     text: "以下哪些是你的网络人设？",
@@ -5121,7 +5121,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "喷子", weights: { KEYB: 2, GANG: 2, HITER: 1 } }
     ]
   },
-  {
+{
     id: "Q_multi_028",
     type: "multi",
     text: "你的解压方式包括？",
@@ -5134,7 +5134,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "买买买", weights: { YOLO: 1, EMO: 1, BENG: 1 } }
     ]
   },
-  {
+{
     id: "Q_multi_029",
     type: "multi",
     text: "以下哪些标签适合你？",
@@ -5147,7 +5147,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "emo 怪", weights: { WEMO: 1, EMO: 2, BENG: 2 } }
     ]
   },
-  {
+{
     id: "Q_multi_030",
     type: "multi",
     text: "你最常出现的情绪是？",
@@ -5160,7 +5160,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "孤独", weights: { GHOST: 2, GELI: 3, POET: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_850",
     type: "single",
     text: "当被陌生人冒犯时，你的第一反应是？（补1）",
@@ -5172,7 +5172,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 3, WEMO: 1, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_851",
     type: "single",
     text: "当遭遇不公平待遇时，你的第一反应是？（补2）",
@@ -5184,7 +5184,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 3, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_852",
     type: "single",
     text: "当计划突然被打乱时，你的第一反应是？（补3）",
@@ -5196,7 +5196,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 1, NORM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_853",
     type: "single",
     text: "当收到坏消息时，你的第一反应是？（补4）",
@@ -5208,7 +5208,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 3, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_854",
     type: "single",
     text: "当面对无理要求时，你的第一反应是？（补5）",
@@ -5220,7 +5220,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 2, WEMO: 4, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_855",
     type: "single",
     text: "当被朋友背叛时，你的第一反应是？（补6）",
@@ -5232,7 +5232,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 2, LIKE: 3, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_856",
     type: "single",
     text: "当工作压力爆棚时，你的第一反应是？（补7）",
@@ -5244,7 +5244,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 3, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_857",
     type: "single",
     text: "当深夜 emo时，你的第一反应是？（补8）",
@@ -5256,7 +5256,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 4, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_858",
     type: "single",
     text: "当社交场合尴尬时，你的第一反应是？（补9）",
@@ -5268,7 +5268,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 1, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_859",
     type: "single",
     text: "当经济拮据时，你的第一反应是？（补10）",
@@ -5280,7 +5280,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 2, LIKE: 2, DYOR: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_860",
     type: "single",
     text: "当感情受挫时，你的第一反应是？（补11）",
@@ -5292,7 +5292,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 2, BEIH: 4, NORM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_861",
     type: "single",
     text: "当被人误解时，你的第一反应是？（补12）",
@@ -5304,7 +5304,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 2, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_862",
     type: "single",
     text: "当遇到技术故障时，你的第一反应是？（补13）",
@@ -5316,7 +5316,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 1, BIAO: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_863",
     type: "single",
     text: "当被陌生人冒犯时，你的第一反应是？（补14）",
@@ -5328,7 +5328,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 3, DYOR: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_864",
     type: "single",
     text: "当遭遇不公平待遇时，你的第一反应是？（补15）",
@@ -5340,7 +5340,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 1, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_865",
     type: "single",
     text: "当计划突然被打乱时，你的第一反应是？（补16）",
@@ -5352,7 +5352,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 4, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_866",
     type: "single",
     text: "当收到坏消息时，你的第一反应是？（补17）",
@@ -5364,7 +5364,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 3, BIAO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_867",
     type: "single",
     text: "当面对无理要求时，你的第一反应是？（补18）",
@@ -5376,7 +5376,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 4, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_868",
     type: "single",
     text: "当被朋友背叛时，你的第一反应是？（补19）",
@@ -5388,7 +5388,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 2, BEIH: 3, NORM: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_869",
     type: "single",
     text: "当工作压力爆棚时，你的第一反应是？（补20）",
@@ -5400,7 +5400,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 3, BOSS: 3, SHEK: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_870",
     type: "single",
     text: "当深夜 emo时，你的第一反应是？（补21）",
@@ -5412,7 +5412,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 3, WEMO: 2, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_871",
     type: "single",
     text: "当社交场合尴尬时，你的第一反应是？（补22）",
@@ -5424,7 +5424,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 4, LIKE: 3, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_872",
     type: "single",
     text: "当经济拮据时，你的第一反应是？（补23）",
@@ -5436,7 +5436,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 3, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_873",
     type: "single",
     text: "当感情受挫时，你的第一反应是？（补24）",
@@ -5448,7 +5448,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 2, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_874",
     type: "single",
     text: "当被人误解时，你的第一反应是？（补25）",
@@ -5460,7 +5460,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 4, WEMO: 3, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_875",
     type: "single",
     text: "当遇到技术故障时，你的第一反应是？（补26）",
@@ -5472,7 +5472,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 4, LIKE: 4, DYOR: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_876",
     type: "single",
     text: "当被陌生人冒犯时，你的第一反应是？（补27）",
@@ -5484,7 +5484,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 4, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_877",
     type: "single",
     text: "当遭遇不公平待遇时，你的第一反应是？（补28）",
@@ -5496,7 +5496,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 1, BOSS: 3, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_878",
     type: "single",
     text: "当计划突然被打乱时，你的第一反应是？（补29）",
@@ -5508,7 +5508,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 2, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_879",
     type: "single",
     text: "当收到坏消息时，你的第一反应是？（补30）",
@@ -5520,7 +5520,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 1, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_880",
     type: "single",
     text: "当面对无理要求时，你的第一反应是？（补31）",
@@ -5532,7 +5532,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 3, BEIH: 4, NORM: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_881",
     type: "single",
     text: "当被朋友背叛时，你的第一反应是？（补32）",
@@ -5544,7 +5544,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 3, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_882",
     type: "single",
     text: "当工作压力爆棚时，你的第一反应是？（补33）",
@@ -5556,7 +5556,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 2, WEMO: 2, BIAO: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_883",
     type: "single",
     text: "当深夜 emo时，你的第一反应是？（补34）",
@@ -5568,7 +5568,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 3, LIKE: 3, DYOR: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_884",
     type: "single",
     text: "当社交场合尴尬时，你的第一反应是？（补35）",
@@ -5580,7 +5580,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 2, BEIH: 1, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_885",
     type: "single",
     text: "当经济拮据时，你的第一反应是？（补36）",
@@ -5592,7 +5592,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 3, SHEK: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_886",
     type: "single",
     text: "当感情受挫时，你的第一反应是？（补37）",
@@ -5604,7 +5604,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 2, WEMO: 1, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_887",
     type: "single",
     text: "当被人误解时，你的第一反应是？（补38）",
@@ -5616,7 +5616,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 1, LIKE: 2, DYOR: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_888",
     type: "single",
     text: "当遇到技术故障时，你的第一反应是？（补39）",
@@ -5628,7 +5628,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 4, BEIH: 2, NORM: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_889",
     type: "single",
     text: "当被陌生人冒犯时，你的第一反应是？（补40）",
@@ -5640,7 +5640,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 2, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_890",
     type: "single",
     text: "当遭遇不公平待遇时，你的第一反应是？（补41）",
@@ -5652,7 +5652,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 3, BIAO: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_891",
     type: "single",
     text: "当计划突然被打乱时，你的第一反应是？（补42）",
@@ -5664,7 +5664,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 4, LIKE: 4, DYOR: 2 } }
     ]
   },
-  {
+{
     id: "Q_single_892",
     type: "single",
     text: "当收到坏消息时，你的第一反应是？（补43）",
@@ -5676,7 +5676,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 1, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_893",
     type: "single",
     text: "当面对无理要求时，你的第一反应是？（补44）",
@@ -5688,7 +5688,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 4, BOSS: 3, SHEK: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_894",
     type: "single",
     text: "当被朋友背叛时，你的第一反应是？（补45）",
@@ -5700,7 +5700,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "当场崩溃", weights: { BENG: 1, WEMO: 3, BIAO: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_895",
     type: "single",
     text: "当工作压力爆棚时，你的第一反应是？（补46）",
@@ -5712,7 +5712,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "解释", weights: { BOSS: 4, LIKE: 2, DYOR: 4 } }
     ]
   },
-  {
+{
     id: "Q_single_896",
     type: "single",
     text: "当深夜 emo时，你的第一反应是？（补47）",
@@ -5724,7 +5724,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "道歉", weights: { WONANG: 1, BEIH: 4, NORM: 1 } }
     ]
   },
-  {
+{
     id: "Q_single_897",
     type: "single",
     text: "当社交场合尴尬时，你的第一反应是？（补48）",
@@ -5736,7 +5736,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "找人撑腰", weights: { DAREN: 2, BOSS: 3, SHEK: 3 } }
     ]
   },
-  {
+{
     id: "Q_single_898",
     type: "single",
     text: "当经济拮据时，你的第一反应是？（补49）",
