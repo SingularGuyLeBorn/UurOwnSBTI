@@ -216,7 +216,7 @@ export default function HomePage() {
   const faqRef = useScrollReveal<HTMLDivElement>();
   const ctaRef = useRef<HTMLDivElement>(null);
   const scrollTriggersRef = useRef<ScrollTrigger[]>([]);
-  const count127 = useCountUp(127, 2000);
+  const countTypes = useCountUp(266, 2000);
   const countQuestions = useCountUp(267, 2500);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
@@ -300,7 +300,7 @@ export default function HomePage() {
             className="text-lg sm:text-xl md:text-2xl text-[var(--neu-text-soft)] font-light tracking-wide opacity-0"
           >
             基于混沌算法的
-            <span className="font-medium text-[var(--neu-text)]">{count127}</span>
+            <span className="font-medium text-[var(--neu-text)]">{countTypes}</span>
             种人格测试系统
           </p>
 
@@ -452,7 +452,7 @@ export default function HomePage() {
                   SBTI-Engine 诞生于对无聊测试的反抗。我们相信，人类的网络人格从来不是 16 种颜色可以概括的。你可能在凌晨三点化身「键盘战神」，在白天却是兢兢业业的「NPC」，偶尔还想做一只「哥布林」阴暗爬行。
                 </p>
                 <p className="text-[var(--neu-text-soft)] leading-relaxed">
-                  于是我们打造了这款混沌测试：127 种互联网原生人格、267 道带着 meme 气息的题目、7 层混合计分逻辑。没有标准答案，只有更荒诞、更真实的你。
+                  于是我们打造了这款混沌测试：266 种互联网原生人格、267 道带着 meme 气息的题目、7 层混合计分逻辑。没有标准答案，只有更荒诞、更真实的你。
                 </p>
               </div>
               <div className="md:w-1/2 w-full space-y-4">
@@ -497,7 +497,7 @@ export default function HomePage() {
               不只是测试
             </h2>
             <p className="text-[var(--neu-text-soft)] text-base sm:text-lg max-w-2xl mx-auto">
-              一次深入灵魂的混沌探索，127 种人格类型等你解锁
+              一次深入灵魂的混沌探索，266 种人格类型等你解锁
             </p>
           </div>
 

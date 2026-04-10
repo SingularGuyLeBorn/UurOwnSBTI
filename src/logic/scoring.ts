@@ -6,7 +6,29 @@ const ALL_TYPE_CODES: SBTITypeCode[] = [
   'BUG', '404', 'VIP', 'EMO', 'CPU', 'KFC', 'DNA', 'PDF', 'GIF', 'JPG',
   'FOMO', 'YOLO', 'FUDI', 'HODL', 'DYOR', 'SERF', 'GHOST', 'TROLL', 'WEEB', 'NORM',
   'DEEP', 'OPEN', 'GROK', 'CLAUD', 'DOUB', 'GEMI', 'PUZZ', 'MIDI', 'CODE', 'SORA',
-  'SHENJ', 'DAWEI', 'XPENG', 'DPENG', 'WANDOU', 'SHUANG', 'SANXIAN', 'RUSHI', 'RAND'
+  'XPENG', 'DPENG', 'WANDOU', 'SHUANG', 'SANXIAN', 'RUSHI', 'SHENJ', 'DAWEI', 'RAND', 'HOUJ',
+  'BAOZ', 'YINY', 'LENGL', 'HUIM', 'CHAO', 'BENG', 'FENN', 'JING', 'YUAN', 'SHUI',
+  'LIKE', 'GANG', 'CHIG', 'YUYA', 'KAOG', 'GEZI', 'XIAO', 'POFF', 'KEYB', 'MAIM',
+  'XUAN', 'CHOU', 'CHUAN', 'MAIP', 'YUEG', 'TUNJI', 'JIEP', 'TUOY', 'XUANZ', 'TAOH',
+  'HUIB', 'BIAO', 'BEIH', 'ZIL', 'KONG', 'LAI', 'XIAOQI', 'DAREN', 'SHEK', 'DUNJ',
+  'YITP', 'JUEJ', 'TAIK', 'ZUND', 'BABI', 'WEMO', 'SHUS', 'MALO', 'DANR', 'NONG',
+  'GELI', 'SHIL', 'DIAN', 'SHUJU', 'SAIBO', 'PING', 'WAIF', 'BACH', 'APIJ', 'JSON',
+  'SQLJ', 'VPNJ', 'COOK', 'CACH', 'DOCK', 'GITJ', 'ROOT', 'BUG2', 'SHENG', 'XIAN',
+  'WOYU', 'DADE', 'FANS', 'HEIH', 'BAIH', 'CHAH', 'KENG', 'MAO', 'GOU', 'SHU2',
+  'NIU', 'HU2', 'LANG', 'XIONG', 'SHE2', 'TU', 'LONG', 'ZHUS', 'YANG', 'BAISE',
+  'HEISE', 'FENH', 'LV', 'LAN', 'ZI', 'HUANG', 'HONG', 'HUI', 'QING', 'GAN',
+  'SHEN2', 'WEI', 'FEI', 'XIN', 'NAO', 'YAN', 'ER', 'SHOU', 'JIAO', 'ZAO',
+  'YE', 'ZHOU', 'JIA', 'CHUN', 'XIA', 'QIU', 'DONG', 'SHUX', 'WEN', 'LI',
+  'YING', 'LIH', 'DILI', 'SHENG2', 'ZHENGZ', 'JINGJ', 'FALV', 'QI', 'JIAO2', 'DIDI',
+  'GAOTIE', 'FEIJI', 'LUN', 'SKATE', 'DIAN2', 'GONG', 'CHUANG', 'CES', 'DIANT', 'LOUTI',
+  'DITIE', 'YUE', 'WU', 'YU', 'XUE', 'FENG', 'WU2', 'SHAN', 'LEI', 'YUN',
+  'XIA2', 'GUP', 'JIJIN', 'JIAO3', 'FANG', 'CHE', 'XINY', 'DAI', 'LICAI', 'CHAOS2',
+  'GUA', 'V50', 'EMOJI', 'PINY', 'FUHAO', 'SHUZI', 'JIEG', 'FASONG', 'YIG', 'SHAN2',
+  'MIMA', 'JU', 'FAN', 'YING2', 'ZHIBO', 'TUAN', 'HEI', 'KENG2', 'MAN', 'ZONG',
+  'DANCE', 'WEIX', 'ZHONG', 'AO', 'TONG', 'FAN2', 'BASHI', 'DUAN', 'SHI', 'AI',
+  'YUAN2', 'NFT', 'VR', 'QUAN', 'NAO2', 'UFO', 'ROBOT', 'SHUANG2', 'KONG2', 'KONG3',
+  'JIAOLV', 'YIY', 'SHUANG3', 'QIAN', 'BIAN', 'XING', 'MAI', 'MO', 'CHU', 'LEI2',
+  'DAODE', 'JING2', 'HEI2', 'TUO', 'XU', 'PIN'
 ];
 
 /**
