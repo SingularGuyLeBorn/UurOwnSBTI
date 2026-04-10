@@ -53,6 +53,7 @@ export default function QuizPage() {
   const [answers, setAnswers] = useState<Map<string, Answer>>(new Map());
   const [startTime] = useState<number>(Date.now());
   const [timings, setTimings] = useState<Map<string, number>>(new Map());
+  const [sessionSeed] = useState<string>(() => location.state?.sessionSeed || Math.random().toString(36).slice(2));
 
   const [showStabilityTip, setShowStabilityTip] = useState(false);
   const [showSkipTip, setShowSkipTip] = useState(false);
@@ -66,9 +67,9 @@ export default function QuizPage() {
   const slowCheckTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    const sampled = sampleQuestions(Math.min(questionCount, QUESTION_LIBRARY.length));
+    const sampled = sampleQuestions(Math.min(questionCount, QUESTION_LIBRARY.length), sessionSeed);
     setQuestions(sampled);
-  }, [questionCount]);
+  }, [questionCount, sessionSeed]);
 
   useEffect(() => {
     questionStartTimeRef.current = Date.now();
@@ -213,6 +214,7 @@ export default function QuizPage() {
       result = calculateResult(session, questions);
       if (isRandom) result = generateRandomResult(result);
     }
+    result.sessionSeed = sessionSeed;
     navigate('/result', { state: { result } });
   };
 

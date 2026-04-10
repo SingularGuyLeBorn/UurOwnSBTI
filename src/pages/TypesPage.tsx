@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, ArrowLeft, Sparkles, X } from 'lucide-react';
 import { TYPE_LIBRARY } from '@/data/types';
@@ -78,6 +78,29 @@ export default function TypesPage() {
     });
   }, [query]);
 
+  // Lazy loading: render in chunks to avoid mounting 266 SVGs at once
+  const BATCH_SIZE = 24;
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
+  const loaderRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    setVisibleCount(BATCH_SIZE);
+  }, [query]);
+
+  useEffect(() => {
+    if (!loaderRef.current) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, entries.length));
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(loaderRef.current);
+    return () => observer.disconnect();
+  }, [entries.length]);
+
   return (
     <div className="min-h-screen px-4 pb-16">
       {selected && (
@@ -106,7 +129,7 @@ export default function TypesPage() {
             人格大观园
           </h1>
           <p className="text-[var(--neu-text-soft)] text-base sm:text-lg max-w-2xl mx-auto">
-            收录全部 <span className="font-bold text-[var(--neu-text)]">127</span> 种混沌人格，从攻击性暴徒到赛博幽灵一网打尽
+            收录全部 <span className="font-bold text-[var(--neu-text)]">266</span> 种混沌人格，从攻击性暴徒到赛博幽灵一网打尽
           </p>
         </div>
 
@@ -131,12 +154,12 @@ export default function TypesPage() {
             )}
           </div>
           <p className="text-center text-xs text-[var(--neu-text-soft)] mt-3">
-            已展示 {entries.length} / 127 种人格
+            已展示 {Math.min(visibleCount, entries.length)} / {entries.length} 种人格
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {entries.map(([code, type]) => (
+          {entries.slice(0, visibleCount).map(([code, type]) => (
             <button
               key={code}
               onClick={() => setSelected(code)}
@@ -178,6 +201,13 @@ export default function TypesPage() {
             </button>
           ))}
         </div>
+
+        {visibleCount < entries.length && (
+          <div ref={loaderRef} className="py-8 text-center">
+            <div className="inline-block w-8 h-8 rounded-full neu-concave border-2 border-[var(--neu-text-soft)]/30 border-t-[var(--neu-text)] animate-spin" />
+            <p className="text-xs text-[var(--neu-text-soft)] mt-2">正在加载更多人格...</p>
+          </div>
+        )}
 
         {entries.length === 0 && (
           <div className="text-center py-16">

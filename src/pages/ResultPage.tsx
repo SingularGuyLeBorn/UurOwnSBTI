@@ -94,6 +94,9 @@ export default function ResultPage() {
   const maxScore = topDimensions[0]?.score || 1;
 
   const handleRestart = () => navigate('/');
+  const handleRetrySameSeed = () => {
+    navigate('/quiz', { state: { questionCount: result.totalQuestions || 15, sessionSeed: result.sessionSeed } });
+  };
 
   const handleSendEmail = () => {
     if (!email || !email.includes('@')) {
@@ -232,20 +235,26 @@ export default function ResultPage() {
         </div>
 
         {/* Actions */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <button onClick={handleRestart} className="flex items-center justify-center gap-2 h-12 rounded-xl neu-convex neu-convex-hover neu-convex-active font-semibold text-[var(--neu-text)]">
+        <div className="flex flex-wrap justify-center gap-4">
+          <button onClick={handleRestart} className="flex-1 min-w-[10rem] flex items-center justify-center gap-2 h-12 rounded-xl neu-convex neu-convex-hover neu-convex-active font-semibold text-[var(--neu-text)]">
             <RefreshCw className="w-5 h-5" />
             重新测试
           </button>
-          <button onClick={handleShare} className="flex items-center justify-center gap-2 h-12 rounded-xl neu-flat neu-flat-hover neu-flat-active font-semibold text-[var(--neu-text)]">
+          {result.sessionSeed && (
+            <button onClick={handleRetrySameSeed} className="flex-1 min-w-[10rem] flex items-center justify-center gap-2 h-12 rounded-xl neu-convex neu-convex-hover neu-convex-active font-semibold text-[var(--neu-text)]">
+              <RefreshCw className="w-5 h-5" />
+              复现测试
+            </button>
+          )}
+          <button onClick={handleShare} className="flex-1 min-w-[10rem] flex items-center justify-center gap-2 h-12 rounded-xl neu-flat neu-flat-hover neu-flat-active font-semibold text-[var(--neu-text)]">
             <Share2 className="w-5 h-5" />
             分享结果
           </button>
-          <button onClick={() => setShowShareCard(true)} className="flex items-center justify-center gap-2 h-12 rounded-xl neu-flat neu-flat-hover neu-flat-active font-semibold text-[var(--neu-text)]">
+          <button onClick={() => setShowShareCard(true)} className="flex-1 min-w-[10rem] flex items-center justify-center gap-2 h-12 rounded-xl neu-flat neu-flat-hover neu-flat-active font-semibold text-[var(--neu-text)]">
             <ImageIcon className="w-5 h-5" />
             生成卡片
           </button>
-          <button onClick={() => setShowEmailDialog(true)} className="flex items-center justify-center gap-2 h-12 rounded-xl neu-flat neu-flat-hover neu-flat-active font-semibold text-[var(--neu-text)]">
+          <button onClick={() => setShowEmailDialog(true)} className="flex-1 min-w-[10rem] flex items-center justify-center gap-2 h-12 rounded-xl neu-flat neu-flat-hover neu-flat-active font-semibold text-[var(--neu-text)]">
             <Mail className="w-5 h-5" />
             发送报告
           </button>

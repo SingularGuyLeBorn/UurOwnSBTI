@@ -61,7 +61,7 @@ const FAQS = [
   },
   {
     q: '测试结果准吗？',
-    a: '仅供娱乐。但有趣的是，很多人反馈“被骂到了”。毕竟 127 种类型里，总有一种能精准戳中你的赛博画像。'
+    a: '仅供娱乐。但有趣的是，很多人反馈“被骂到了”。毕竟 266 种类型里，总有一种能精准戳中你的赛博画像。'
   },
   {
     q: '为什么题目看起来很有攻击性？',
@@ -307,7 +307,7 @@ export default function HomePage() {
           {/* Hero stats + CTA mini */}
           <div className="flex justify-center gap-4 sm:gap-6 mt-10">
             <div className="neu-flat px-6 py-4 min-w-[120px]">
-              <div className="text-3xl sm:text-4xl font-black text-[var(--neu-text)]">{count127}</div>
+              <div className="text-3xl sm:text-4xl font-black text-[var(--neu-text)]">{countTypes}</div>
               <div className="text-xs text-[var(--neu-text-soft)] mt-1">人格类型</div>
             </div>
             <div className="neu-flat px-6 py-4 min-w-[120px]">
@@ -379,13 +379,13 @@ export default function HomePage() {
               人格大观园
             </h2>
             <p className="text-[var(--neu-text-soft)] text-base sm:text-lg max-w-2xl mx-auto">
-              从攻击性暴徒到赛博幽灵，127 种类型里总有一款让你汗流浃背
+              从攻击性暴徒到赛博幽灵，266 种类型里总有一款让你汗流浃背
             </p>
           </div>
 
           {/* Animated stats */}
           <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-12">
-            <LiveStatCard label="人格类型" value={127} />
+            <LiveStatCard label="人格类型" value={266} />
             <LiveStatCard label="混沌题库" value={585} />
             <LiveStatCard label="今日确诊" value={342} />
           </div>

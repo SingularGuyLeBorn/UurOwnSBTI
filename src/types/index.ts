@@ -103,6 +103,7 @@ export interface TestResult {
   pseudoResult?: SBTITypeCode;
   answered?: number;
   totalQuestions?: number;
+  sessionSeed?: string;
 }
 
 // 维度分组

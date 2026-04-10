@@ -2118,9 +2118,37 @@ export const QUESTION_LIBRARY: Question[] = [
 ] as Question[];
 
 /**
- * 根据数量抽样题目
+ * 基于 seed 的确定性随机数生成器 (mulberry32)
  */
-export function sampleQuestions(count: number): Question[] {
+function mulberry32(a: number) {
+  return function() {
+    let t = a += 0x6D2B79F5;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function seededShuffle<T>(array: T[], seed: string): T[] {
+  let hash = 0;
+  for (let i = 0; i < seed.length; i++) {
+    hash = ((hash << 5) - hash) + seed.charCodeAt(i);
+    hash |= 0;
+  }
+  const rand = mulberry32(hash);
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+/**
+ * 根据数量抽样题目
+ * 提供 seed 可实现可复现的确定性抽题
+ */
+export function sampleQuestions(count: number, seed?: string): Question[] {
   // 确保最少题目数
   const minCount = Math.min(count, QUESTION_LIBRARY.length);
 
@@ -2130,6 +2158,14 @@ export function sampleQuestions(count: number): Question[] {
 
   const multiCount = Math.max(1, Math.floor(minCount * 0.18));
   const singleCount = minCount - multiCount;
+
+  if (seed) {
+    const result: Question[] = [
+      ...seededShuffle(singleQuestions, seed + 'single').slice(0, singleCount),
+      ...seededShuffle(multiQuestions, seed + 'multi').slice(0, multiCount)
+    ];
+    return seededShuffle(result, seed + 'mix');
+  }
 
   const result: Question[] = [
     ...singleQuestions.sort(() => Math.random() - 0.5).slice(0, singleCount),
