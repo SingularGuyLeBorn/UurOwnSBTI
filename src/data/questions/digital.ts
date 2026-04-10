@@ -1,0 +1,226 @@
+import type { Question } from '@/types';
+
+export const DIGITAL_QUESTIONS: Question[] = [
+  {
+    id: 'Q_digital_001',
+    type: 'single',
+    text: '周四下午，你在工作群里看到有人在发肯德基文案，你的第一反应是？',
+    options: [
+      { text: '立刻复制转发到其他群', weights: { V50: 4 } },
+      { text: '回复 v我50 看看实力', weights: { V50: 5 }, hidden: true },
+      { text: '觉得无聊，直接忽略', weights: { YIG: 3 } },
+      { text: '发个表情包敷衍一下', weights: { EMOJI: 2 } },
+    ],
+  },
+  {
+    id: 'Q_digital_002',
+    type: 'single',
+    text: '群里有人发免费领会员的链接，你会？',
+    options: [
+      { text: '二话不说转发给所有好友一起白嫖', weights: { V50: 5 } },
+      { text: '先自己领了再说', weights: { V50: 4 } },
+      { text: '怀疑是钓鱼链接，不敢点', weights: { MIMA: 2 } },
+      { text: '默默潜水，看有没有人被骗', weights: { YIG: 3 } },
+    ],
+  },
+  {
+    id: 'Q_digital_003',
+    type: 'single',
+    text: '和朋友线上吵架时，你更倾向于怎么表达情绪？',
+    options: [
+      { text: '疯狂斗图，用表情包轰炸对方', weights: { EMOJI: 5 } },
+      { text: '发阴阳怪气的emoji组合', weights: { EMOJI: 4 } },
+      { text: '打字讲道理', weights: { PINY: 2 } },
+      { text: '直接不回消息', weights: { YIG: 3 } },
+    ],
+  },
+  {
+    id: 'Q_digital_004',
+    type: 'single',
+    text: '当你懒得打字时，你会？',
+    options: [
+      { text: '发一长串表情包让对方猜', weights: { EMOJI: 4 } },
+      { text: '纯用emoji回复，一个文字都不打', weights: { EMOJI: 5 }, hidden: true },
+      { text: '发语音条代替', weights: { PINY: 2 } },
+      { text: '直接不回复', weights: { YIG: 2 } },
+    ],
+  },
+  {
+    id: 'Q_digital_005',
+    type: 'single',
+    text: '看到朋友圈里有人写《今天真是yyds》，你的反应是？',
+    options: [
+      { text: '秒懂，永远的神', weights: { PINY: 4 } },
+      { text: '觉得不说人话，很无语', weights: { PINY: 3 } },
+      { text: '默默去查百度是什么意思', weights: { MIMA: 2 } },
+      { text: '评论区问这是什么意思', weights: { FASONG: 2 } },
+    ],
+  },
+  {
+    id: 'Q_digital_006',
+    type: 'single',
+    text: '描述一件让你震惊的事，你会怎么说？',
+    options: [
+      { text: '绝绝子，我真的栓Q', weights: { PINY: 4 } },
+      { text: '夹杂大量拼音缩写和流行语', weights: { PINY: 5 }, hidden: true },
+      { text: '正常打字描述', weights: { YIG: 1 } },
+      { text: '用emoji表示震惊', weights: { EMOJI: 3 } },
+    ],
+  },
+  {
+    id: 'Q_digital_007',
+    type: 'single',
+    text: '聊天结束时，你习惯用什么方式收尾？',
+    options: [
+      { text: '发一个可爱的颜文字 (^_^)／', weights: { FUHAO: 4 } },
+      { text: '用特殊符号组合画个表情', weights: { FUHAO: 3 } },
+      { text: '发一个表情包', weights: { EMOJI: 2 } },
+      { text: '直接结束，什么都不发', weights: { YIG: 3 } },
+      { text: '发句号。表示对话终结', weights: { PINY: 1 } },
+    ],
+  },
+  {
+    id: 'Q_digital_008',
+    type: 'single',
+    text: '你想在群里发一句只有少数人懂的暗号，你会？',
+    options: [
+      { text: '用@#￥%等符号替代关键字', weights: { FUHAO: 4 } },
+      { text: '直接拼音缩写', weights: { PINY: 3 } },
+      { text: '发闪照，看完就懂', weights: { SHAN2: 3 } },
+      { text: '算了，不搞暗号', weights: { YIG: 2 } },
+    ],
+  },
+  {
+    id: 'Q_digital_009',
+    type: 'single',
+    text: '设置一个新的账号密码，你会优先选择？',
+    options: [
+      { text: '用幸运数字组合，比如666、888', weights: { SHUZI: 4 } },
+      { text: '把生日和纪念日串在一起', weights: { SHUZI: 5 }, hidden: true },
+      { text: '随机生成一串复杂密码', weights: { MIMA: 2 } },
+      { text: '用同一个密码，方便记忆', weights: { MIMA: 3 } },
+    ],
+  },
+  {
+    id: 'Q_digital_010',
+    type: 'single',
+    text: '聊到考试成绩或者运势，你会？',
+    options: [
+      { text: '说我的幸运数字是X，所以这次一定能行', weights: { SHUZI: 4 } },
+      { text: '承认数学不好，但对某些数字特别迷信', weights: { SHUZI: 5 } },
+      { text: '觉得数字都是骗人的', weights: { FUHAO: 1 } },
+      { text: '立刻转发到朋友圈求好运', weights: { V50: 2 } },
+    ],
+  },
+  {
+    id: 'Q_digital_011',
+    type: 'single',
+    text: '在小红书上看到一篇很有用的攻略，你会？',
+    options: [
+      { text: '截图保存到相册，收藏即学习', weights: { JIEG: 5 } },
+      { text: '点收藏，但永远不会再看', weights: { JIEG: 4 } },
+      { text: '立刻打开备忘录记录要点', weights: { MIMA: 2 } },
+      { text: '转发给朋友，让对方整理', weights: { FASONG: 2 } },
+    ],
+  },
+  {
+    id: 'Q_digital_012',
+    type: 'single',
+    text: '和网友发生争执，对方开始删评论，你会？',
+    options: [
+      { text: '立刻截图留证', weights: { JIEG: 5 } },
+      { text: '录屏保存全过程', weights: { JIEG: 4 } },
+      { text: '算了，懒得计较', weights: { YIG: 3 } },
+      { text: '比对方删得更快', weights: { SHAN2: 3 } },
+      { text: '我的相册里全是这种截图', weights: { JIEG: 5 }, hidden: true },
+    ],
+  },
+  {
+    id: 'Q_digital_013',
+    type: 'single',
+    text: '你给 crush 发了一条消息，对方十分钟没回，你会？',
+    options: [
+      { text: '每隔一分钟看一次手机', weights: { FASONG: 5 } },
+      { text: '纠结要不要撤回这条消息', weights: { FASONG: 4 } },
+      { text: '继续发问号或者表情包追问', weights: { FASONG: 3 } },
+      { text: '关掉聊天框，假装不在意', weights: { YIG: 3 } },
+    ],
+  },
+  {
+    id: 'Q_digital_014',
+    type: 'single',
+    text: '凌晨两点你给朋友发了条消息，第二天早上你发现？',
+    options: [
+      { text: '对方已读但没回，你开始焦虑', weights: { FASONG: 5 } },
+      { text: '发现自己发错群了，赶紧撤回', weights: { FASONG: 4 } },
+      { text: '消息还显示未读，稍微松口气', weights: { FASONG: 3 } },
+      { text: '对方秒回，但你不想理了', weights: { YIG: 3 } },
+    ],
+  },
+  {
+    id: 'Q_digital_015',
+    type: 'single',
+    text: '家族群里长辈在转发养生谣言，你会？',
+    options: [
+      { text: '默默潜水，围观但不发言', weights: { YIG: 5 } },
+      { text: '已阅，但绝对不回复', weights: { YIG: 4 } },
+      { text: '截图发到吐槽群', weights: { JIEG: 3 } },
+      { text: '忍不住辟谣', weights: { PINY: 2 } },
+    ],
+  },
+  {
+    id: 'Q_digital_016',
+    type: 'single',
+    text: '微信群里有朋友@你问周末安排，但你不想出门，你会？',
+    options: [
+      { text: '假装没看到，继续潜水', weights: { YIG: 4 } },
+      { text: '过几个小时再冷淡回复', weights: { YIG: 3 } },
+      { text: '用表情包糊弄过去', weights: { EMOJI: 2 } },
+      { text: '看消息但不点进去，避免显示已读', weights: { YIG: 5 }, hidden: true },
+    ],
+  },
+  {
+    id: 'Q_digital_017',
+    type: 'single',
+    text: '朋友找你要一张你的丑照，你会？',
+    options: [
+      { text: '发闪照，阅后即焚', weights: { SHAN2: 5 } },
+      { text: '先发过去，再立刻撤回', weights: { SHAN2: 4 } },
+      { text: '设置仅聊天可见', weights: { SHAN2: 3 } },
+      { text: '大方发过去，无所谓', weights: { YIG: 2 } },
+    ],
+  },
+  {
+    id: 'Q_digital_018',
+    type: 'single',
+    text: '你深夜发了一条emo朋友圈，五分钟后？',
+    options: [
+      { text: '觉得太丢人了，立刻秒删', weights: { SHAN2: 4 } },
+      { text: '设置仅自己可见', weights: { SHAN2: 3 } },
+      { text: '发完就心虚，不敢看评论', weights: { SHAN2: 5 } },
+      { text: '不管它，反正没人看', weights: { YIG: 2 } },
+    ],
+  },
+  {
+    id: 'Q_digital_019',
+    type: 'single',
+    text: '登录某个很久没用的网站，提示密码错误，你会？',
+    options: [
+      { text: '把常用的几个密码都试一遍', weights: { MIMA: 5 } },
+      { text: '点击《忘记密码》走重置流程', weights: { MIMA: 4 } },
+      { text: '打开备忘录查找记录', weights: { MIMA: 3 } },
+      { text: '去邮箱翻找之前的找回邮件', weights: { MIMA: 4 } },
+    ],
+  },
+  {
+    id: 'Q_digital_020',
+    type: 'single',
+    text: '你的密码管理哲学是？',
+    options: [
+      { text: '所有账号都用同一个密码，好记', weights: { MIMA: 5 } },
+      { text: '写在手机备忘录里', weights: { MIMA: 4 } },
+      { text: '用浏览器自动保存', weights: { MIMA: 3 } },
+      { text: '我的人生就是一部密码重置史', weights: { MIMA: 5 }, hidden: true },
+    ],
+  },
+];

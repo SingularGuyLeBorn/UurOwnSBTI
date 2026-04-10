@@ -1,13 +1,43 @@
 import type { Question } from '@/types';
 import { WORK_QUESTIONS } from './questions/work';
+import { ANIMAL_QUESTIONS } from './questions/animals';
+import { COLOR_QUESTIONS } from './questions/colors';
+import { BODY_QUESTIONS } from './questions/body';
+import { TIME_QUESTIONS } from './questions/time';
+import { ACADEMIA_QUESTIONS } from './questions/academia';
+import { TRANSPORT_QUESTIONS } from './questions/transport';
+import { SPACE_QUESTIONS } from './questions/space';
+import { WEATHER_QUESTIONS } from './questions/weather';
+import { FINANCE_QUESTIONS } from './questions/finance';
+import { DIGITAL_QUESTIONS } from './questions/digital';
+import { ENTERTAINMENT_QUESTIONS } from './questions/entertainment';
+import { LITERATURE_QUESTIONS } from './questions/literature';
+import { TECH_QUESTIONS } from './questions/tech';
+import { EMOTION_QUESTIONS } from './questions/emotion';
+import { ABSURD_QUESTIONS } from './questions/absurd';
 
 /**
  * SBTI-Engine 3.0 完整题库
  * 
- * 267道题：167道核心 + 100道职场地狱
+ * 585道题：167道核心 + 418道主题专属
  */
 export const QUESTION_LIBRARY: Question[] = [
   ...WORK_QUESTIONS,
+  ...ANIMAL_QUESTIONS,
+  ...COLOR_QUESTIONS,
+  ...BODY_QUESTIONS,
+  ...TIME_QUESTIONS,
+  ...ACADEMIA_QUESTIONS,
+  ...TRANSPORT_QUESTIONS,
+  ...SPACE_QUESTIONS,
+  ...WEATHER_QUESTIONS,
+  ...FINANCE_QUESTIONS,
+  ...DIGITAL_QUESTIONS,
+  ...ENTERTAINMENT_QUESTIONS,
+  ...LITERATURE_QUESTIONS,
+  ...TECH_QUESTIONS,
+  ...EMOTION_QUESTIONS,
+  ...ABSURD_QUESTIONS,
 {
     id: "Q_single_001",
     type: "single",

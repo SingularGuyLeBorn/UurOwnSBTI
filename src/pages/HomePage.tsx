@@ -217,7 +217,7 @@ export default function HomePage() {
   const ctaRef = useRef<HTMLDivElement>(null);
   const scrollTriggersRef = useRef<ScrollTrigger[]>([]);
   const countTypes = useCountUp(266, 2000);
-  const countQuestions = useCountUp(267, 2500);
+  const countQuestions = useCountUp(585, 2500);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useEffect(() => {
@@ -386,7 +386,7 @@ export default function HomePage() {
           {/* Animated stats */}
           <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-12">
             <LiveStatCard label="人格类型" value={127} />
-            <LiveStatCard label="混沌题库" value={267} />
+            <LiveStatCard label="混沌题库" value={585} />
             <LiveStatCard label="今日确诊" value={342} />
           </div>
 
@@ -452,7 +452,7 @@ export default function HomePage() {
                   SBTI-Engine 诞生于对无聊测试的反抗。我们相信，人类的网络人格从来不是 16 种颜色可以概括的。你可能在凌晨三点化身「键盘战神」，在白天却是兢兢业业的「NPC」，偶尔还想做一只「哥布林」阴暗爬行。
                 </p>
                 <p className="text-[var(--neu-text-soft)] leading-relaxed">
-                  于是我们打造了这款混沌测试：266 种互联网原生人格、267 道带着 meme 气息的题目、7 层混合计分逻辑。没有标准答案，只有更荒诞、更真实的你。
+                  于是我们打造了这款混沌测试：266 种互联网原生人格、585 道带着 meme 气息的题目、7 层混合计分逻辑。没有标准答案，只有更荒诞、更真实的你。
                 </p>
               </div>
               <div className="md:w-1/2 w-full space-y-4">
@@ -505,7 +505,7 @@ export default function HomePage() {
             {[
               { icon: Brain, title: '127 种人格', desc: '亚文化型 + AI 型 + 抽象贵物全覆盖' },
               { icon: Zap, title: '7 层逻辑', desc: '跳过 / 乱选 / 时间 / 矛盾 / 一致性 / 陷阱 / 置信度' },
-              { icon: Target, title: '267 道智能题', desc: '单选 / 多选混合，含隐藏选项' },
+              { icon: Target, title: '585 道智能题', desc: '单选 / 多选混合，含隐藏选项' },
               { icon: Shuffle, title: '随机文案', desc: 'Mad Libs 风格槽位填充，每次独一无二' },
             ].map((feature, idx) => (
               <div
@@ -534,7 +534,7 @@ export default function HomePage() {
               题库风格
             </h2>
             <p className="text-[var(--neu-text-soft)] text-base sm:text-lg max-w-2xl mx-auto">
-              267 道混沌拷问，从经典 meme 到攻击性辱骂全覆盖
+              585 道混沌拷问，从经典 meme 到攻击性辱骂全覆盖
             </p>
           </div>
 

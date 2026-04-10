@@ -1,0 +1,185 @@
+import type { Question } from '@/types';
+
+export const WEATHER_QUESTIONS: Question[] = [
+  {
+    id: 'Q_weather_001',
+    type: 'single',
+    text: '窗外突然下起大雨，你第一反应是？',
+    options: [
+      { text: '立刻打开窗，让雨声灌满房间', weights: { YU: 4 } },
+      { text: '检查阳台有没有晾衣服', weights: { XIA2: 2 } },
+      { text: '担心出门计划泡汤', weights: { YU: 2, LEI: 2 } },
+      { text: '拿起手机拍下雨幕发朋友圈', weights: { FENG: 3 } },
+    ],
+  },
+  {
+    id: 'Q_weather_002',
+    type: 'single',
+    text: '连续一周的阴雨让你感觉如何？',
+    options: [
+      { text: '整个人像浸在水里，情绪低到了极点', weights: { YU: 5 } },
+      { text: '正好有理由宅家打游戏', weights: { YUN: 3 } },
+      { text: '开始研究除湿机和烘干机', weights: { WU2: 3 } },
+      { text: '觉得世界被洗得干净，挺舒服的', weights: { XUE: 2 } },
+      { text: '在备忘录里写下一首关于潮湿的诗', weights: { YU: 5 }, hidden: true },
+    ],
+  },
+  {
+    id: 'Q_weather_003',
+    type: 'single',
+    text: '冬天你站在滑雪场山顶，你会？',
+    options: [
+      { text: '深呼吸一口冷空气，直接冲下去', weights: { XUE: 5 } },
+      { text: '先拍张照再说，毕竟来都来了', weights: { YUN: 3 } },
+      { text: '担心摔倒骨折，小心翼翼地滑', weights: { SHAN: 3 } },
+      { text: '觉得太冷了，还是去室内喝热可可吧', weights: { XIA2: 2 } },
+    ],
+  },
+  {
+    id: 'Q_weather_004',
+    type: 'single',
+    text: '你期待一个怎样的圣诞节？',
+    options: [
+      { text: '窗外飘着大雪，屋里暖气很足', weights: { XUE: 4 } },
+      { text: '和朋友去热带海岛避寒', weights: { XIA2: 3 } },
+      { text: '参加热闹的圣诞派对，越嗨越好', weights: { FENG: 3 } },
+      { text: '窝在家里看《真爱至上》', weights: { YU: 2 } },
+    ],
+  },
+  {
+    id: 'Q_weather_005',
+    type: 'single',
+    text: '一阵突如其来的狂风吹乱了你的发型，你的反应是？',
+    options: [
+      { text: '大笑几声，任由头发在风中飞舞', weights: { FENG: 5 } },
+      { text: '立刻用手压住头发，寻找避风处', weights: { SHAN: 3 } },
+      { text: '抱怨这鬼天气，破坏了自己的形象', weights: { LEI: 3 } },
+      { text: '趁机拍一张凌乱美的照片', weights: { YUN: 2 } },
+      { text: '张开双臂，感受风穿过身体的自由', weights: { FENG: 5 }, hidden: true },
+    ],
+  },
+  {
+    id: 'Q_weather_006',
+    type: 'single',
+    text: '如果你可以变成一种自然现象，你会选择？',
+    options: [
+      { text: '一阵来去无踪的风，自由穿梭在世界各地', weights: { FENG: 4 } },
+      { text: '夏日的雷阵雨，来得猛烈去得干脆', weights: { LEI: 3 } },
+      { text: '山顶的积雪，安静而永恒', weights: { XUE: 2 } },
+      { text: '午后慵懒的云朵，飘在空中看人间', weights: { YUN: 3 } },
+    ],
+  },
+  {
+    id: 'Q_weather_007',
+    type: 'single',
+    text: '早晨醒来发现窗外雾霾严重，你会？',
+    options: [
+      { text: '第一时间翻出N95口罩和空气净化器', weights: { WU2: 5 } },
+      { text: '抱怨两句但还是照常出门', weights: { LEI: 3 } },
+      { text: '觉得这种灰蒙蒙的天气很适合睡觉', weights: { YU: 2 } },
+      { text: '查空气质量指数，考虑是否请假居家', weights: { SHAN: 3 } },
+    ],
+  },
+  {
+    id: 'Q_weather_008',
+    type: 'single',
+    text: '你怎样形容自己对雾霾天的感受？',
+    options: [
+      { text: '呼吸道都在抗议，完全无法忍受', weights: { WU2: 4 } },
+      { text: '只要不影响出行，无所谓', weights: { FENG: 2 } },
+      { text: '觉得城市像被加了层怀旧滤镜', weights: { YUN: 3 } },
+      { text: '立刻制定逃离计划，去空气清新处', weights: { SHAN: 3 } },
+      { text: '家里常备三台空气净化器，全员开最高档', weights: { WU2: 5 }, hidden: true },
+    ],
+  },
+  {
+    id: 'Q_weather_009',
+    type: 'single',
+    text: '逛街时突然遇到前任，你的第一反应像哪种天气？',
+    options: [
+      { text: '像一道闪电，瞬间闪躲到旁边的店里', weights: { SHAN: 5 } },
+      { text: '像暴雨来袭，情绪有点崩', weights: { YU: 3 } },
+      { text: '像一阵风，无所谓地擦肩而过', weights: { FENG: 3 } },
+      { text: '像暖阳高照，大方地打招呼', weights: { XIA2: 2 } },
+    ],
+  },
+  {
+    id: 'Q_weather_010',
+    type: 'single',
+    text: '公司聚会让你感到不自在，你会？',
+    options: [
+      { text: '找个借口提前离开，像快闪一样消失', weights: { SHAN: 4 } },
+      { text: '躲在角落默默玩手机', weights: { YU: 3 } },
+      { text: '强撑着应付，回家后累得不想动', weights: { LEI: 3 } },
+      { text: '拉着几个人拼酒，试图融入', weights: { FENG: 2 } },
+    ],
+  },
+  {
+    id: 'Q_weather_011',
+    type: 'single',
+    text: '你最近的状态最接近哪种天气？',
+    options: [
+      { text: '乌云压顶的雷暴前夜，随时可能炸毛', weights: { LEI: 5 } },
+      { text: '绵绵细雨，虽然低落但还算平静', weights: { YU: 3 } },
+      { text: '沙尘暴，走到哪里都一团糟', weights: { WU2: 3 } },
+      { text: '晴空万里，精力充沛', weights: { XIA2: 2 } },
+      { text: '先轰隆隆地惊天动地哭一场，然后像下雨一样恢复平静', weights: { LEI: 5 }, hidden: true },
+    ],
+  },
+  {
+    id: 'Q_weather_012',
+    type: 'single',
+    text: '工作压力大时，你的爆发方式更像？',
+    options: [
+      { text: '闷雷滚动，先忍着最后惊天动地爆发', weights: { LEI: 4 } },
+      { text: '像一阵风抱怨完就忘了', weights: { FENG: 3 } },
+      { text: '像下雪一样冷战处理，不说话', weights: { XUE: 2 } },
+      { text: '像躲进云层里，暂时回避问题', weights: { SHAN: 3 } },
+    ],
+  },
+  {
+    id: 'Q_weather_013',
+    type: 'single',
+    text: '关于新出的3A大作游戏，你的态度是？',
+    options: [
+      { text: '看主播通关就等于自己玩过了', weights: { YUN: 5 } },
+      { text: '等打折再考虑入手，毕竟配置不够', weights: { YUN: 3, WU2: 2 } },
+      { text: '必须首发入手，亲自体验每一个细节', weights: { XIA2: 3 } },
+      { text: '等风评稳定了再说，不急', weights: { SHAN: 2 } },
+    ],
+  },
+  {
+    id: 'Q_weather_014',
+    type: 'single',
+    text: '朋友邀你联机一款需要高配置的游戏，你会？',
+    options: [
+      { text: '打开直播看别人玩，顺便在弹幕里指点', weights: { YUN: 4 } },
+      { text: '借口网络不好婉拒', weights: { SHAN: 3 } },
+      { text: '硬着头皮下载，结果卡成PPT', weights: { LEI: 3 } },
+      { text: '怒而升级电脑配置，必须参战', weights: { FENG: 3 } },
+      { text: '打开云游戏平台，用最低画质蹭一下', weights: { YUN: 5 }, hidden: true },
+    ],
+  },
+  {
+    id: 'Q_weather_015',
+    type: 'single',
+    text: '夏天你最离不开的三件套是？',
+    options: [
+      { text: '防晒霜、冰美式、蚊香', weights: { XIA2: 5 } },
+      { text: '空调、羽绒服、热可可', weights: { XUE: 3 } },
+      { text: '雨伞、除湿袋、emo歌单', weights: { YU: 3 } },
+      { text: '空气净化器、口罩、加湿器', weights: { WU2: 2 } },
+    ],
+  },
+  {
+    id: 'Q_weather_016',
+    type: 'single',
+    text: '烈日炎炎的下午，你理想的度过方式是？',
+    options: [
+      { text: '躲进冷气十足的咖啡馆喝冰饮', weights: { XIA2: 4 } },
+      { text: '去海边暴晒，感受阳光的炙热', weights: { FENG: 3 } },
+      { text: '在空调房里裹着被子睡觉', weights: { YUN: 2 } },
+      { text: '去商场逛街蹭空调，顺便买短袖', weights: { SHAN: 2 } },
+    ],
+  },
+];
