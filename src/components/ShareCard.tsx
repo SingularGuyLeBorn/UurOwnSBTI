@@ -120,11 +120,11 @@ export default function ShareCard({ result, onClose }: ShareCardProps) {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-auto">
+      <div className="bg-[#0f0f10] border border-white/10 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-auto">
         {/* 头部 */}
-        <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex items-center justify-between">
-          <h2 className="text-lg font-bold text-gray-800">生成分享卡片</h2>
-          <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
+        <div className="sticky top-0 bg-[#0f0f10] border-b border-white/10 p-4 flex items-center justify-between z-10">
+          <h2 className="text-lg font-bold text-white">生成分享卡片</h2>
+          <button onClick={onClose} className="text-white/50 hover:text-white transition-colors">
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -133,7 +133,7 @@ export default function ShareCard({ result, onClose }: ShareCardProps) {
 
         <div className="flex flex-col lg:flex-row">
           {/* 左侧：预览 */}
-          <div className="flex-1 p-6 flex items-center justify-center bg-gray-100">
+          <div className="flex-1 p-6 flex items-center justify-center bg-[#0a0a0a]">
             <div
               ref={cardRef}
               className="relative w-[300px] h-[400px] rounded-xl overflow-hidden shadow-2xl"
@@ -202,22 +202,22 @@ export default function ShareCard({ result, onClose }: ShareCardProps) {
           </div>
 
           {/* 右侧：设置面板 */}
-          <div className="w-full lg:w-80 p-6 space-y-6 border-l border-gray-200">
+          <div className="w-full lg:w-80 p-6 space-y-6 border-l border-white/10">
             {/* 文字内容 */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                <AlignLeft className="w-4 h-4" />
+              <label className="flex items-center gap-2 text-sm font-medium text-white/90">
+                <AlignLeft className="w-4 h-4 text-violet-400" />
                 卡片文字
               </label>
               <textarea
                 value={cardText}
                 onChange={(e) => setCardText(e.target.value)}
-                className="w-full p-3 text-sm border border-gray-300 rounded-lg resize-none h-24 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full p-3 text-sm bg-white/5 border border-white/10 rounded-lg resize-none h-24 text-white placeholder-white/30 focus:ring-2 focus:ring-violet-500/50 focus:border-transparent"
                 placeholder="输入卡片文字..."
               />
               <button
                 onClick={() => setCardText(generateShareCardText(result))}
-                className="text-xs text-blue-500 hover:text-blue-600 flex items-center gap-1"
+                className="text-xs text-violet-400 hover:text-violet-300 flex items-center gap-1"
               >
                 <RefreshCw className="w-3 h-3" />
                 恢复默认
@@ -226,8 +226,8 @@ export default function ShareCard({ result, onClose }: ShareCardProps) {
 
             {/* 背景颜色 */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                <Palette className="w-4 h-4" />
+              <label className="flex items-center gap-2 text-sm font-medium text-white/90">
+                <Palette className="w-4 h-4 text-violet-400" />
                 背景颜色
               </label>
               <div className="grid grid-cols-4 gap-2">
@@ -236,7 +236,7 @@ export default function ShareCard({ result, onClose }: ShareCardProps) {
                     key={bg.name}
                     onClick={() => setBgGradient(bg.value)}
                     className={`w-full aspect-square rounded-lg border-2 transition-all ${
-                      bgGradient === bg.value ? 'border-blue-500 scale-110' : 'border-transparent hover:border-gray-300'
+                      bgGradient === bg.value ? 'border-violet-500 scale-110' : 'border-transparent hover:border-white/30'
                     }`}
                     style={{ background: bg.value }}
                     title={bg.name}
@@ -247,8 +247,8 @@ export default function ShareCard({ result, onClose }: ShareCardProps) {
 
             {/* 图案 */}
             <div className="space-y-2">
-              <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                <ImageIcon className="w-4 h-4" />
+              <label className="flex items-center gap-2 text-sm font-medium text-white/90">
+                <ImageIcon className="w-4 h-4 text-violet-400" />
                 背景图案
               </label>
               <div className="flex flex-wrap gap-2">
@@ -257,9 +257,9 @@ export default function ShareCard({ result, onClose }: ShareCardProps) {
                     key={p.name}
                     onClick={() => setPattern(p.value)}
                     className={`px-3 py-1.5 text-xs rounded-full border transition-all ${
-                      pattern === p.value 
-                        ? 'bg-blue-500 text-white border-blue-500' 
-                        : 'bg-white text-gray-600 border-gray-300 hover:border-gray-400'
+                      pattern === p.value
+                        ? 'bg-violet-600 text-white border-violet-600'
+                        : 'bg-white/5 text-white/70 border-white/10 hover:border-white/30'
                     }`}
                   >
                     {p.name}
@@ -270,27 +270,27 @@ export default function ShareCard({ result, onClose }: ShareCardProps) {
 
             {/* 颜色设置 */}
             <div className="space-y-3">
-              <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                <Type className="w-4 h-4" />
+              <label className="flex items-center gap-2 text-sm font-medium text-white/90">
+                <Type className="w-4 h-4 text-violet-400" />
                 颜色设置
               </label>
               <div className="flex items-center gap-3">
                 <div className="flex-1">
-                  <span className="text-xs text-gray-500 block mb-1">强调色</span>
+                  <span className="text-xs text-white/50 block mb-1">强调色</span>
                   <input
                     type="color"
                     value={accentColor}
                     onChange={(e) => setAccentColor(e.target.value)}
-                    className="w-full h-8 rounded cursor-pointer"
+                    className="w-full h-8 rounded cursor-pointer bg-transparent"
                   />
                 </div>
                 <div className="flex-1">
-                  <span className="text-xs text-gray-500 block mb-1">文字色</span>
+                  <span className="text-xs text-white/50 block mb-1">文字色</span>
                   <input
                     type="color"
                     value={textColor}
                     onChange={(e) => setTextColor(e.target.value)}
-                    className="w-full h-8 rounded cursor-pointer"
+                    className="w-full h-8 rounded cursor-pointer bg-transparent"
                   />
                 </div>
               </div>
@@ -298,31 +298,31 @@ export default function ShareCard({ result, onClose }: ShareCardProps) {
 
             {/* 字体大小 */}
             <div className="space-y-3">
-              <label className="text-sm font-medium text-gray-700">字体大小</label>
+              <label className="text-sm font-medium text-white/90">字体大小</label>
               <div className="space-y-2">
                 <div className="flex items-center gap-3">
-                  <span className="text-xs text-gray-500 w-12">标题</span>
+                  <span className="text-xs text-white/50 w-12">标题</span>
                   <input
                     type="range"
                     min={20}
                     max={48}
                     value={titleSize}
                     onChange={(e) => setTitleSize(Number(e.target.value))}
-                    className="flex-1"
+                    className="flex-1 accent-violet-500"
                   />
-                  <span className="text-xs text-gray-500 w-8">{titleSize}</span>
+                  <span className="text-xs text-white/50 w-8">{titleSize}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-xs text-gray-500 w-12">正文</span>
+                  <span className="text-xs text-white/50 w-12">正文</span>
                   <input
                     type="range"
                     min={12}
                     max={24}
                     value={fontSize}
                     onChange={(e) => setFontSize(Number(e.target.value))}
-                    className="flex-1"
+                    className="flex-1 accent-violet-500"
                   />
-                  <span className="text-xs text-gray-500 w-8">{fontSize}</span>
+                  <span className="text-xs text-white/50 w-8">{fontSize}</span>
                 </div>
               </div>
             </div>
@@ -331,7 +331,7 @@ export default function ShareCard({ result, onClose }: ShareCardProps) {
             <Button
               onClick={generateImage}
               disabled={isGenerating}
-              className="w-full h-12 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-medium"
+              className="w-full h-12 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-medium"
             >
               {isGenerating ? (
                 <>

@@ -2,16 +2,25 @@
  * SBTI-Engine 3.0 类型定义
  */
 
-// 49种人格类型代码
+// 127种人格类型代码
 export type SBTITypeCode =
   | 'SEXY' | 'IMFW' | 'HITER' | 'WONANG' | 'SLEEP' | 'GIVEU' | 'POET' | 'DOGE' | 'BOSS' | 'NPC'
   | 'BUG' | '404' | 'VIP' | 'EMO' | 'CPU' | 'KFC' | 'DNA' | 'PDF' | 'GIF' | 'JPG'
   | 'FOMO' | 'YOLO' | 'FUDI' | 'HODL' | 'DYOR' | 'SERF' | 'GHOST' | 'TROLL' | 'WEEB' | 'NORM'
   | 'DEEP' | 'OPEN' | 'GROK' | 'CLAUD' | 'DOUB' | 'GEMI' | 'PUZZ' | 'MIDI' | 'CODE' | 'SORA'
-  | 'SHENJ' | 'DAWEI' | 'XPENG' | 'DPENG' | 'WANDOU' | 'SHUANG' | 'SANXIAN' | 'RUSHI' | 'RAND';
+  | 'SHENJ' | 'DAWEI' | 'XPENG' | 'DPENG' | 'WANDOU' | 'SHUANG' | 'SANXIAN' | 'RUSHI' | 'RAND'
+  // 新增78种人格
+  | 'HOUJ' | 'BAOZ' | 'YINY' | 'LENGL' | 'HUIM' | 'CHAO' | 'BENG' | 'FENN' | 'JING' | 'YUAN'
+  | 'SHUI' | 'LIKE' | 'GANG' | 'CHIG' | 'YUYA' | 'KAOG' | 'GEZI' | 'XIAO' | 'POFF' | 'KEYB'
+  | 'MAIM' | 'XUAN' | 'CHOU' | 'CHUAN' | 'MAIP' | 'YUEG' | 'TUNJI' | 'JIEP' | 'TUOY' | 'XUANZ'
+  | 'TAOH' | 'HUIB' | 'BIAO' | 'BEIH' | 'ZIL' | 'KONG' | 'LAI' | 'XIAOQI' | 'DAREN' | 'SHEK'
+  | 'DUNJ' | 'YITP' | 'JUEJ' | 'TAIK' | 'ZUND' | 'BABI' | 'WEMO' | 'SHUS' | 'MALO' | 'DANR'
+  | 'NONG' | 'GELI' | 'SHIL' | 'DIAN' | 'SHUJU' | 'SAIBO' | 'PING' | 'WAIF' | 'BACH' | 'APIJ'
+  | 'JSON' | 'SQLJ' | 'VPNJ' | 'COOK' | 'CACH' | 'DOCK' | 'GITJ' | 'ROOT' | 'BUG2' | 'SHENG'
+  | 'XIAN' | 'WOYU' | 'DADE' | 'FANS' | 'HEIH' | 'BAIH' | 'CHAH' | 'KENG';
 
 // 题目类型
-export type QuestionType = 'single' | 'multi' | 'fill';
+export type QuestionType = 'single' | 'multi';
 
 // 选项
 export interface Option {
@@ -21,12 +30,6 @@ export interface Option {
   hidden?: boolean;
 }
 
-// 填空选项
-export interface FillOption {
-  text: string;
-  value: string;
-}
-
 // 题目
 export interface Question {
   id: string;
@@ -34,8 +37,6 @@ export interface Question {
   text: string;
   hint?: string;
   options?: Option[];
-  blanks?: FillOption[][];
-  combos?: { values: string[]; bonus: Partial<Record<SBTITypeCode, number>> }[];
   trap?: boolean;
 }
 

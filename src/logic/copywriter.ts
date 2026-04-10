@@ -174,7 +174,7 @@ export function generateRoast(
     roast += `${transition}虽然测出来是${type.name}，但您刚才的答题像人格分裂。`;
     roast += `前一秒还${randomPick(['攻击性拉满', '热情似火', '混乱不堪'])}，`;
     roast += `下一秒就${randomPick(['窝囊到家', '冷若冰霜', '规规矩矩'])}。`;
-    roast += `您这人格跟薛定谔的猫似的，观测前同时是49种贵物，观测后坍缩成"随便"。\n\n`;
+    roast += `您这人格跟薛定谔的猫似的，观测前同时是127种贵物，观测后坍缩成"随便"。\n\n`;
   } else if (confidence > 0.8) {
     const scenarios = [
       ...SCENARIO_TEMPLATES.wechat,
@@ -299,7 +299,7 @@ export function generateRandRoast(pseudoType?: SBTITypeCode): string {
   const currencies = ['硬币', '骰子', '伪随机数生成器', '量子比特', '外卖红包抽奖结果', '微信掷骰子表情包', '彩票摇号机', '抽卡游戏的保底机制'];
   const physicsConcepts = ['薛定谔的猫', '量子叠加态', '测不准原理的实体化', '坍缩前的波函数', '既死又活的贵物', '平行宇宙的交集', '混沌理论的案例'];
   const stateDescriptions = [
-    '在观测前同时是49种贵物',
+    '在观测前同时是127种贵物',
     '观测后坍缩成"随便"',
     '既存在又不存在',
     '既是A又是B直到被观测',

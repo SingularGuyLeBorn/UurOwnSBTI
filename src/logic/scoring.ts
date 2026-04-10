@@ -81,16 +81,6 @@ export function calculateBaseScores(
           });
         }
       });
-    } else if (question.type === 'fill' && answer.values) {
-      // 填空题：检查组合
-      const combo = question.combos?.find(c => 
-        c.values.every((v, i) => v === answer.values?.[i])
-      );
-      if (combo?.bonus) {
-        Object.entries(combo.bonus).forEach(([type, weight]) => {
-          scores[type as SBTITypeCode] += weight;
-        });
-      }
     }
     
     // 陷阱题权重翻倍
@@ -271,31 +261,36 @@ export function calculateConfidence(
   topScore: number,
   secondScore: number
 ): number {
-  // 特殊情况：RUSHI和RAND直接最低置信度
-  if (session.isRushed || session.isRandom) {
+  // RUSHI（几乎没答题）直接最低置信度
+  if (session.isRushed) {
     return 0.1;
   }
-  
-  // 基础置信度 = 完成度 / 100
+
+  // 基础置信度：答完题保底 0.45
   const completionRate = (session.answered || 0) / (session.totalQuestions || 1);
-  let confidence = completionRate * 0.5;
-  
-  // 分数差距加成
+  let confidence = 0.15 + completionRate * 0.35;
+
+  // 分数差距加成（相对差距更合理）
   const scoreGap = topScore - secondScore;
-  const gapBonus = Math.min(scoreGap / 20, 0.3);
+  const relativeGap = topScore > 0 ? scoreGap / topScore : 0;
+  const gapBonus = Math.min(relativeGap * 0.5, 0.35);
   confidence += gapBonus;
-  
-  // 矛盾惩罚
-  if (session.contradictions && session.contradictions.length > 0) {
-    confidence -= 0.3;
+
+  // 矛盾惩罚（按矛盾次数递减）
+  const contradictionCount = session.contradictions?.length || 0;
+  if (contradictionCount > 0) {
+    confidence -= 0.12 * contradictionCount;
   }
-  
+
   // 一致性奖励
   if (session.consistencyStreak && session.consistencyStreak >= 5) {
-    confidence += 0.2;
+    confidence += 0.12;
   }
-  
-  return Math.max(0.1, Math.min(1.0, confidence));
+
+  // RAND 给上限限制，体现随机性
+  const maxConfidence = session.isRandom ? 0.32 : 0.96;
+
+  return Math.max(0.1, Math.min(maxConfidence, confidence));
 }
 
 /**
@@ -396,11 +391,13 @@ export function generateRushiResult(
 export function generateRandomResult(
   baseResult: TestResult
 ): TestResult {
+  // 一键乱选不再强行 10%，但上限被 calculateConfidence 限制在 32% 左右
+  const randomConfidence = Math.min(baseResult.confidence, 0.25 + Math.random() * 0.07);
   return {
     ...baseResult,
     primaryType: 'RAND',
     pseudoResult: baseResult.primaryType,
-    confidence: 0.1,
+    confidence: Math.max(0.12, randomConfidence),
     isRandom: true
   };
 }
