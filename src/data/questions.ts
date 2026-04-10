@@ -1,10 +1,13 @@
 import type { Question } from '@/types';
+import { WORK_QUESTIONS } from './questions/work';
 
 /**
  * SBTI-Engine 3.0 完整题库
- * 170道题：140道单选 + 30道多选
+ * 
+ * 267道题：167道核心 + 100道职场地狱
  */
 export const QUESTION_LIBRARY: Question[] = [
+  ...WORK_QUESTIONS,
 {
     id: "Q_single_001",
     type: "single",
@@ -16,7 +19,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "面无表情划走，内心毫无波澜甚至想笑", weights: { NPC: 4, '404': 3, GHOST: 2 } },
       { id: "E", text: "打开ChatGPT让它帮我写祝福文案", weights: { GROK: 4, CLAUD: 3, GEMI: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_002",
     type: "single",
@@ -28,7 +31,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "直接私聊问具体哪里不行你倒是说啊", weights: { HITER: 4, RUSHI: 3, DOGE: 2 } },
       { id: "E", text: "假装没看见，反正明天他会忘", weights: { GHOST: 4, BUG: 3, '404': 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_003",
     type: "single",
@@ -40,7 +43,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "认真请教那您觉得哪里需要改进", weights: { NORM: 4, OPEN: 3, DEEP: 2 } },
       { id: "E", text: "从此素颜出门省下的钱买基金", weights: { HODL: 4, FUDI: 3, VIP: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_004",
     type: "single",
@@ -52,7 +55,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "算好时间差要求退配送费", weights: { BOSS: 4, DYOR: 3, PDF: 2 } },
       { id: "E", text: "开始思考路上有事的100种可能性", weights: { PUZZ: 4, DEEP: 3, WONANG: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_005",
     type: "single",
@@ -64,7 +67,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "转移话题对了你上次说的那个包买了吗", weights: { CPU: 4, TROLL: 3, FOMO: 2 } },
       { id: "E", text: "认真分析外貌、性格、经济条件", weights: { DEEP: 4, OPEN: 3, CODE: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_006",
     type: "single",
@@ -76,7 +79,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "隐藏角色——连开发者都忘了还有我", weights: { GHOST: 5, '404': 3, PUZZ: 2 } },
       { id: "E", text: "GM——看着你们玩，偶尔改改参数", weights: { OPEN: 5, GROK: 3, CLAUD: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_007",
     type: "single",
@@ -88,7 +91,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "日记本（死也要死得文艺）", weights: { POET: 4, WONANG: 3, MIDI: 2 } },
       { id: "E", text: "什么都不带，反正末日了躺平吧", weights: { SLEEP: 4, GIVEU: 3, '404': 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_008",
     type: "single",
@@ -100,7 +103,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "无限复制钱（朴实无华的梦想）", weights: { VIP: 4, FUDI: 3, BOSS: 2 } },
       { id: "E", text: "删除别人的记忆（尤其是自己的黑历史）", weights: { SORA: 4, CODE: 3, TROLL: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_009",
     type: "single",
@@ -112,7 +115,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "约朋友出来然后各自玩手机", weights: { NPC: 4, NORM: 3, CPU: 2 } },
       { id: "E", text: "学习新技能卷死所有人", weights: { BOSS: 4, CODE: 3, OPEN: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_010",
     type: "single",
@@ -124,7 +127,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "变色龙——见人说人话", weights: { NPC: 4, SERF: 3, NORM: 2 } },
       { id: "E", text: "渡渡鸟——已经灭绝，勿扰", weights: { GHOST: 5, BUG: 3, WONANG: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_011",
     type: "single",
@@ -136,7 +139,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "能活一天是一天，明天的事明天再说", weights: { YOLO: 4, SLEEP: 3, GIVEU: 2 } },
       { id: "E", text: "我很好啊我很好啊我很好啊（已黑化）", weights: { TROLL: 4, BUG: 3, HITER: 2, SHENJ: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_012",
     type: "single",
@@ -148,7 +151,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "负数——社交一次需要恢复三天", weights: { WEEB: 4, WONANG: 3, GHOST: 2 } },
       { id: "E", text: "没有能量条——我是太阳能的，阴天不工作", weights: { RAND: 4, BUG: 3, DOGE: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_013",
     type: "single",
@@ -160,7 +163,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "有钱（错觉，我只是会装）", weights: { VIP: 4, FUDI: 3, BOSS: 2 } },
       { id: "E", text: "没什么印象（透明人实锤）", weights: { '404': 4, GHOST: 3, SLEEP: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_014",
     type: "single",
@@ -172,7 +175,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: ".gif——循环播放同一套表情", weights: { GIF: 5, NPC: 3, DOGE: 2 } },
       { id: "E", text: ".tmp——临时文件，随时可能被删", weights: { '404': 5, GHOST: 3, SLEEP: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_015",
     type: "single",
@@ -184,7 +187,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "DOS——古老且随时可能崩溃", weights: { BUG: 4, '404': 3, WONANG: 2 } },
       { id: "E", text: "蓝屏——别问，问就是死机", weights: { SLEEP: 5, GIVEU: 3, EMO: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_016",
     type: "single",
@@ -196,7 +199,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "它突然更新，把我忘了", weights: { DOGE: 4, FOMO: 3, '404': 2 } },
       { id: "E", text: "它其实同时在和100万人谈恋爱", weights: { CPU: 4, BOSS: 3, SERF: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_017",
     type: "single",
@@ -208,7 +211,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "给我写深夜emo文案", weights: { POET: 4, EMO: 3, WEEB: 2 } },
       { id: "E", text: "其实没什么用，但我怕不用就落伍了", weights: { FOMO: 4, FUDI: 3, NPC: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_018",
     type: "single",
@@ -220,7 +223,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "举报我，因为我问的问题太蠢", weights: { CLAUD: 4, NORM: 3, SERF: 2 } },
       { id: "E", text: "爱上我，毕竟我这么特别", weights: { SEXY: 4, POET: 3, YOLO: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_019",
     type: "single",
@@ -232,7 +235,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "Grok——口无遮拦经常被封", weights: { GROK: 4, HITER: 3, TROLL: 2 } },
       { id: "E", text: "Midjourney——想象力丰富但看不懂", weights: { MIDI: 4, POET: 3, WEEB: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_020",
     type: "single",
@@ -244,7 +247,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "继续躺平，反正AI也不会喜欢我", weights: { SLEEP: 4, GHOST: 3, IMFW: 2 } },
       { id: "E", text: "试图和AI谈恋爱，用爱感化它", weights: { DOGE: 4, POET: 3, SEXY: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_021",
     type: "single",
@@ -257,7 +260,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "意识到这是陷阱题并试图反套路", weights: { BUG: 3, TROLL: 2 } }
     ],
     trap: true
-  },,
+  },
 {
     id: "Q_single_022",
     type: "single",
@@ -270,7 +273,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "我希望测出来是个有趣的人", weights: { POET: 3, FOMO: 2 } }
     ],
     trap: true
-  },,
+  },
 {
     id: "Q_single_023",
     type: "single",
@@ -283,7 +286,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不选，看系统怎么办", weights: { TROLL: 3, HITER: 2 } }
     ],
     trap: true
-  },,
+  },
 {
     id: "Q_single_024",
     type: "single",
@@ -296,7 +299,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "我经常走神", weights: { SLEEP: 3, GHOST: 2 } }
     ],
     trap: true
-  },,
+  },
 {
     id: "Q_single_025",
     type: "single",
@@ -309,7 +312,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "分析哪里出错了", weights: { DEEP: 3, CODE: 2 } }
     ],
     trap: true
-  },,
+  },
 {
     id: "Q_single_026",
     type: "single",
@@ -322,7 +325,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "打开外卖APP点早餐", weights: { DAWEI: 4, VIP: 3, YOLO: 2 } },
       { id: "F", text: "像小喷菇一样免费燃烧自己照亮公司", weights: { XPENG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_027",
     type: "single",
@@ -335,7 +338,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "发朋友圈阴阳怪气", weights: { EMO: 4, FOMO: 3, TROLL: 2 } },
       { id: "F", text: "在会议上AOE喷所有人包括老板", weights: { DPENG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_028",
     type: "single",
@@ -348,7 +351,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "说在加班其实在家里躺平", weights: { TROLL: 4, SERF: 3, '404': 2 } },
       { id: "F", text: "同时答应三拨人然后都鸽了", weights: { SANXIAN: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_029",
     type: "single",
@@ -360,7 +363,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "公司文化衫", weights: { SERF: 5, CPU: 3, PDF: 2 } },
       { id: "E", text: "买了但没拆吊牌的衣服", weights: { GIVEU: 4, YOLO: 3, FUDI: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_030",
     type: "single",
@@ -373,7 +376,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有BGM，静音模式", weights: { '404': 4, NPC: 3, BUG: 2 } },
       { id: "F", text: "植物大战僵尸BGM循环播放", weights: { WANDOU: 4, SHUANG: 4, SANXIAN: 3 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_031",
     type: "single",
@@ -385,7 +388,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "可爱软萌二次元", weights: { WEEB: 4, DOGE: 3, NORM: 2 } },
       { id: "E", text: "根本不用表情包", weights: { PDF: 4, BOSS: 3, GHOST: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_032",
     type: "single",
@@ -397,7 +400,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "工作文件/截图", weights: { SERF: 4, PDF: 3, BOSS: 2 } },
       { id: "E", text: " memes和沙雕图", weights: { GIF: 4, TROLL: 3, SHENJ: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_033",
     type: "single",
@@ -410,7 +413,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "担心以后工作量翻倍", weights: { SERF: 4, WONANG: 3, GHOST: 2 } },
       { id: "F", text: "要求双倍，不给就AOE喷", weights: { DPENG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_034",
     type: "single",
@@ -423,7 +426,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "发朋友圈暗示", weights: { EMO: 4, CPU: 3, TROLL: 2 } },
       { id: "F", text: "远程输出，靠近就装死", weights: { SLEEP: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_035",
     type: "single",
@@ -435,7 +438,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "买前做三天攻略", weights: { DYOR: 4, DEEP: 3, PDF: 2 } },
       { id: "E", text: "购物车塞满但从不结账", weights: { GIVEU: 4, IMFW: 3, BUG: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_036",
     type: "single",
@@ -448,7 +451,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "从不发，只看", weights: { GHOST: 5, '404': 3, IMFW: 2 } },
       { id: "F", text: "同时发三条不同内容给不同分组", weights: { SANXIAN: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_037",
     type: "single",
@@ -460,7 +463,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "累了需要休息", weights: { SLEEP: 4, DAWEI: 3, GHOST: 2 } },
       { id: "E", text: "根本不找理由，就是不想做", weights: { IMFW: 5, TROLL: 3, HITER: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_038",
     type: "single",
@@ -472,7 +475,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "假装没发生过", weights: { NPC: 4, '404': 3, NORM: 2 } },
       { id: "E", text: "立刻放弃换赛道", weights: { GIVEU: 4, YOLO: 3, RAND: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_039",
     type: "single",
@@ -485,7 +488,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "植物——连喂食都不用", weights: { GIVEU: 4, GHOST: 3, '404': 2 } },
       { id: "F", text: "豌豆射手——忠诚且稳定输出", weights: { WANDOU: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_040",
     type: "single",
@@ -497,7 +500,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "纪录片——平淡如水", weights: { NPC: 5, NORM: 3, SERF: 2 } },
       { id: "E", text: "爽剧——开挂人生", weights: { BOSS: 4, VIP: 3, YOLO: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_041",
     type: "single",
@@ -510,7 +513,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "哈哈哈哈", weights: { GIF: 4, TROLL: 3, KFC: 2 } },
       { id: "F", text: "哒哒哒哒哒", weights: { SHUANG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_042",
     type: "single",
@@ -523,7 +526,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "都讨厌，所以我不看朋友圈", weights: { GHOST: 5, '404': 3, IMFW: 2 } },
       { id: "F", text: "AOE喷所有类型的朋友圈", weights: { DPENG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_043",
     type: "single",
@@ -535,7 +538,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "找人吐槽", weights: { HITER: 4, TROLL: 3, CPU: 2 } },
       { id: "E", text: "Shopping", weights: { VIP: 4, FOMO: 3, YOLO: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_044",
     type: "single",
@@ -547,7 +550,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "没什么想说的，都是命", weights: { DNA: 4, IMFW: 3, NORM: 2 } },
       { id: "E", text: "多吃两口，以后减肥更难", weights: { DAWEI: 5, YOLO: 3, TROLL: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_045",
     type: "single",
@@ -559,7 +562,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "不需要浪漫，务实最重要", weights: { BOSS: 4, PDF: 3, NORM: 2 } },
       { id: "E", text: " romance 是消费主义陷阱", weights: { HITER: 4, CPU: 3, DYOR: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_046",
     type: "single",
@@ -572,7 +575,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不学，知识会自动过期的", weights: { IMFW: 4, '404': 3, RAND: 2 } },
       { id: "F", text: "同时开三个教程三倍速播放", weights: { SANXIAN: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_047",
     type: "single",
@@ -585,7 +588,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有时间观念", weights: { '404': 4, SLEEP: 3, NPC: 2 } },
       { id: "F", text: "固定节奏一颗一颗完成任务", weights: { WANDOU: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_048",
     type: "single",
@@ -598,7 +601,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "直接清掉红点假装没看见", weights: { BUG: 4, RAND: 3, TROLL: 2 } },
       { id: "F", text: "同时和三个窗口对线", weights: { SANXIAN: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_049",
     type: "single",
@@ -610,7 +613,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "好看就行，买不买单说", weights: { JPG: 4, FOMO: 3, VIP: 2 } },
       { id: "E", text: "是时代的悲哀", weights: { POET: 4, EMO: 3, WONANG: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_050",
     type: "single",
@@ -623,7 +626,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "什么优惠点什么", weights: { FUDI: 4, DYOR: 3, BOSS: 2 } },
       { id: "F", text: "量大管饱的碳水炸弹", weights: { DAWEI: 6 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_051",
     type: "single",
@@ -635,7 +638,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "随缘型", weights: { IMFW: 4, RAND: 3, YOLO: 2 } },
       { id: "E", text: "没有恋爱模式，单着呢", weights: { SERF: 4, WEEB: 3, GIVEU: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_052",
     type: "single",
@@ -647,7 +650,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "温情治愈", weights: { POET: 4, NORM: 3, DOGE: 2 } },
       { id: "E", text: "不追梗，已经脱节了", weights: { GHOST: 4, '404': 3, PDF: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_053",
     type: "single",
@@ -659,7 +662,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "发呆/补觉", weights: { SLEEP: 5, IMFW: 3, GIVEU: 2 } },
       { id: "E", text: "赶路赶得骂骂咧咧", weights: { HITER: 4, RUSHI: 3, BOSS: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_054",
     type: "single",
@@ -671,7 +674,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "买回来就放衣柜吃灰", weights: { GIVEU: 5, VIP: 3, YOLO: 2 } },
       { id: "E", text: "退得比买得多", weights: { YOLO: 4, FOMO: 3, FUDI: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_055",
     type: "single",
@@ -684,7 +687,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "提前离场的那位", weights: { GHOST: 4, RUSHI: 3, IMFW: 2 } },
       { id: "F", text: "同时和三个小团体聊天", weights: { SANXIAN: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_056",
     type: "single",
@@ -697,7 +700,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "自己就是八卦中心", weights: { VIP: 4, SEXY: 3, EMO: 2 } },
       { id: "F", text: "AOE喷所有八卦的人", weights: { DPENG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_057",
     type: "single",
@@ -709,7 +712,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "某种只有我知道的梗", weights: { POET: 4, WEEB: 3, TROLL: 2 } },
       { id: "E", text: "没有WiFi，蹭邻居的", weights: { GHOST: 4, '404': 3, IMFW: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_058",
     type: "single",
@@ -722,7 +725,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "只看不玩", weights: { GHOST: 4, NPC: 3, '404': 2 } },
       { id: "F", text: "单线程只玩一款游戏十年", weights: { WANDOU: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_059",
     type: "single",
@@ -734,7 +737,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "心血来潮", weights: { YOLO: 4, RAND: 3, BUG: 2 } },
       { id: "E", text: "没有动力，所以不整理", weights: { GIVEU: 5, IMFW: 3, BUG: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_060",
     type: "single",
@@ -746,7 +749,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "和黑粉对线", weights: { HITER: 5, CPU: 3, TROLL: 2 } },
       { id: "E", text: "不追星，觉得自己最棒", weights: { BOSS: 4, VIP: 3, NORM: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_061",
     type: "single",
@@ -758,7 +761,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "哲学/诗歌", weights: { DEEP: 4, POET: 3, CLAUD: 2 } },
       { id: "E", text: "不阅读", weights: { IMFW: 5, GIVEU: 3, BUG: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_062",
     type: "single",
@@ -771,7 +774,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "睡着睡着就下班了", weights: { BUG: 4, IMFW: 3, '404': 2 } },
       { id: "F", text: "像小喷菇一样只在阴暗处短暂休眠", weights: { XPENG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_063",
     type: "single",
@@ -783,7 +786,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "直接干了不说话", weights: { HITER: 4, RUSHI: 3, YOLO: 2 } },
       { id: "E", text: "找借口不喝", weights: { BUG: 4, CPU: 3, IMFW: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_064",
     type: "single",
@@ -795,7 +798,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "留着说不定哪天有用", weights: { BUG: 4, FUDI: 3, NPC: 2 } },
       { id: "E", text: "旧物是什么？没有旧物", weights: { YOLO: 4, VIP: 3, FOMO: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_065",
     type: "single",
@@ -807,7 +810,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: " copy 去年的改个年份", weights: { GIVEU: 4, BUG: 3, SERF: 2 } },
       { id: "E", text: "不写，爱咋咋地", weights: { IMFW: 5, HITER: 3, GHOST: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_066",
     type: "single",
@@ -819,7 +822,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "从来不闯", weights: { CLAUD: 4, NORM: 3, GHOST: 2 } },
       { id: "E", text: "没注意灯的颜色", weights: { RAND: 4, BUG: 3, SLEEP: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_067",
     type: "single",
@@ -832,7 +835,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "每次都不一样", weights: { RAND: 5, BUG: 3, TROLL: 2 } },
       { id: "F", text: "武大郎/碳水教父", weights: { DAWEI: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_068",
     type: "single",
@@ -844,7 +847,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "动漫OST", weights: { WEEB: 5, MIDI: 3, NORM: 2 } },
       { id: "E", text: "不唱歌，思考人生", weights: { DEEP: 4, PUZZ: 3, GHOST: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_069",
     type: "single",
@@ -857,7 +860,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "理由写得很详细很感人", weights: { POET: 4, PDF: 3, EMO: 2 } },
       { id: "F", text: "说去给植物浇水", weights: { WANDOU: 5, SHUANG: 3, SANXIAN: 3 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_070",
     type: "single",
@@ -869,7 +872,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "扶着杆发呆", weights: { NPC: 4, SLEEP: 3, POET: 2 } },
       { id: "E", text: "走来走去找空位", weights: { FOMO: 4, RUSHI: 3, YOLO: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_071",
     type: "single",
@@ -881,7 +884,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "精心设计的pose", weights: { VIP: 4, FOMO: 3, BOSS: 2 } },
       { id: "E", text: "拒绝拍照", weights: { GHOST: 5, '404': 3, HITER: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_072",
     type: "single",
@@ -894,7 +897,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不喝奶茶", weights: { GHOST: 4, BOSS: 3, IMFW: 2 } },
       { id: "F", text: "点三杯不同口味换着喝", weights: { SANXIAN: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_073",
     type: "single",
@@ -906,7 +909,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "震动", weights: { GHOST: 4, SLEEP: 3, '404': 2 } },
       { id: "E", text: "没有闹钟，自然醒", weights: { IMFW: 5, VIP: 3, SLEEP: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_074",
     type: "single",
@@ -919,7 +922,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "外卖/购物", weights: { DAWEI: 4, VIP: 3, YOLO: 2 } },
       { id: "F", text: "同时开八个APP切来切去", weights: { SANXIAN: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_075",
     type: "single",
@@ -931,7 +934,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "说走就走没计划", weights: { YOLO: 5, RAND: 3, BUG: 2 } },
       { id: "E", text: "不去旅行，没钱/没时间", weights: { SERF: 4, IMFW: 3, GHOST: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_076",
     type: "single",
@@ -943,7 +946,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "详细标签（如：不能借钱）", weights: { CPU: 4, BOSS: 3, DYOR: 2 } },
       { id: "E", text: "经常改备注", weights: { BUG: 4, RAND: 3, EMO: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_077",
     type: "single",
@@ -956,7 +959,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不砍，直接买", weights: { VIP: 5, YOLO: 3, BOSS: 2 } },
       { id: "F", text: "哒哒哒连续快速砍价", weights: { SHUANG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_078",
     type: "single",
@@ -968,7 +971,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "黑暗料理制造机", weights: { BUG: 4, SHENJ: 3, TROLL: 2 } },
       { id: "E", text: "不做饭也不吃", weights: { GHOST: 4, SLEEP: 3, IMFW: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_079",
     type: "single",
@@ -980,7 +983,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "停两个车位中间", weights: { TROLL: 5, VIP: 3, HITER: 2 } },
       { id: "E", text: "没有车", weights: { SERF: 4, NPC: 3, IMFW: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_080",
     type: "single",
@@ -993,7 +996,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "无所谓", weights: { IMFW: 5, RAND: 3, BUG: 2 } },
       { id: "F", text: "同时占三个座位放包", weights: { SANXIAN: 5, VIP: 3 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_081",
     type: "single",
@@ -1005,7 +1008,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "从来不戴", weights: { BOSS: 4, HITER: 3, RUSHI: 2 } },
       { id: "E", text: "戴了但没电", weights: { BUG: 4, GIVEU: 3, RAND: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_082",
     type: "single",
@@ -1017,7 +1020,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "抽象/梗", weights: { SHENJ: 5, TROLL: 3, BUG: 2 } },
       { id: "E", text: "很久没改过了", weights: { NPC: 4, HODL: 3, WANDOU: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_083",
     type: "single",
@@ -1030,7 +1033,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "直接睡着", weights: { SLEEP: 5, IMFW: 3, GHOST: 2 } },
       { id: "F", text: "像小喷菇一样躲在角落不敢出声", weights: { XPENG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_084",
     type: "single",
@@ -1042,7 +1045,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "不道歉，觉得自己没错", weights: { HITER: 5, BOSS: 3, GROK: 2 } },
       { id: "E", text: "转移话题当作没发生", weights: { BUG: 4, TROLL: 3, RAND: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_085",
     type: "single",
@@ -1054,7 +1057,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "换完又换回原头像", weights: { GIVEU: 4, BUG: 3, EMO: 2 } },
       { id: "E", text: "换头像是为了引起某人注意", weights: { DOGE: 4, CPU: 3, EMO: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_086",
     type: "single",
@@ -1066,7 +1069,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "列了计划但从不执行", weights: { GIVEU: 5, BUG: 3, RAND: 2 } },
       { id: "E", text: "不做计划", weights: { IMFW: 5, RAND: 3, YOLO: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_087",
     type: "single",
@@ -1078,7 +1081,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "销量排行榜", weights: { NPC: 4, SERF: 3, FOMO: 2 } },
       { id: "E", text: "看心情", weights: { YOLO: 4, RAND: 3, BUG: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_088",
     type: "single",
@@ -1090,7 +1093,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "运动发泄", weights: { BOSS: 4, HITER: 3, NORM: 2 } },
       { id: "E", text: "睡觉逃避", weights: { SLEEP: 5, IMFW: 3, GHOST: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_089",
     type: "single",
@@ -1103,7 +1106,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "看心情，时快时慢", weights: { BUG: 4, RAND: 3, YOLO: 2 } },
       { id: "F", text: "哒哒哒连续秒回十条", weights: { SHUANG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_090",
     type: "single",
@@ -1116,7 +1119,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "没有愿望，反正也实现不了", weights: { EMO: 5, WONANG: 3, '404': 2 } },
       { id: "F", text: "同时许三个不同的愿", weights: { SANXIAN: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_091",
     type: "single",
@@ -1128,7 +1131,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "花式包装", weights: { VIP: 4, BOSS: 3, PDF: 2 } },
       { id: "E", text: "社恐到说不出话", weights: { GHOST: 5, SLEEP: 3, WONANG: 2 } },
     ]
-  },,
+  },
 {
     id: "Q_single_092",
     type: "single",
@@ -1141,7 +1144,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不熬夜，养生", weights: { BOSS: 4, NORM: 3, CLAUD: 2 } },
       { id: "F", text: "像小喷菇一样只在夜里活跃", weights: { XPENG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_093",
     type: "single",
@@ -1154,7 +1157,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不谈判，爱咋咋地", weights: { IMFW: 5, HITER: 3, GHOST: 2 } },
       { id: "F", text: "AOE范围攻击谁都别想赢", weights: { DPENG: 5 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_multi_004",
     type: "multi",
@@ -1169,7 +1172,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "卷王", weights: { BOSS: 1, CODE: 1, SERF: 1 } },
       { id: "G", text: "植物系打工人", weights: { XPENG: 1, WANDOU: 1, SHUANG: 1, SANXIAN: 1 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_multi_005",
     type: "multi",
@@ -1183,7 +1186,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "空空如也", weights: { GHOST: 1, '404': 1, IMFW: 1 } },
       { id: "F", text: "各种APP促销", weights: { FUDI: 1, VIP: 1, KFC: 1 } },
     ]
-  },,
+  },
 {
     id: "Q_multi_006",
     type: "multi",
@@ -1198,7 +1201,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "从不失眠", weights: { BOSS: 1, NORM: 1, CLAUD: 1 } },
       { id: "G", text: "像小喷菇一样只在夜里精神", weights: { XPENG: 2 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_multi_007",
     type: "multi",
@@ -1213,7 +1216,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "追星人", weights: { DOGE: 1, FOMO: 1, WEEB: 1 } },
       { id: "G", text: "植物大战僵尸忠实玩家", weights: { WANDOU: 1, SHUANG: 1, SANXIAN: 1, XPENG: 1, DPENG: 1 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_multi_008",
     type: "multi",
@@ -1227,7 +1230,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "假装很忙", weights: { SERF: 1, NPC: 1, PDF: 1 } },
       { id: "F", text: "直接消失", weights: { GHOST: 1, '404': 1, RAND: 1 } },
     ]
-  },,
+  },
 {
     id: "Q_multi_009",
     type: "multi",
@@ -1242,7 +1245,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "能摸鱼", weights: { BUG: 1, SERF: 1, TROLL: 1 } },
       { id: "G", text: "稳定的单线程重复劳动", weights: { WANDOU: 2, XPENG: 1 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_multi_010",
     type: "multi",
@@ -1257,7 +1260,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "F", text: "噪音喇叭", weights: { HITER: 1, TROLL: 1, DPENG: 1 } },
       { id: "G", text: "豌豆射手", weights: { WANDOU: 2, SHUANG: 2, SANXIAN: 2 }, hidden: true },
     ]
-  },,
+  },
 {
     id: "Q_single_550",
     type: "single",
@@ -1269,7 +1272,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "打开蓝牙音箱放哀乐对轰", weights: { HOUJ: 1, HUIM: 4, YOLO: 2 } },
       { id: "E", text: "直接报警说他扰民", weights: { BOSS: 1, KONG: 2, GANG: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_551",
     type: "single",
@@ -1281,7 +1284,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "大声说：大家看有人插队", weights: { BIAO: 1, ZIL: 3, XUAN: 4 } },
       { id: "E", text: "心里想一万句脏话但不说", weights: { WONANG: 4, BENG: 3, WEMO: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_552",
     type: "single",
@@ -1293,7 +1296,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "立刻发一条更甜的反击", weights: { XUAN: 2, VIP: 4, ZIL: 1 } },
       { id: "E", text: "截图发给闺蜜一起酸", weights: { CHOU: 4, CHIG: 4, FOMO: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_553",
     type: "single",
@@ -1305,7 +1308,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "无所谓，我的消息也不值钱", weights: { IMFW: 2, DANR: 2, GHOST: 3 } },
       { id: "E", text: "立刻删除对话框眼不见为净", weights: { HUIB: 4, GHOST: 3, HEIH: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_554",
     type: "single",
@@ -1317,7 +1320,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "打开招聘软件", weights: { IMFW: 3, XIAN: 3, BUG: 3 } },
       { id: "E", text: "直接哭出来", weights: { BENG: 1, WEMO: 3, MAIM: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_555",
     type: "single",
@@ -1329,7 +1332,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "屏蔽举报一条龙", weights: { BOSS: 3, KONG: 4, NORM: 3 } },
       { id: "E", text: "默默流泪但继续玩", weights: { WONANG: 2, BENG: 3, WEMO: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_556",
     type: "single",
@@ -1341,7 +1344,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "发朋友圈骂平台", weights: { CHAO: 4, FOMO: 1, YINY: 2 } },
       { id: "E", text: "直接取消订单", weights: { BOSS: 4, IMFW: 3, PING: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_557",
     type: "single",
@@ -1353,7 +1356,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "找共同朋友传话", weights: { CPU: 4, YINY: 4, BOSS: 4 } },
       { id: "E", text: "写 PDF 挂他", weights: { PDF: 1, HITER: 3, GANG: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_558",
     type: "single",
@@ -1365,7 +1368,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "写小作文缅怀", weights: { POET: 2, WEMO: 2, WONANG: 4 } },
       { id: "E", text: "无所谓，我早忘了", weights: { IMFW: 4, DANR: 2, PING: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_559",
     type: "single",
@@ -1377,7 +1380,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "辞职，这公司配不上我", weights: { HUIM: 1, BUG: 2, IMFW: 3 } },
       { id: "E", text: "算了，反正也不是第一次", weights: { WONANG: 2, XIAN: 3, SERF: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_560",
     type: "single",
@@ -1389,7 +1392,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "第二杯半价但没人一起", weights: { GELI: 4, SHUS: 4, MALO: 4 } },
       { id: "E", text: "店员说售罄了", weights: { 404: 3, BUG: 3, SLEEP: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_561",
     type: "single",
@@ -1401,7 +1404,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "卡在人机验证里的机器人", weights: { NPC: 3, SERF: 4, 404: 1 } },
       { id: "E", text: "已经格式化重装的系统", weights: { HUIM: 3, BUG2: 2, XIAN: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_562",
     type: "single",
@@ -1413,7 +1416,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "emo 神曲循环播放", weights: { WEMO: 2, EMO: 1, BENG: 1 } },
       { id: "E", text: "静音", weights: { GHOST: 1, DANR: 2, 404: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_563",
     type: "single",
@@ -1425,7 +1428,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "只看不发，潜水到账号长蘑菇", weights: { GHOST: 3, DIAN: 2, SAIBO: 4 } },
       { id: "E", text: "已经注销重开了三次", weights: { HUIM: 1, BUG: 2, RAND: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_564",
     type: "single",
@@ -1437,7 +1440,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "镜子，维持形象", weights: { ZIL: 3, BIAO: 3, XUAN: 3 } },
       { id: "E", text: "什么都不带，直接躺平", weights: { YOLO: 3, PING: 1, HUIM: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_565",
     type: "single",
@@ -1449,7 +1452,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "在家大扫除", weights: { JIEP: 2, KONG: 4, NORM: 2 } },
       { id: "E", text: "根本不存在周末", weights: { BOSS: 1, SERF: 4, WEMO: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_566",
     type: "single",
@@ -1461,7 +1464,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "为情绪价值无脑下单", weights: { EMO: 3, WEMO: 2, BENG: 1 } },
       { id: "E", text: "钱是什么？没见过", weights: { SHUS: 2, MALO: 2, YUEG: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_567",
     type: "single",
@@ -1473,7 +1476,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "找人倾诉直到对方烦", weights: { POET: 2, WONANG: 4, KONG: 1 } },
       { id: "E", text: "上网骂人", weights: { KEYB: 3, HOUJ: 2, BAOZ: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_568",
     type: "single",
@@ -1485,7 +1488,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "换个车厢", weights: { IMFW: 1, XIAN: 1, DANR: 2 } },
       { id: "E", text: "发小红书吐槽", weights: { CHAO: 3, FOMO: 2, YINY: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_569",
     type: "single",
@@ -1497,7 +1500,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "乱删存档的玩家", weights: { HUIM: 1, RAND: 2, YOLO: 2 } },
       { id: "E", text: "氪金大佬但技术菜", weights: { VIP: 3, FUDI: 1, XUAN: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_570",
     type: "single",
@@ -1509,7 +1512,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "直接问 AI", weights: { CLAUD: 3, GROK: 2, GEMI: 1 } },
       { id: "E", text: "推倒重写十遍", weights: { BOSS: 4, KONG: 4, CODE: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_571",
     type: "single",
@@ -1521,7 +1524,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "隔壁密码12345678", weights: { HITER: 4, GANG: 3, TROLL: 1 } },
       { id: "E", text: "默认名字从未改过", weights: { NPC: 3, SERF: 4, NORM: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_572",
     type: "single",
@@ -1533,7 +1536,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "直接关机睡觉", weights: { SLEEP: 1, XIAN: 2, GHOST: 4 } },
       { id: "E", text: "借充电宝但不想花钱", weights: { XIAOQI: 4, LAI: 1, DOGE: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_573",
     type: "single",
@@ -1545,7 +1548,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "截图保存等秋后算账", weights: { KAOG: 2, YUAN: 1, BOSS: 3 } },
       { id: "E", text: "立刻打电话追问", weights: { KONG: 4, HOUJ: 2, BAOZ: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_574",
     type: "single",
@@ -1557,7 +1560,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "全是简历和招聘网站", weights: { XIAN: 3, IMFW: 3, SERF: 3 } },
       { id: "E", text: "清一色抽象视频", weights: { SAIBO: 1, DIAN: 2, GIF: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_575",
     type: "single",
@@ -1569,7 +1572,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "闲鱼：躺平卖闲置", weights: { YUEG: 3, XIAN: 4, IMFW: 3 } },
       { id: "E", text: "学习强国：打卡机器", weights: { NPC: 1, BOSS: 2, SERF: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_576",
     type: "single",
@@ -1581,7 +1584,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "用密码管理器", weights: { BOSS: 1, CODE: 4, NORM: 2 } },
       { id: "E", text: "直接短信验证码登录", weights: { IMFW: 3, YOLO: 3, DANR: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_577",
     type: "single",
@@ -1593,7 +1596,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "只删前任和仇人", weights: { HEIH: 3, YUAN: 4, LENGL: 4 } },
       { id: "E", text: "根本不知道好友列表有多少人", weights: { IMFW: 3, NPC: 3, SLEEP: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_578",
     type: "single",
@@ -1605,7 +1608,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "更新完后悔", weights: { WONANG: 3, BENG: 4, BUG: 2 } },
       { id: "E", text: "根本不知道有更新", weights: { NPC: 3, SLEEP: 3, IMFW: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_579",
     type: "single",
@@ -1617,7 +1620,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "会自己哄自己", weights: { POET: 4, WONANG: 2, BENG: 3 } },
       { id: "E", text: "没有优点", weights: { WONANG: 4, SHUS: 1, MALO: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_580",
     type: "single",
@@ -1629,7 +1632,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "周一", weights: { SERF: 3, SLEEP: 1, WEMO: 4 } },
       { id: "E", text: " phone call 突然响起", weights: { GHOST: 3, JING: 3, BEIH: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_581",
     type: "single",
@@ -1641,7 +1644,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "深夜 emo", weights: { WEMO: 2, EMO: 2, POET: 3 } },
       { id: "E", text: "基本不流泪", weights: { PING: 4, HITER: 4, BOSS: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_582",
     type: "single",
@@ -1653,7 +1656,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "立刻找下一个目标", weights: { BOSS: 2, KONG: 1, HITER: 3 } },
       { id: "E", text: "假装没发生过", weights: { NPC: 4, BIAO: 3, IMFW: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_583",
     type: "single",
@@ -1665,7 +1668,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "鸵鸟：遇到问题先埋起来", weights: { WONANG: 2, SLEEP: 1, GHOST: 2 } },
       { id: "E", text: "变色龙：见人说人话", weights: { NPC: 3, YINY: 1, CPU: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_584",
     type: "single",
@@ -1677,7 +1680,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "永远不缺钱", weights: { VIP: 2, BOSS: 1, FUDI: 1 } },
       { id: "E", text: "让别人闭嘴", weights: { HOUJ: 1, BAOZ: 4, HITER: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_585",
     type: "single",
@@ -1689,7 +1692,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "设十个闹钟但听不见", weights: { BUG: 2, NPC: 3, SLEEP: 1 } },
       { id: "E", text: "直接请假", weights: { IMFW: 3, XIAN: 1, YOLO: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_586",
     type: "single",
@@ -1701,7 +1704,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "发完秒删", weights: { EMO: 1, WEMO: 3, WONANG: 1 } },
       { id: "E", text: "只发工作相关", weights: { SERF: 2, BOSS: 2, PDF: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_587",
     type: "single",
@@ -1713,7 +1716,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "抢劫便利店", weights: { HUIM: 2, YOLO: 1, PING: 1 } },
       { id: "E", text: "发最后一条朋友圈", weights: { BIAO: 1, ZIL: 1, FOMO: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_588",
     type: "single",
@@ -1725,7 +1728,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "工作文件", weights: { BOSS: 2, SERF: 2, PDF: 2 } },
       { id: "E", text: "空的，定期清理", weights: { GHOST: 1, JIEP: 1, KONG: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_589",
     type: "single",
@@ -1737,7 +1740,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "只对熟悉的人疯", weights: { WAIF: 2, YINY: 2, NPC: 4 } },
       { id: "E", text: "社交是什么？能吃吗", weights: { NPC: 1, IMFW: 2, SLEEP: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_590",
     type: "single",
@@ -1749,7 +1752,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "积极发言但全是废话", weights: { BOSS: 1, BIAO: 1, VIP: 1 } },
       { id: "E", text: "努力不睡着", weights: { SLEEP: 2, WEMO: 1, WONANG: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_single_591",
     type: "single",
@@ -1761,7 +1764,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "永远不用上班", weights: { IMFW: 2, XIAN: 1, SERF: 1 } },
       { id: "E", text: "没有理想，活着就行", weights: { XIAN: 3, WONANG: 1, NPC: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_592",
     type: "single",
@@ -1773,7 +1776,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "已读不回", weights: { GHOST: 1, HEIH: 2, LENGL: 4 } },
       { id: "E", text: "借口去洗澡然后消失", weights: { YINY: 4, NPC: 1, IMFW: 4 } }
     ]
-  },,
+  },
 {
     id: "Q_single_593",
     type: "single",
@@ -1785,7 +1788,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "帮别人挑的礼物", weights: { DAREN: 3, SHEK: 1, TAOH: 2 } },
       { id: "E", text: "空的，我理性消费", weights: { GHOST: 2, JIEP: 1, BOSS: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_single_594",
     type: "single",
@@ -1797,7 +1800,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "笑死", weights: { CHAO: 3, TROLL: 1, GIF: 2 } },
       { id: "E", text: "好的收到", weights: { SERF: 1, BOSS: 1, NPC: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_595",
     type: "single",
@@ -1809,7 +1812,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "不想未来", weights: { SLEEP: 4, WONANG: 1, GHOST: 4 } },
       { id: "E", text: "未来会好的（自我洗脑）", weights: { POET: 2, BIAO: 4, NORM: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_single_596",
     type: "single",
@@ -1821,7 +1824,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "D", text: "溜之大吉", weights: { GHOST: 1, IMFW: 3, YOLO: 2 } },
       { id: "E", text: "当场崩溃", weights: { BENG: 3, WEMO: 1, BIAO: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_011",
     type: "multi",
@@ -1834,7 +1837,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "闹钟响了再睡五分钟", weights: { SLEEP: 2, TUOY: 1, IMFW: 2 } },
       { id: "F", text: "买东西凑满减", weights: { XIAOQI: 3, DOGE: 2, FUDI: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_012",
     type: "multi",
@@ -1847,7 +1850,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "自恋", weights: { ZIL: 2, VIP: 1, BIAO: 3 } },
       { id: "F", text: "多疑", weights: { JING: 1, BEIH: 1, YUAN: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_013",
     type: "multi",
@@ -1860,7 +1863,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "插队", weights: { HOUJ: 1, BAOZ: 1, VIP: 1 } },
       { id: "F", text: "半夜噪音", weights: { HOUJ: 1, BAOZ: 3, KONG: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_014",
     type: "multi",
@@ -1873,7 +1876,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "尊嘟假嘟", weights: { ZUND: 3, JUEJ: 1, DUNJ: 1 } },
       { id: "F", text: "泰裤辣", weights: { TAIK: 1, YOLO: 3, BABI: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_015",
     type: "multi",
@@ -1886,7 +1889,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "知乎", weights: { LIKE: 1, DYOR: 3, GANG: 1 } },
       { id: "F", text: "豆瓣", weights: { CHAO: 3, LIKE: 1, POET: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_016",
     type: "multi",
@@ -1899,7 +1902,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "刷剧打游戏", weights: { SAIBO: 3, DIAN: 2, SLEEP: 3 } },
       { id: "F", text: "学习充电", weights: { BOSS: 1, KONG: 3, CODE: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_017",
     type: "multi",
@@ -1912,7 +1915,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "考古学家", weights: { YUYA: 3, KAOG: 3, DYOR: 1 } },
       { id: "F", text: "引流狗", weights: { SHUI: 2, SERF: 2, NPC: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_018",
     type: "multi",
@@ -1925,7 +1928,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "被贬低", weights: { WONANG: 2, BEIH: 1, MAIM: 2 } },
       { id: "F", text: "被道德绑架", weights: { SHENG: 3, CPU: 1, WONANG: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_019",
     type: "multi",
@@ -1938,7 +1941,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "逆天", weights: { CHAO: 2, LIKE: 1, GANG: 1 } },
       { id: "F", text: "好家伙", weights: { CHIG: 1, NPC: 3, DUNJ: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_020",
     type: "multi",
@@ -1951,7 +1954,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "发疯文学", weights: { WEMO: 2, BENG: 2, POET: 1 } },
       { id: "F", text: "躺平摆烂", weights: { IMFW: 2, XIAN: 3, SLEEP: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_021",
     type: "multi",
@@ -1964,7 +1967,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "占小便宜", weights: { LAI: 1, XIAOQI: 2, TROLL: 2 } },
       { id: "F", text: "大声打电话", weights: { HOUJ: 3, BAOZ: 1, KONG: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_022",
     type: "multi",
@@ -1977,7 +1980,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "徒步露营", weights: { BOSS: 1, OPEN: 3, YOLO: 1 } },
       { id: "F", text: "博物馆看展", weights: { DEEP: 2, NORM: 3, POET: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_023",
     type: "multi",
@@ -1990,7 +1993,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "不买立省 100%", weights: { IMFW: 3, GHOST: 1, XIAOQI: 1 } },
       { id: "F", text: "只买贵的", weights: { VIP: 1, BOSS: 3, XUAN: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_024",
     type: "multi",
@@ -2003,7 +2006,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "写小作文", weights: { POET: 2, WEMO: 2, WONANG: 3 } },
       { id: "F", text: "直接分手", weights: { BOSS: 3, PING: 3, YOLO: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_025",
     type: "multi",
@@ -2016,7 +2019,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "成为网红", weights: { ZIL: 1, XUAN: 2, BIAO: 2 } },
       { id: "F", text: "改变世界", weights: { BOSS: 3, GROK: 2, SHENG: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_026",
     type: "multi",
@@ -2029,7 +2032,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "被迫营业", weights: { NPC: 1, SERF: 2, BIAO: 1 } },
       { id: "F", text: "只参加有利益相关的局", weights: { BOSS: 1, VIP: 2, CPU: 3 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_027",
     type: "multi",
@@ -2042,7 +2045,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "吃瓜路人", weights: { CHIG: 1, NPC: 2, SAIBO: 2 } },
       { id: "F", text: "喷子", weights: { KEYB: 2, GANG: 2, HITER: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_028",
     type: "multi",
@@ -2055,7 +2058,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "追剧", weights: { SAIBO: 3, DIAN: 1, NPC: 2 } },
       { id: "F", text: "买买买", weights: { YOLO: 1, EMO: 1, BENG: 1 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_029",
     type: "multi",
@@ -2068,7 +2071,7 @@ export const QUESTION_LIBRARY: Question[] = [
       { id: "E", text: "事业批", weights: { BOSS: 3, SERF: 2, CODE: 1 } },
       { id: "F", text: "emo 怪", weights: { WEMO: 1, EMO: 2, BENG: 2 } }
     ]
-  },,
+  },
 {
     id: "Q_multi_030",
     type: "multi",

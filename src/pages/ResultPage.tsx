@@ -1,6 +1,14 @@
 import { useEffect, useState, useRef, type RefObject } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { RefreshCw, Share2, Activity, Image as ImageIcon } from 'lucide-react';
+import { RefreshCw, Share2, Activity, Image as ImageIcon, Mail } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from '@/components/ui/dialog';
 import type { TestResult } from '@/types';
 import { TYPE_LIBRARY } from '@/data/types';
 import { generateFullRoast, getConfidenceLabel, getConfidenceDescription } from '@/logic/copywriter';
@@ -63,6 +71,8 @@ export default function ResultPage() {
   const result = location.state?.result as TestResult | undefined;
   const [showPseudo, setShowPseudo] = useState(false);
   const [showShareCard, setShowShareCard] = useState(false);
+  const [showEmailDialog, setShowEmailDialog] = useState(false);
+  const [email, setEmail] = useState('');
   const roast = result ? generateFullRoast(result) : '';
   const confidencePct = result ? Math.round(result.confidence * 100) : 0;
   const animatedConfidence = useCountUp(confidencePct, 1500);
@@ -84,6 +94,30 @@ export default function ResultPage() {
   const maxScore = topDimensions[0]?.score || 1;
 
   const handleRestart = () => navigate('/');
+
+  const handleSendEmail = () => {
+    if (!email || !email.includes('@')) {
+      alert('请输入有效的邮箱地址');
+      return;
+    }
+    const subject = encodeURIComponent(`我的 SBTI 测试结果：${result.primaryType}-${typeInfo.name}`);
+    const bodyLines = [
+      `你的 SBTI 类型：${result.primaryType} - ${typeInfo.name}`,
+      `置信度：${confidencePct}%（${confidenceLabel}）`,
+      ``,
+      `【分析结果】`,
+      roast,
+      ``,
+      `【维度分析 TOP 5】`,
+      ...topDimensions.map(({ type, score }) => `${TYPE_LIBRARY[type].name} (${type})：${score.toFixed(0)}`),
+      ``,
+      `—— 来自 SBTI-Engine 3.0`,
+    ];
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    setShowEmailDialog(false);
+    setEmail('');
+  };
 
   const handleShare = () => {
     const text = `我的SBTI类型是【${result.primaryType}-${typeInfo.name}】，置信度${confidencePct}%！快来测测你是什么贵物~`;
@@ -198,7 +232,7 @@ export default function ResultPage() {
         </div>
 
         {/* Actions */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <button onClick={handleRestart} className="flex items-center justify-center gap-2 h-12 rounded-xl neu-convex neu-convex-hover neu-convex-active font-semibold text-[var(--neu-text)]">
             <RefreshCw className="w-5 h-5" />
             重新测试
@@ -211,8 +245,47 @@ export default function ResultPage() {
             <ImageIcon className="w-5 h-5" />
             生成卡片
           </button>
+          <button onClick={() => setShowEmailDialog(true)} className="flex items-center justify-center gap-2 h-12 rounded-xl neu-flat neu-flat-hover neu-flat-active font-semibold text-[var(--neu-text)]">
+            <Mail className="w-5 h-5" />
+            发送报告
+          </button>
         </div>
       </div>
+
+      {/* Email Dialog */}
+      <Dialog open={showEmailDialog} onOpenChange={setShowEmailDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>发送测试报告到邮箱</DialogTitle>
+            <DialogDescription>
+              输入你的邮箱地址，我们将通过邮件客户端为你生成完整的测试报告邮件。
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 py-4">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="your@email.com"
+              className="w-full h-12 px-4 rounded-xl neu-concave bg-transparent text-[var(--neu-text)] placeholder:text-[var(--neu-text-soft)] outline-none focus:ring-2 focus:ring-[var(--neu-text-soft)]/30"
+            />
+          </div>
+          <DialogFooter className="sm:justify-end gap-2">
+            <button
+              onClick={() => setShowEmailDialog(false)}
+              className="px-4 h-10 rounded-xl neu-convex font-medium text-[var(--neu-text)]"
+            >
+              取消
+            </button>
+            <button
+              onClick={handleSendEmail}
+              className="px-4 h-10 rounded-xl neu-flat font-medium text-[var(--neu-text)]"
+            >
+              打开邮件客户端
+            </button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
