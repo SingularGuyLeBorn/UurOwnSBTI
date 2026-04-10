@@ -83,6 +83,7 @@ export default function QuizPage() {
   const [showStabilityTip, setShowStabilityTip] = useState(false);
   const [showSkipTip, setShowSkipTip] = useState(false);
   const [showRandomTip, setShowRandomTip] = useState(false);
+  const [revealedHidden, setRevealedHidden] = useState<Set<string>>(new Set());
   
   // 智能提示状态
   const [fastClickToast, setFastClickToast] = useState(false);
@@ -444,29 +445,29 @@ export default function QuizPage() {
         {/* 选项 */}
         <div className="space-y-2 mb-6">
           {/* 单选 */}
-          {currentQuestion.type === 'single' && currentQuestion.options?.map((option) => (
+          {currentQuestion.type === 'single' && currentQuestion.options?.filter(o => !o.hidden || revealedHidden.has(currentQuestion.id)).map((option) => (
             <button
               key={option.id}
               onClick={() => handleSingleSelect(option.id)}
               className={`w-full flex items-center gap-3 p-3 rounded-lg border-2 text-left transition-colors ${
                 currentAnswer?.optionId === option.id
                   ? 'border-blue-500 bg-blue-50'
-                  : 'border-gray-200 bg-white hover:border-blue-300'
+                  : option.hidden ? 'border-purple-200 bg-purple-50 hover:border-purple-400' : 'border-gray-200 bg-white hover:border-blue-300'
               }`}
             >
               <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                currentAnswer?.optionId === option.id ? 'border-blue-500 bg-blue-500' : 'border-gray-300'
+                currentAnswer?.optionId === option.id ? 'border-blue-500 bg-blue-500' : option.hidden ? 'border-purple-400' : 'border-gray-300'
               }`}>
                 {currentAnswer?.optionId === option.id && <div className="w-1.5 h-1.5 bg-white rounded-full" />}
               </div>
-              <span className="text-sm text-gray-700">{option.text}</span>
+              <span className={`text-sm ${option.hidden ? 'text-purple-700' : 'text-gray-700'}`}>{option.text}</span>
             </button>
           ))}
 
           {/* 多选 */}
           {currentQuestion.type === 'multi' && (
             <>
-              {currentQuestion.options?.map((option) => {
+              {currentQuestion.options?.filter(o => !o.hidden || revealedHidden.has(currentQuestion.id)).map((option) => {
                 const selectedIds = currentAnswer?.optionId?.split(',') || [];
                 const isSelected = selectedIds.includes(option.id);
                 return (
@@ -474,15 +475,15 @@ export default function QuizPage() {
                     key={option.id}
                     onClick={() => handleMultiSelect(option.id)}
                     className={`w-full flex items-center gap-3 p-3 rounded-lg border-2 text-left transition-colors ${
-                      isSelected ? 'border-blue-500 bg-blue-50' : 'border-gray-200 bg-white hover:border-blue-300'
+                      isSelected ? 'border-blue-500 bg-blue-50' : option.hidden ? 'border-purple-200 bg-purple-50 hover:border-purple-400' : 'border-gray-200 bg-white hover:border-blue-300'
                     }`}
                   >
                     <div className={`w-4 h-4 rounded border-2 flex items-center justify-center ${
-                      isSelected ? 'border-blue-500 bg-blue-500' : 'border-gray-300'
+                      isSelected ? 'border-blue-500 bg-blue-500' : option.hidden ? 'border-purple-400' : 'border-gray-300'
                     }`}>
                       {isSelected && <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>}
                     </div>
-                    <span className="text-sm text-gray-700">{option.text}</span>
+                    <span className={`text-sm ${option.hidden ? 'text-purple-700' : 'text-gray-700'}`}>{option.text}</span>
                   </button>
                 );
               })}
@@ -490,6 +491,20 @@ export default function QuizPage() {
                 确认选择
               </Button>
             </>
+          )}
+
+          {/* 隐藏选项开关 */}
+          {currentQuestion.options && currentQuestion.options.some(o => o.hidden) && !revealedHidden.has(currentQuestion.id) && (
+            <button
+              onClick={() => {
+                const newSet = new Set(revealedHidden);
+                newSet.add(currentQuestion.id);
+                setRevealedHidden(newSet);
+              }}
+              className="w-full py-2 text-sm text-purple-600 border border-dashed border-purple-300 rounded-lg hover:bg-purple-50 transition-colors"
+            >
+              🌱 解锁植物系隐藏选项
+            </button>
           )}
 
           {/* 填空 */}

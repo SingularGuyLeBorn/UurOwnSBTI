@@ -1,7 +1,7 @@
 import type { TypeProfile, SBTITypeCode } from '@/types';
 
 /**
- * 44种人格类型完整定义
+ * 49种人格类型完整定义
  */
 export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
   // === 经典亚文化型（30种）===
@@ -626,6 +626,130 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     </svg>`
   },
   
+  // === 植物大战僵尸型（5种）===
+  XPENG: {
+    code: 'XPENG',
+    name: '小喷菇',
+    englishName: 'Puff-shroom',
+    keywords: ['免费劳动力', '射程短但无畏', '弱小可怜但能打', '夜班专业户', '0成本消耗品', '天亮就消失'],
+    svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#1a0a2e" width="200" height="200"/>
+      <ellipse cx="100" cy="100" rx="30" ry="25" fill="#9b59b6">
+        <animate attributeName="rx" values="30;32;30" dur="1.5s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="90" cy="95" r="4" fill="#fff"/>
+      <circle cx="110" cy="95" r="4" fill="#fff"/>
+      <circle cx="100" cy="108" r="3" fill="#333"/>
+      <g opacity="0.7">
+        <circle cx="135" cy="100" r="6" fill="#e74c3c"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0;30,0;0,0" dur="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0;0.7" dur="1.2s" repeatCount="indefinite"/>
+      </g>
+      <text x="100" y="160" text-anchor="middle" font-size="10" fill="#9b59b6">免费但拼命</text>
+    </svg>`
+  },
+
+  DPENG: {
+    code: 'DPENG',
+    name: '大喷菇',
+    englishName: 'Fume-shroom',
+    keywords: ['AOE喷子', '穿透伤害', '范围攻击', '群体破防', '口臭攻击', '一喷一片'],
+    svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#1a0a1a" width="200" height="200"/>
+      <ellipse cx="100" cy="95" rx="45" ry="40" fill="#8e44ad">
+        <animate attributeName="ry" values="40;42;40" dur="1s" repeatCount="indefinite"/>
+      </ellipse>
+      <circle cx="85" cy="88" r="5" fill="#fff"/>
+      <circle cx="115" cy="88" r="5" fill="#fff"/>
+      <ellipse cx="100" cy="105" rx="8" ry="5" fill="#333"/>
+      <g>
+        <ellipse cx="145" cy="95" rx="25" ry="15" fill="#9b59b6" opacity="0.4">
+          <animate attributeName="rx" values="25;40;25" dur="1.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.4;0.1;0.4" dur="1.5s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="145" cy="95" rx="15" ry="8" fill="#9b59b6" opacity="0.6">
+          <animate attributeName="rx" values="15;30;15" dur="1.5s" repeatCount="indefinite"/>
+        </ellipse>
+      </g>
+      <text x="100" y="170" text-anchor="middle" font-size="10" fill="#9b59b6">AOE破防</text>
+    </svg>`
+  },
+
+  WANDOU: {
+    code: 'WANDOU',
+    name: '豌豆射手',
+    englishName: 'Peashooter',
+    keywords: ['单线程输出', '稳定但平庸', '标准打工人', '节奏固定', '一颗一颗来', '职场基干'],
+    svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#0a1a0a" width="200" height="200"/>
+      <circle cx="100" cy="100" r="35" fill="#27ae60"/>
+      <circle cx="90" cy="92" r="5" fill="#fff"/>
+      <circle cx="110" cy="92" r="5" fill="#fff"/>
+      <circle cx="100" cy="108" r="4" fill="#1a5c3a"/>
+      <g>
+        <circle cx="140" cy="100" r="8" fill="#2ecc71">
+          <animateTransform attributeName="transform" type="translate" values="0,0;20,0;0,0" dur="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      <text x="100" y="160" text-anchor="middle" font-size="10" fill="#27ae60">一颗一颗来</text>
+    </svg>`
+  },
+
+  SHUANG: {
+    code: 'SHUANG',
+    name: '双发射手',
+    englishName: 'Repeater',
+    keywords: ['双倍输出', '节奏快', '手速党', '连珠炮', '双倍工资就好了', '效率加倍'],
+    svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#0a1a0a" width="200" height="200"/>
+      <circle cx="100" cy="100" r="38" fill="#27ae60"/>
+      <circle cx="92" cy="92" r="5" fill="#fff"/>
+      <circle cx="108" cy="92" r="5" fill="#fff"/>
+      <ellipse cx="100" cy="110" rx="6" ry="4" fill="#1a5c3a"/>
+      <g>
+        <circle cx="140" cy="95" r="7" fill="#2ecc71">
+          <animateTransform attributeName="transform" type="translate" values="0,0;25,0;0,0" dur="0.8s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="140" cy="105" r="7" fill="#2ecc71">
+          <animateTransform attributeName="transform" type="translate" values="0,0;25,0;0,0" dur="0.8s" begin="0.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0;1" dur="0.8s" begin="0.2s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      <text x="100" y="165" text-anchor="middle" font-size="10" fill="#27ae60">哒哒哒哒</text>
+    </svg>`
+  },
+
+  SANXIAN: {
+    code: 'SANXIAN',
+    name: '三线射手',
+    englishName: 'Threepeater',
+    keywords: ['多线程处理', '覆盖面广', '同时干三件事', '三心二意但有用', '全域监控', '分散投资'],
+    svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <rect fill="#0a1a0a" width="200" height="200"/>
+      <circle cx="100" cy="100" r="40" fill="#27ae60"/>
+      <circle cx="90" cy="92" r="5" fill="#fff"/>
+      <circle cx="110" cy="92" r="5" fill="#fff"/>
+      <circle cx="100" cy="108" r="4" fill="#1a5c3a"/>
+      <g>
+        <circle cx="140" cy="80" r="6" fill="#2ecc71">
+          <animateTransform attributeName="transform" type="translate" values="0,0;20,0;0,0" dur="0.9s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0;1" dur="0.9s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="140" cy="100" r="6" fill="#2ecc71">
+          <animateTransform attributeName="transform" type="translate" values="0,0;20,0;0,0" dur="0.9s" begin="0.15s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0;1" dur="0.9s" begin="0.15s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="140" cy="120" r="6" fill="#2ecc71">
+          <animateTransform attributeName="transform" type="translate" values="0,0;20,0;0,0" dur="0.9s" begin="0.3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0;1" dur="0.9s" begin="0.3s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      <text x="100" y="165" text-anchor="middle" font-size="10" fill="#27ae60">三线齐发</text>
+    </svg>`
+  },
+
   // === 特殊行为型（2种）===
   RUSHI: {
     code: 'RUSHI',

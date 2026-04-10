@@ -56,7 +56,7 @@ export default function HomePage() {
                 <div className="bg-gray-50 p-2 rounded">
                   <div className="flex items-center gap-1 mb-1">
                     <Brain className="w-4 h-4 text-blue-500" />
-                    <span className="font-medium text-gray-800">44种人格</span>
+                    <span className="font-medium text-gray-800">49种人格</span>
                   </div>
                   <p className="text-xs">30亚文化型+10AI型+2特殊型</p>
                 </div>

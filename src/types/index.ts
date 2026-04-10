@@ -2,13 +2,13 @@
  * SBTI-Engine 3.0 类型定义
  */
 
-// 44种人格类型代码
+// 49种人格类型代码
 export type SBTITypeCode =
   | 'SEXY' | 'IMFW' | 'HITER' | 'WONANG' | 'SLEEP' | 'GIVEU' | 'POET' | 'DOGE' | 'BOSS' | 'NPC'
   | 'BUG' | '404' | 'VIP' | 'EMO' | 'CPU' | 'KFC' | 'DNA' | 'PDF' | 'GIF' | 'JPG'
   | 'FOMO' | 'YOLO' | 'FUDI' | 'HODL' | 'DYOR' | 'SERF' | 'GHOST' | 'TROLL' | 'WEEB' | 'NORM'
   | 'DEEP' | 'OPEN' | 'GROK' | 'CLAUD' | 'DOUB' | 'GEMI' | 'PUZZ' | 'MIDI' | 'CODE' | 'SORA'
-  | 'SHENJ' | 'DAWEI' | 'RUSHI' | 'RAND';
+  | 'SHENJ' | 'DAWEI' | 'XPENG' | 'DPENG' | 'WANDOU' | 'SHUANG' | 'SANXIAN' | 'RUSHI' | 'RAND';
 
 // 题目类型
 export type QuestionType = 'single' | 'multi' | 'fill';
@@ -18,6 +18,7 @@ export interface Option {
   id: string;
   text: string;
   weights: Partial<Record<SBTITypeCode, number>>;
+  hidden?: boolean;
 }
 
 // 填空选项
