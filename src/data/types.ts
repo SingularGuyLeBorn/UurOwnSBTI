@@ -27,7 +27,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
           <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
       </defs>
-      <rect fill="url(#sexyGrad)" width="200" height="200"/>
+      
       <path d="M100 25 L123 78 L175 83 L133 118 L150 175 L100 148 L50 175 L67 118 L25 83 L77 78 Z" fill="url(#heartGrad)" filter="url(#glow)"/>
       <circle cx="100" cy="100" r="40" fill="none" stroke="#ff1493" stroke-width="2" stroke-dasharray="8,4" opacity="0.8"/>
       <circle cx="100" cy="100" r="50" fill="none" stroke="#ff69b4" stroke-width="1" stroke-dasharray="4,8" opacity="0.5"/>
@@ -106,7 +106,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
           <stop offset="100%" stop-color="#1a0a2e"/>
         </radialGradient>
       </defs>
-      <rect fill="url(#shroomGrad)" width="200" height="200"/>
+      
       <rect x="85" y="110" width="30" height="60" fill="#d4a574" rx="8"/>
       <ellipse cx="100" cy="90" rx="45" ry="35" fill="#9b59b6">
         <animate attributeName="ry" values="35;25;35" dur="2s" repeatCount="indefinite"/>
@@ -136,7 +136,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Give Up',
     keywords: ['完美主义瘫痪', 'flag殡葬', '明天开始', '计划表是行为艺术', '从入门到放弃', '白旗树懒'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#2d3436" width="200" height="200"/>
+      
       <rect x="60" y="40" width="80" height="100" fill="#636e72" rx="3"/>
       <path d="M100 150 L100 40" stroke="#fff" stroke-width="3"/>
       <path d="M100 40 L140 55 L100 70" fill="#fff"/>
@@ -162,7 +162,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Doge',
     keywords: ['自我感动', '批量深情', '流泪复制机', '拼多多砍一刀式爱情', '已读不回专业户', '备胎成精'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#3d2817" width="200" height="200"/>
+      
       <ellipse cx="100" cy="110" rx="45" ry="40" fill="#d4a574"/>
       <ellipse cx="80" cy="95" rx="12" ry="15" fill="#fff"/>
       <ellipse cx="120" cy="95" rx="12" ry="15" fill="#fff"/>
@@ -261,7 +261,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Emo',
     keywords: ['午夜疼痛', '定时崩溃', '23:00自动开启', '没人懂我', '褪黑素广告主角', '疼痛文学活体'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0d1117" width="200" height="200"/>
+      
       <circle cx="100" cy="90" r="50" fill="#21262d"/>
       <circle cx="80" cy="85" r="5" fill="#58a6ff"/>
       <circle cx="120" cy="85" r="5" fill="#58a6ff"/>
@@ -275,7 +275,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'CPU Master',
     keywords: ['煤气灯', '精神控制', '脑子里拧螺丝', '让你怀疑自己色盲', '关系暴君', 'gaslighting米其林三星'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#1a0a0a" width="200" height="200"/>
+      
       <rect x="60" y="60" width="80" height="80" fill="#2d1f1f" rx="5"/>
       <text x="100" y="108" text-anchor="middle" font-size="20" fill="#e74c3c" font-weight="bold">CPU</text>
       <circle cx="40" cy="40" r="8" fill="#e74c3c"/>
@@ -291,7 +291,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'KFC',
     keywords: ['meme寄生', '梗小鬼', '疯狂星期四', 'vivo50', '不会说话只会转发', 'copypasta之王'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#8b0000" width="200" height="200"/>
+      
       <rect x="50" y="60" width="100" height="80" fill="#fff" rx="5"/>
       <text x="100" y="95" text-anchor="middle" font-size="16" fill="#8b0000" font-weight="bold">KFC</text>
       <text x="100" y="115" text-anchor="middle" font-size="10" fill="#8b0000">疯狂星期四</text>
@@ -318,7 +318,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'PDF',
     keywords: ['信息熵敌人', '官僚话术', '卡纸打印机', '又臭又长', '关于这个事的那个事的说明的通知'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#2c3e50" width="200" height="200"/>
+      
       <rect x="60" y="40" width="80" height="100" fill="#ecf0f1" rx="3"/>
       <rect x="75" y="150" width="50" height="20" fill="#e74c3c" rx="3"/>
       <text x="100" y="164" text-anchor="middle" font-size="10" fill="#fff">卡纸中</text>
@@ -359,7 +359,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'FOMO',
     keywords: ['热点强迫症', '刷新成瘾', '生怕错过', '通知栏人质', '错过一个亿', '永远在线永远焦虑'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0d1117" width="200" height="200"/>
+      
       <rect x="60" y="50" width="80" height="100" fill="#21262d" rx="5"/>
       <circle cx="140" cy="60" r="8" fill="#f85149"/>
       <text x="140" y="64" text-anchor="middle" font-size="8" fill="#fff">99+</text>
@@ -373,7 +373,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'YOLO',
     keywords: ['冲动消费', '极限体验', '不管明天', '信用卡VIP', '意外险受益者', '及时行乐'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#1a0a00" width="200" height="200"/>
+      
       <path d="M100 40 L120 90 L170 100 L130 140 L145 190 L100 160 L55 190 L70 140 L30 100 L80 90 Z" fill="#ff6b00"/>
       <text x="100" y="115" text-anchor="middle" font-size="20" fill="#fff" font-weight="bold">YOLO</text>
     </svg>`
@@ -385,7 +385,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'FUD',
     keywords: ['听风就是雨', '贩卖焦虑接盘侠', '投资恐慌', '别人喊狼你就跑', '结果发现是狗', '绿色爱好者'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0a1a0a" width="200" height="200"/>
+      
       <path d="M50 150 L50 100 Q50 80 70 80 Q90 80 90 100 L90 150" fill="#27ae60"/>
       <path d="M110 150 L110 70 Q110 50 130 50 Q150 50 150 70 L150 150" fill="#27ae60"/>
       <text x="100" y="180" text-anchor="middle" font-size="10" fill="#27ae60">-99.99%</text>
@@ -449,7 +449,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Troll',
     keywords: ['钓鱼狂', '以激怒为乐', '纯乐子人', '混乱中立', '桥洞下钓鱼', '世界燃烧观察者'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#1a1a00" width="200" height="200"/>
+      
       <circle cx="100" cy="90" r="40" fill="#27ae60"/>
       <rect x="80" y="130" width="40" height="30" fill="#8b4513" rx="5"/>
       <text x="100" y="175" text-anchor="middle" font-size="12" fill="#27ae60">钓鱼中...</text>
@@ -488,7 +488,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'DeepSeek',
     keywords: ['后发先至', '深渊修显卡', '技术暴力', '吃泡面干大事', '性价比刺客', '二手4090战神'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0a0a1a" width="200" height="200"/>
+      
       <rect x="60" y="60" width="80" height="60" fill="#1a1a2e" rx="3"/>
       <text x="100" y="95" text-anchor="middle" font-size="14" fill="#58a6ff" font-family="monospace">DeepSeek</text>
       <text x="100" y="180" text-anchor="middle" font-size="10" fill="#58a6ff">深渊修显卡</text>
@@ -514,7 +514,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Grok',
     keywords: ['法外狂徒', '火星混球', '零审查', '雪茄激光眼', '政治正确耳光射手', '危险发言者'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#1a0a00" width="200" height="200"/>
+      
       <circle cx="100" cy="90" r="40" fill="#c0392b"/>
       <text x="100" y="155" text-anchor="middle" font-size="14" fill="#c0392b" font-weight="bold">GROK</text>
       <text x="100" y="175" text-anchor="middle" font-size="10" fill="#f39c12">火星混球</text>
@@ -553,7 +553,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Gemini',
     keywords: ['全知无能', '大厂官僚', '多头龙钉服务器', '知识囤积', '选择困难', '学术瘫痪'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0a0a1a" width="200" height="200"/>
+      
       <circle cx="70" cy="80" r="25" fill="#4285f4" opacity="0.7"/>
       <circle cx="100" cy="80" r="25" fill="#ea4335" opacity="0.7"/>
       <circle cx="130" cy="80" r="25" fill="#fbbc05" opacity="0.7"/>
@@ -570,7 +570,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Perplexity',
     keywords: ['问号成精', '搜索焦虑', 'Google当心理医生', '来源请求狂', '信息饥渴症'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0d1117" width="200" height="200"/>
+      
       <text x="100" y="100" text-anchor="middle" font-size="72" fill="#58a6ff" font-weight="bold">?</text>
       <text x="100" y="170" text-anchor="middle" font-size="10" fill="#8b949e">来源请求</text>
     </svg>`
@@ -605,7 +605,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Copilot',
     keywords: ['Tab键成瘾', '代码自闭症', '离AI不会写函数', '自动补全幽灵', 'GitHub章鱼猫附身'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0d1117" width="200" height="200"/>
+      
       <path d="M100 50 Q130 50 130 80 Q130 110 100 110 Q70 110 70 80 Q70 50 100 50" fill="#f97583"/>
       <rect x="60" y="120" width="80" height="40" fill="#21262d" rx="3"/>
       <text x="100" y="145" text-anchor="middle" font-size="10" fill="#58a6ff" font-family="monospace">Tab Tab Tab</text>
@@ -633,7 +633,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Puff-shroom',
     keywords: ['免费劳动力', '射程短但无畏', '弱小可怜但能打', '夜班专业户', '0成本消耗品', '天亮就消失'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#1a0a2e" width="200" height="200"/>
+      
       <ellipse cx="100" cy="100" rx="30" ry="25" fill="#9b59b6">
         <animate attributeName="rx" values="30;32;30" dur="1.5s" repeatCount="indefinite"/>
       </ellipse>
@@ -681,7 +681,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Peashooter',
     keywords: ['单线程输出', '稳定但平庸', '标准打工人', '节奏固定', '一颗一颗来', '职场基干'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0a1a0a" width="200" height="200"/>
+      
       <circle cx="100" cy="100" r="35" fill="#27ae60"/>
       <circle cx="90" cy="92" r="5" fill="#fff"/>
       <circle cx="110" cy="92" r="5" fill="#fff"/>
@@ -702,7 +702,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Repeater',
     keywords: ['双倍输出', '节奏快', '手速党', '连珠炮', '双倍工资就好了', '效率加倍'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0a1a0a" width="200" height="200"/>
+      
       <circle cx="100" cy="100" r="38" fill="#27ae60"/>
       <circle cx="92" cy="92" r="5" fill="#fff"/>
       <circle cx="108" cy="92" r="5" fill="#fff"/>
@@ -727,7 +727,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Threepeater',
     keywords: ['多线程处理', '覆盖面广', '同时干三件事', '三心二意但有用', '全域监控', '分散投资'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#0a1a0a" width="200" height="200"/>
+      
       <circle cx="100" cy="100" r="40" fill="#27ae60"/>
       <circle cx="90" cy="92" r="5" fill="#fff"/>
       <circle cx="110" cy="92" r="5" fill="#fff"/>
@@ -757,7 +757,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'Rusher',
     keywords: ['连测试都等不及', '量子急躁体', 'instant gratification肉体化身', 'ADHD实体化', '火箭解体兔子'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#1a0a00" width="200" height="200"/>
+      
       <path d="M100 40 L110 80 L150 85 L115 110 L125 150 L100 125 L75 150 L85 110 L50 85 L90 80 Z" fill="#e74c3c"/>
       <text x="100" y="185" text-anchor="middle" font-size="12" fill="#e74c3c">快！快！快！</text>
     </svg>`
@@ -789,7 +789,7 @@ export const TYPE_LIBRARY: Record<SBTITypeCode, TypeProfile> = {
     englishName: 'David Dai',
     keywords: ['胃袋控制大脑', '碳水教父', '吃播成精', '情绪不够饭来凑', '嘴巴不停脑子不转', '万物皆可炫'],
     svgDescription: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <rect fill="#2d1b0f" width="200" height="200"/>
+      
       <ellipse cx="100" cy="110" rx="55" ry="50" fill="#f4a460"/>
       <ellipse cx="100" cy="90" rx="20" ry="12" fill="#8b0000">
         <animate attributeName="ry" values="12;18;12" dur="1s" repeatCount="indefinite"/>

@@ -2,22 +2,13 @@ import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, ArrowLeft, Sparkles, X } from 'lucide-react';
 import { TYPE_LIBRARY } from '@/data/types';
-import { SLOT_LIBRARY } from '@/data/slots';
+import { generateRoast } from '@/logic/copywriter';
 import type { SBTITypeCode, TypeProfile } from '@/types';
 
 function TypeModal({ code, type, onClose }: { code: SBTITypeCode; type: TypeProfile; onClose: () => void }) {
-  const slot = SLOT_LIBRARY[code];
-  const description = useMemo(() => {
-    if (!slot) return '暂无描述';
-    return [
-      `【${type.name}】是 ${type.keywords.join('、')} 的集合体。`,
-      ``,
-      `👉 本质：${slot.opening[0]}`,
-      `👉 日常：${slot.scenario[0]}`,
-      `👉 预警：${slot.warning[0]}`,
-      `👉 出路：${slot.career[0]}`,
-    ].join('\n');
-  }, [type, slot]);
+  const roast = useMemo(() => {
+    return generateRoast(code, 0.85, false, 88);
+  }, [code]);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4 py-6">
@@ -60,7 +51,7 @@ function TypeModal({ code, type, onClose }: { code: SBTITypeCode; type: TypeProf
 
         <div className="neu-pressed p-5 rounded-xl">
           <p className="text-sm sm:text-base text-[var(--neu-text)] leading-relaxed whitespace-pre-line">
-            {description}
+            {roast}
           </p>
         </div>
       </div>
