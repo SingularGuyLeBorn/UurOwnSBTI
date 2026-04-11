@@ -1,15 +1,34 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, SkipForward, Dice5, HelpCircle, AlertCircle, Clock, CheckCircle2 } from 'lucide-react';
 import type { Question, SBTITypeCode } from '@/types';
 import { QUESTION_LIBRARY, sampleQuestions } from '@/data/questions';
-import { calculateResult, generateRushiResult, generateRandomResult } from '@/logic/scoring';
+import { calculateResult, generateRushiResult, generateRandomResult, calculateBaseScores, sortTypesByScore } from '@/logic/scoring';
 
 interface Answer {
   optionId: string;
 }
 
 const STORAGE_KEY = 'SBTI_QUIZ_PROGRESS';
+
+const HIDDEN_THEMES = [
+  { emoji: '🌱', text: '解锁植物系隐藏选项' },
+  { emoji: '👻', text: '召唤幽灵级隐藏选项' },
+  { emoji: '💎', text: '发掘钻石隐藏选项' },
+  { emoji: '🕳️', text: '打开深渊隐藏选项' },
+  { emoji: '🧬', text: '激活变异隐藏选项' },
+  { emoji: '🗝️', text: '开启密室隐藏选项' },
+  { emoji: '🎭', text: '揭开面具隐藏选项' },
+  { emoji: '🔮', text: '占卜隐藏选项' },
+  { emoji: '🧪', text: '合成实验隐藏选项' },
+  { emoji: '🚀', text: '发射太空隐藏选项' },
+  { emoji: '🐉', text: '唤醒龙族隐藏选项' },
+  { emoji: '💀', text: '掘墓隐藏选项' },
+];
+
+function getHiddenTheme(index: number) {
+  return HIDDEN_THEMES[index % HIDDEN_THEMES.length];
+}
 
 function InlineToast({ message, type, onAction, actionText, onClose }: { message: string; type: 'warning' | 'info'; onAction?: () => void; actionText?: string; onClose: () => void }) {
   useEffect(() => {
@@ -192,6 +211,15 @@ export default function QuizPage() {
   const currentQuestion = questions[currentIndex];
   const progress = questions.length > 0 ? ((currentIndex + 1) / questions.length) * 100 : 0;
   const chaosValue = Math.min(100, (currentIndex / questions.length) * 100);
+
+  // Live prediction based on answered questions only
+  const liveTop5 = useMemo(() => {
+    if (answers.size === 0 || questions.length === 0) return [];
+    const scores = calculateBaseScores(answers, questions);
+    const sorted = sortTypesByScore(scores).slice(0, 5);
+    const total = sorted.reduce((sum, s) => sum + s.score, 0) || 1;
+    return sorted.map(s => ({ ...s, probability: s.score / total }));
+  }, [answers, questions]);
 
   const stopSimulation = () => {
     if (simulationTimerRef.current) clearTimeout(simulationTimerRef.current);
@@ -383,6 +411,37 @@ export default function QuizPage() {
         </div>
       </div>
 
+      {/* Live Prediction Panel */}
+      {liveTop5.length > 0 && (
+        <div className="max-w-2xl mx-auto mb-4">
+          <div className="neu-flat p-4">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-xs font-bold text-[var(--neu-text-soft)] uppercase tracking-wide">实时人格预测 TOP 5</span>
+              <span className="text-[10px] text-[var(--neu-text-soft)]">基于已答 {answers.size} 题</span>
+            </div>
+            <div className="space-y-3">
+              {liveTop5.map((item: { type: SBTITypeCode; score: number; probability: number }, idx: number) => (
+                <div key={item.type} className="flex items-center gap-3">
+                  <span className={`text-xs font-black w-5 ${idx === 0 ? 'text-rose-500' : idx === 1 ? 'text-amber-500' : 'text-[var(--neu-text-soft)]'}`}>{idx + 1}</span>
+                  <div className="flex-1">
+                    <div className="flex justify-between items-center mb-1">
+                      <span className="text-sm font-bold text-[var(--neu-text)]">{item.type}</span>
+                      <span className="text-xs font-semibold text-[var(--neu-text-soft)]">{(item.probability * 100).toFixed(1)}%</span>
+                    </div>
+                    <div className="h-2 rounded-full neu-concave overflow-hidden p-0.5">
+                      <div
+                        className={`h-full rounded-full transition-all ${idx === 0 ? 'bg-rose-400' : idx === 1 ? 'bg-amber-400' : 'bg-[var(--neu-text-soft)]/50'}`}
+                        style={{ width: `${Math.max(4, item.probability * 100)}%` }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Simulation banner */}
       {isSimulatingRandom && (
         <div className="max-w-2xl mx-auto mb-4">
@@ -496,7 +555,10 @@ export default function QuizPage() {
               onClick={() => { const newSet = new Set(revealedHidden); newSet.add(currentQuestion.id); setRevealedHidden(newSet); }}
               className="w-full py-3 text-sm text-[var(--neu-text)] neu-flat neu-flat-hover neu-flat-active rounded-xl"
             >
-              🌱 解锁植物系隐藏选项
+              {(() => {
+                const theme = getHiddenTheme(currentIndex);
+                return `${theme.emoji} ${theme.text}`;
+              })()}
             </button>
           )}
         </div>
