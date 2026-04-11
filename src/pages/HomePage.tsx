@@ -18,7 +18,9 @@ const QUESTION_COUNTS = [
   { value: 20, label: '详细' },
   { value: 30, label: '深度' },
   { value: 50, label: '地狱' },
-  { value: 100, label: '自虐' }
+  { value: 100, label: '自虐' },
+  { value: 200, label: '究极' },
+  { value: 500, label: '癫狂' }
 ];
 
 const SHOWCASE_TYPES = [

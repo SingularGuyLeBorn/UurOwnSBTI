@@ -159,7 +159,8 @@ export const WORK_QUESTIONS: Question[] = [
       { id: "B", text: "当天\"发烧\"请假", weights: { BUG: 4, TROLL: 3 } },
       { id: "C", text: "去了但全程摆烂装死", weights: { IMFW: 4, SLEEP: 3 } },
       { id: "D", text: "在群里直接说周末要陪家人", weights: { HITER: 4, NORM: 3 } },
-      { id: "E", text: "报名但当天睡过头", weights: { RAND: 4, SLEEP: 3 } }
+      { id: "E", text: "报名但当天睡过头", weights: { RAND: 4, SLEEP: 3 } },
+      { id: "F", text: "请假说自己已经买了去外地的机票", weights: { YOLO: 3, GEZI: 2 } }
     ]
   },
   {

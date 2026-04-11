@@ -171,6 +171,8 @@ export const SPACE_QUESTIONS: Question[] = [
       { id: 'C', text: '这辈子都不可能买房了，搬家搬到麻木，纸箱就是我的家', weights: { WU: 5 }, hidden: true },
       { id: 'D', text: '立刻关掉手机，眼不见为净', weights: { CHUANG: 2 } },
       { id: 'E', text: '开始计算还要攒多少年首付', weights: { WU: 3 } },
+      { id: 'F', text: '还好我已经买了，坐等升值', weights: { FANG: 4, LICAI: 3 } },
+      { id: 'G', text: '赶紧发给没买房的朋友安慰一下', weights: { TROLL: 3, YINY: 2 } },
     ],
   },
   {

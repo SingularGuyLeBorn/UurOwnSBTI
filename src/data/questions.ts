@@ -15,6 +15,7 @@ import { LITERATURE_QUESTIONS } from './questions/literature';
 import { TECH_QUESTIONS } from './questions/tech';
 import { EMOTION_QUESTIONS } from './questions/emotion';
 import { ABSURD_QUESTIONS } from './questions/absurd';
+import { EXTRA_COVERAGE_QUESTIONS } from './questions/extra_coverage';
 
 /**
  * SBTI-Engine 3.0 完整题库
@@ -38,6 +39,7 @@ export const QUESTION_LIBRARY: Question[] = [
   ...TECH_QUESTIONS,
   ...EMOTION_QUESTIONS,
   ...ABSURD_QUESTIONS,
+  ...EXTRA_COVERAGE_QUESTIONS,
 {
     id: "Q_single_001",
     type: "single",

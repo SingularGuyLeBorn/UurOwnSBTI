@@ -55,7 +55,8 @@ export const TIME_QUESTIONS: Question[] = [
       { id: 'B', text: '报复性娱乐开启，不玩到凌晨不罢休', weights: { ZHOU: 4 } },
       { id: 'C', text: '正常作息，周末再说', weights: { YE: 2 } },
       { id: 'D', text: '已经提前进入假期模式', weights: { JIA: 3 } },
-      { id: 'E', text: '周五不熬夜，这周等于白过', weights: { ZHOU: 5 }, hidden: true },
+      { id: 'E', text: '约朋友出去嗨，夜生活才刚开始', weights: { YOLO: 3, FOMO: 2 } },
+      { id: 'F', text: '周五不熬夜，这周等于白过', weights: { ZHOU: 5 }, hidden: true },
     ],
   },
   {

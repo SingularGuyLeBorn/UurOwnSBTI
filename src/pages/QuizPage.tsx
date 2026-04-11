@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, SkipForward, Dice5, HelpCircle, AlertCircle, Clock } from 'lucide-react';
+import { ChevronLeft, ChevronRight, SkipForward, Dice5, HelpCircle, AlertCircle, Clock, CheckCircle2 } from 'lucide-react';
 import type { Question, SBTITypeCode } from '@/types';
 import { QUESTION_LIBRARY, sampleQuestions } from '@/data/questions';
 import { calculateResult, generateRushiResult, generateRandomResult } from '@/logic/scoring';
@@ -8,6 +8,8 @@ import { calculateResult, generateRushiResult, generateRandomResult } from '@/lo
 interface Answer {
   optionId: string;
 }
+
+const STORAGE_KEY = 'SBTI_QUIZ_PROGRESS';
 
 function InlineToast({ message, type, onAction, actionText, onClose }: { message: string; type: 'warning' | 'info'; onAction?: () => void; actionText?: string; onClose: () => void }) {
   useEffect(() => {
@@ -47,13 +49,36 @@ function getQuestionTypeDesc(type: string): string {
 export default function QuizPage() {
   const navigate = useNavigate();
   const location = useLocation();
-  const questionCount = location.state?.questionCount || 15;
+
+  const [questionCount] = useState<number>(() => {
+    if (location.state?.questionCount) return location.state.questionCount;
+    const saved = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
+    if (saved) {
+      try { const p = JSON.parse(saved); if (p.questionCount) return p.questionCount; } catch {}
+    }
+    return 15;
+  });
+
+  const [sessionSeed] = useState<string>(() => {
+    if (location.state?.sessionSeed) return location.state.sessionSeed;
+    const saved = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
+    if (saved) {
+      try { const p = JSON.parse(saved); if (p.sessionSeed) return p.sessionSeed; } catch {}
+    }
+    return Math.random().toString(36).slice(2);
+  });
+
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Map<string, Answer>>(new Map());
-  const [startTime] = useState<number>(Date.now());
+  const [startTime] = useState<number>(() => {
+    const saved = typeof window !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null;
+    if (saved) {
+      try { const p = JSON.parse(saved); if (p.startTime) return p.startTime; } catch {}
+    }
+    return Date.now();
+  });
   const [timings, setTimings] = useState<Map<string, number>>(new Map());
-  const [sessionSeed] = useState<string>(() => location.state?.sessionSeed || Math.random().toString(36).slice(2));
 
   const [showStabilityTip, setShowStabilityTip] = useState(false);
   const [showSkipTip, setShowSkipTip] = useState(false);
@@ -61,16 +86,54 @@ export default function QuizPage() {
   const [revealedHidden, setRevealedHidden] = useState<Set<string>>(new Set());
   const [fastClickToast, setFastClickToast] = useState(false);
   const [slowToast, setSlowToast] = useState(false);
+  const [isSimulatingRandom, setIsSimulatingRandom] = useState(false);
+
   const lastClickTimeRef = useRef<number>(0);
   const fastClickCountRef = useRef<number>(0);
   const questionStartTimeRef = useRef<number>(Date.now());
   const slowCheckTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const simulationTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  // Load questions (restore from cache or sample)
   useEffect(() => {
+    const hasExplicitState = location.state?.questionCount || location.state?.sessionSeed;
+    if (!hasExplicitState) {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (parsed.questions && parsed.questions.length > 0) {
+            setQuestions(parsed.questions);
+            setCurrentIndex(parsed.currentIndex || 0);
+            setAnswers(new Map(Object.entries(parsed.answers || {})));
+            setTimings(new Map(Object.entries(parsed.timings || {})));
+            if (parsed.revealedHidden) setRevealedHidden(new Set(parsed.revealedHidden));
+            return;
+          }
+        } catch {}
+      }
+    }
     const sampled = sampleQuestions(Math.min(questionCount, QUESTION_LIBRARY.length), sessionSeed);
     setQuestions(sampled);
-  }, [questionCount, sessionSeed]);
+  }, [questionCount, sessionSeed, location.state]);
 
+  // Persist progress
+  useEffect(() => {
+    if (questions.length === 0) return;
+    const payload = {
+      questions,
+      currentIndex,
+      answers: Object.fromEntries(answers),
+      timings: Object.fromEntries(timings),
+      sessionSeed,
+      startTime,
+      questionCount,
+      revealedHidden: Array.from(revealedHidden)
+    };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+  }, [questions, currentIndex, answers, timings, sessionSeed, startTime, questionCount, revealedHidden]);
+
+  // Slow check timer
   useEffect(() => {
     questionStartTimeRef.current = Date.now();
     setSlowToast(false);
@@ -82,9 +145,58 @@ export default function QuizPage() {
     return () => { if (slowCheckTimerRef.current) clearTimeout(slowCheckTimerRef.current); };
   }, [currentIndex, questions, answers]);
 
+  // Random simulation engine
+  useEffect(() => {
+    if (!isSimulatingRandom) return;
+    const q = questions[currentIndex];
+    if (!q) {
+      setIsSimulatingRandom(false);
+      return;
+    }
+    const alreadyAnswered = answers.get(q.id);
+    if (alreadyAnswered && alreadyAnswered.optionId) {
+      // Already answered, just advance
+      simulationTimerRef.current = setTimeout(() => {
+        if (currentIndex < questions.length - 1) {
+          setCurrentIndex(prev => prev + 1);
+        } else {
+          setIsSimulatingRandom(false);
+          finishTest(false, true);
+        }
+      }, 400);
+      return;
+    }
+    // Randomly answer current question
+    const newAnswers = new Map(answers);
+    if (q.type === 'single' && q.options && q.options.length > 0) {
+      const idx = Math.floor(Math.random() * q.options.length);
+      newAnswers.set(q.id, { optionId: q.options[idx].id });
+    } else if (q.type === 'multi' && q.options && q.options.length > 0) {
+      const num = Math.floor(Math.random() * q.options.length) + 1;
+      const shuffled = [...q.options].sort(() => Math.random() - 0.5);
+      const selected = shuffled.slice(0, num);
+      newAnswers.set(q.id, { optionId: selected.map(s => s.id).join(',') });
+    }
+    setAnswers(newAnswers);
+    simulationTimerRef.current = setTimeout(() => {
+      if (currentIndex < questions.length - 1) {
+        setCurrentIndex(prev => prev + 1);
+      } else {
+        setIsSimulatingRandom(false);
+        finishTest(false, true);
+      }
+    }, 700);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isSimulatingRandom, currentIndex, questions]);
+
   const currentQuestion = questions[currentIndex];
   const progress = questions.length > 0 ? ((currentIndex + 1) / questions.length) * 100 : 0;
   const chaosValue = Math.min(100, (currentIndex / questions.length) * 100);
+
+  const stopSimulation = () => {
+    if (simulationTimerRef.current) clearTimeout(simulationTimerRef.current);
+    setIsSimulatingRandom(false);
+  };
 
   const checkFastClick = () => {
     const now = Date.now();
@@ -114,6 +226,7 @@ export default function QuizPage() {
   }, [currentIndex, questions.length, currentQuestion, startTime, timings]);
 
   const handleSingleSelect = (optionId: string) => {
+    stopSimulation();
     checkFastClick();
     if (!currentQuestion) return;
     const newAnswers = new Map(answers);
@@ -123,6 +236,7 @@ export default function QuizPage() {
   };
 
   const handleMultiSelect = (optionId: string) => {
+    stopSimulation();
     checkFastClick();
     if (!currentQuestion) return;
     const newAnswers = new Map(answers);
@@ -135,6 +249,7 @@ export default function QuizPage() {
   };
 
   const handleMultiConfirm = () => {
+    stopSimulation();
     checkFastClick();
     const answer = answers.get(currentQuestion?.id || '');
     if (!answer || !answer.optionId) return;
@@ -142,6 +257,7 @@ export default function QuizPage() {
   };
 
   const handleNext = () => {
+    stopSimulation();
     checkFastClick();
     const timeSpent = Date.now() - startTime;
     const newTimings = new Map(timings);
@@ -152,9 +268,13 @@ export default function QuizPage() {
     } else finishTest(false, false);
   };
 
-  const handlePrev = () => { if (currentIndex > 0) { setCurrentIndex(prev => prev - 1); } };
+  const handlePrev = () => {
+    stopSimulation();
+    if (currentIndex > 0) setCurrentIndex(prev => prev - 1);
+  };
 
   const handleSkip = () => {
+    stopSimulation();
     const remaining = questions.length - currentIndex;
     const answered = answers.size;
     const message = '确定要跳过剩余 ' + remaining + ' 道题目？\n\n将以你已答的 ' + answered + ' 题作为依据进行分析。';
@@ -163,30 +283,31 @@ export default function QuizPage() {
     }
   };
 
+  const handleDirectResult = () => {
+    stopSimulation();
+    const answered = answers.size;
+    if (answered === 0) {
+      alert('至少答一道题才能看结果吧？');
+      return;
+    }
+    if (typeof window !== 'undefined' && window.confirm) {
+      const msg = `已答 ${answered} / ${questions.length} 题，直接查看结果？\n未答题目将视为跳过。`;
+      if (window.confirm(msg)) finishTest(false, false);
+    }
+  };
+
   const handleRandom = () => {
+    stopSimulation();
     const remainingCount = questions.length - currentIndex;
-    const message = '系统将随机选择剩余 ' + remainingCount + ' 道题的答案。\n\n完成后获得【混沌人格】判定。\n\n是否继续？';
+    const message = '系统将模拟你的操作，逐题随机选择剩余 ' + remainingCount + ' 道题的答案。\n\n完成后获得【混沌人格】判定。\n\n是否继续？';
     if (typeof window !== 'undefined' && window.confirm) {
       if (!window.confirm(message)) return;
-      const newAnswers = new Map(answers);
-      for (let i = currentIndex; i < questions.length; i++) {
-        const q = questions[i];
-        if (q.type === 'single' && q.options && q.options.length > 0) {
-          const randomIndex = Math.floor(Math.random() * q.options.length);
-          newAnswers.set(q.id, { optionId: q.options[randomIndex].id });
-        } else if (q.type === 'multi' && q.options && q.options.length > 0) {
-          const num = Math.floor(Math.random() * q.options.length) + 1;
-          const shuffled = [...q.options].sort(() => Math.random() - 0.5);
-          const selected = shuffled.slice(0, num);
-          newAnswers.set(q.id, { optionId: selected.map(s => s.id).join(',') });
-        }
-      }
-      setAnswers(newAnswers);
-      finishTest(false, true);
+      setIsSimulatingRandom(true);
     }
   };
 
   const handleRandomCurrent = () => {
+    stopSimulation();
     if (!currentQuestion) return;
     const newAnswers = new Map(answers);
     if (currentQuestion.type === 'single' && currentQuestion.options && currentQuestion.options.length > 0) {
@@ -204,6 +325,7 @@ export default function QuizPage() {
   };
 
   const finishTest = (isRushed: boolean, isRandom: boolean) => {
+    localStorage.removeItem(STORAGE_KEY);
     const session = {
       totalQuestions: questions.length, answered: answers.size, answers, timings, startTime, isRushed, isRandom,
       contradictions: [], consistencyStreak: 0, scores: {} as Record<SBTITypeCode, number>, lastAnswerDirection: null
@@ -261,6 +383,21 @@ export default function QuizPage() {
         </div>
       </div>
 
+      {/* Simulation banner */}
+      {isSimulatingRandom && (
+        <div className="max-w-2xl mx-auto mb-4">
+          <div className="p-4 rounded-xl neu-pressed border-l-4 border-l-fuchsia-500 flex items-center justify-between">
+            <div className="flex items-center gap-2 text-fuchsia-700">
+              <Dice5 className="w-5 h-5 animate-spin" />
+              <span className="text-sm font-semibold">正在混沌选择中…</span>
+            </div>
+            <button onClick={stopSimulation} className="px-3 py-1.5 rounded-lg neu-convex text-xs font-semibold text-[var(--neu-text)]">
+              停止并查看结果
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Inline Toasts */}
       <div className="max-w-2xl mx-auto space-y-4 mb-6">
         {fastClickToast && (
@@ -301,8 +438,9 @@ export default function QuizPage() {
             return (
               <button
                 key={option.id}
+                disabled={isSimulatingRandom}
                 onClick={() => handleSingleSelect(option.id)}
-                className={`w-full flex items-center gap-3 p-4 rounded-xl text-left transition-all ${
+                className={`w-full flex items-center gap-3 p-4 rounded-xl text-left transition-all disabled:opacity-60 ${
                   active
                     ? 'neu-pressed text-[var(--neu-text)]'
                     : option.hidden
@@ -328,8 +466,9 @@ export default function QuizPage() {
                 return (
                   <button
                     key={option.id}
+                    disabled={isSimulatingRandom}
                     onClick={() => handleMultiSelect(option.id)}
-                    className={`w-full flex items-center gap-3 p-4 rounded-xl text-left transition-all ${
+                    className={`w-full flex items-center gap-3 p-4 rounded-xl text-left transition-all disabled:opacity-60 ${
                       isSelected ? 'neu-pressed text-[var(--neu-text)]' : 'neu-flat neu-flat-hover neu-flat-active text-[var(--neu-text)]'
                     }`}
                   >
@@ -344,7 +483,7 @@ export default function QuizPage() {
               })}
               <button
                 onClick={handleMultiConfirm}
-                disabled={!canProceed()}
+                disabled={!canProceed() || isSimulatingRandom}
                 className="w-full h-12 rounded-xl neu-convex neu-convex-hover neu-convex-active disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-[var(--neu-text)]"
               >
                 确认选择
@@ -360,8 +499,6 @@ export default function QuizPage() {
               🌱 解锁植物系隐藏选项
             </button>
           )}
-
-
         </div>
 
         {/* Dots */}
@@ -377,17 +514,24 @@ export default function QuizPage() {
         <div className="flex justify-center gap-3 py-2">
           <button
             onClick={handlePrev}
-            disabled={currentIndex === 0}
+            disabled={currentIndex === 0 || isSimulatingRandom}
             className="flex items-center gap-1 px-5 py-2.5 rounded-xl neu-flat neu-flat-hover neu-flat-active disabled:opacity-40 disabled:cursor-not-allowed text-sm font-medium text-[var(--neu-text)]"
           >
             <ChevronLeft className="w-4 h-4" />上一题
           </button>
           <button
             onClick={handleNext}
-            disabled={!canProceed()}
+            disabled={!canProceed() || isSimulatingRandom}
             className="flex items-center gap-1 px-5 py-2.5 rounded-xl neu-convex neu-convex-hover neu-convex-active disabled:opacity-40 disabled:cursor-not-allowed text-sm font-semibold text-[var(--neu-text)]"
           >
             {currentIndex === questions.length - 1 ? '查看结果' : '下一题'}<ChevronRight className="w-4 h-4" />
+          </button>
+          <button
+            onClick={handleDirectResult}
+            disabled={isSimulatingRandom || answers.size === 0}
+            className="flex items-center gap-1 px-5 py-2.5 rounded-xl neu-convex neu-convex-hover neu-convex-active disabled:opacity-40 disabled:cursor-not-allowed text-sm font-semibold text-emerald-600 hover:text-emerald-700"
+          >
+            <CheckCircle2 className="w-4 h-4" />直接看结果
           </button>
         </div>
 
@@ -395,7 +539,7 @@ export default function QuizPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
           <div className="neu-flat p-4">
             <div className="flex items-center gap-2 flex-wrap">
-              <button onClick={handleSkip} className="flex items-center gap-1 px-4 py-2 rounded-xl neu-convex text-sm font-semibold text-rose-600 hover:text-rose-700 transition-colors">
+              <button onClick={handleSkip} disabled={isSimulatingRandom} className="flex items-center gap-1 px-4 py-2 rounded-xl neu-convex text-sm font-semibold text-rose-600 hover:text-rose-700 transition-colors disabled:opacity-50">
                 <SkipForward className="w-4 h-4" />
                 烦了，爷不玩了
               </button>
@@ -410,7 +554,7 @@ export default function QuizPage() {
 
           <div className="neu-flat p-4">
             <div className="flex items-center gap-2 flex-wrap">
-              <button onClick={handleRandom} className="flex items-center gap-1 px-4 py-2 rounded-xl neu-convex text-sm font-semibold text-fuchsia-600 hover:text-fuchsia-700 transition-colors">
+              <button onClick={handleRandom} disabled={isSimulatingRandom} className="flex items-center gap-1 px-4 py-2 rounded-xl neu-convex text-sm font-semibold text-fuchsia-600 hover:text-fuchsia-700 transition-colors disabled:opacity-50">
                 <Dice5 className="w-4 h-4" />
                 一键乱选
               </button>
@@ -419,7 +563,7 @@ export default function QuizPage() {
               </button>
             </div>
             {showRandomTip && (
-              <p className="text-xs text-[var(--neu-text-soft)] mt-3 neu-pressed p-3 rounded-xl">随机选择剩余 {questions.length - currentIndex} 道题的答案，获得【混沌人格】判定</p>
+              <p className="text-xs text-[var(--neu-text-soft)] mt-3 neu-pressed p-3 rounded-xl">逐题随机选择剩余 {questions.length - currentIndex} 道题的答案，获得【混沌人格】判定</p>
             )}
           </div>
         </div>

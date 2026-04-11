@@ -93,7 +93,6 @@ export function calculateBaseScores(
         });
       }
     } else if (question.type === 'multi' && question.options) {
-      // 多选题：每个选中选项+1
       const selectedIds = answer.optionId.split(',');
       selectedIds.forEach(id => {
         const option = question.options?.find(o => o.id === id);
@@ -105,7 +104,6 @@ export function calculateBaseScores(
       });
     }
     
-    // 陷阱题权重翻倍
     if (question.trap) {
       Object.keys(scores).forEach(type => {
         scores[type as SBTITypeCode] *= 1.2;
@@ -114,6 +112,43 @@ export function calculateBaseScores(
   });
   
   return scores;
+}
+
+/**
+ * 统计隐藏选项命中次数
+ */
+function countHiddenSelections(
+  answers: Map<string, { optionId: string }>,
+  questions: Question[]
+): number {
+  let count = 0;
+  answers.forEach((answer, questionId) => {
+    const q = questions.find(q => q.id === questionId);
+    if (!q || !q.options) return;
+    const selectedIds = answer.optionId.split(',');
+    selectedIds.forEach(id => {
+      const opt = q.options!.find(o => o.id === id);
+      if (opt?.hidden) count++;
+    });
+  });
+  return count;
+}
+
+/**
+ * 计算分数分布熵值 (Shannon entropy normalized)
+ */
+function calculateEntropy(scores: Record<SBTITypeCode, number>): number {
+  const values = Object.values(scores).filter(v => v > 0);
+  if (values.length === 0) return 0;
+  const sum = values.reduce((a, b) => a + b, 0);
+  let entropy = 0;
+  values.forEach(v => {
+    const p = v / sum;
+    if (p > 0) entropy -= p * Math.log2(p);
+  });
+  // normalize by max possible entropy (log2 of number of types with score > 0)
+  const maxEntropy = Math.log2(values.length);
+  return maxEntropy > 0 ? entropy / maxEntropy : 0;
 }
 
 /**
@@ -136,7 +171,6 @@ export function applyTimeAdjustments(
     adjustment = TIME_ADJUSTMENTS.slow;
   }
   
-  // 检查极慢模式
   const hasExtremeSlow = times.some(t => t > TIME_THRESHOLDS.EXTREME_SLOW);
   if (hasExtremeSlow) {
     adjustment = TIME_ADJUSTMENTS.extreme;
@@ -163,7 +197,6 @@ export function detectContradictions(
   const contradictions: Array<[SBTITypeCode, SBTITypeCode]> = [];
   const typeSequence: SBTITypeCode[] = [];
   
-  // 提取每道题得分最高的类型
   answers.forEach((answer, questionId) => {
     const question = questions.find(q => q.id === questionId);
     if (!question || question.type !== 'single' || !question.options) return;
@@ -176,7 +209,6 @@ export function detectContradictions(
     }
   });
   
-  // 检测连续3题的维度摇摆
   for (let i = 0; i < typeSequence.length - 2; i++) {
     const t1 = typeSequence[i];
     const t2 = typeSequence[i + 1];
@@ -227,7 +259,6 @@ export function detectConsistency(
     }
   });
   
-  // 检测连续5题同类型
   let maxStreak = 1;
   let currentStreak = 1;
   let consistentType: SBTITypeCode | null = null;
@@ -265,6 +296,78 @@ export function applyConsistencyBonus(
 }
 
 /**
+ * 混沌画像修正层
+ * 根据答题行为的隐藏特征，对分数进行全局调整
+ */
+function applyChaosPortraitAdjustments(
+  scores: Record<SBTITypeCode, number>,
+  session: Partial<Session>,
+  questions: Question[]
+): Record<SBTITypeCode, number> {
+  const answers = session.answers as Map<string, { optionId: string }> | undefined;
+  if (!answers) return scores;
+
+  const timings = session.timings as Map<string, number> | undefined;
+  const hiddenCount = countHiddenSelections(answers, questions);
+  const entropy = calculateEntropy(scores);
+  const sorted = sortTypesByScore(scores);
+  const topScore = sorted[0]?.score || 0;
+  const secondScore = sorted[1]?.score || 0;
+  const gapRatio = topScore > 0 ? (topScore - secondScore) / topScore : 0;
+
+  // 1. 隐藏选项猎手：多次选中隐藏选项，说明擅长发现隐蔽人格
+  if (hiddenCount >= 3) {
+    scores.YINY = (scores.YINY || 0) + hiddenCount * 2.5;
+    scores.BOSS = (scores.BOSS || 0) + hiddenCount * 1.5;
+    scores.JING = (scores.JING || 0) + 3;
+  }
+
+  // 2. 熵值修正：分数越分散越混沌，越集中越偏执
+  if (entropy > 0.75) {
+    // 极度混沌：分数像撒胡椒面
+    scores.RAND = (scores.RAND || 0) + 8;
+    scores.CHAO = (scores.CHAO || 0) + 6;
+    scores.DUNJ = (scores.DUNJ || 0) + 4;
+  } else if (entropy < 0.25 && topScore > 20) {
+    // 极度集中：偏执型人格加成
+    const topType = sorted[0].type;
+    scores[topType] *= 1.15;
+    scores.BOSS = (scores.BOSS || 0) + 3;
+  }
+
+  // 3. 速度-矛盾联动：答得飞快还自相矛盾 = 混沌乐子人
+  if (timings && timings.size > 0) {
+    const times = Array.from(timings.values());
+    const avgTime = times.reduce((a, b) => a + b, 0) / times.length;
+    const contradictionCount = session.contradictions?.length || 0;
+    if (avgTime < 2500 && contradictionCount >= 1) {
+      scores.RAND = (scores.RAND || 0) + 10;
+      scores.TROLL = (scores.TROLL || 0) + 5;
+      scores.KFC = (scores.KFC || 0) + 4;
+    }
+    if (avgTime < 2000) {
+      scores.HITER = (scores.HITER || 0) + 3;
+      scores.YOLO = (scores.YOLO || 0) + 3;
+    }
+  }
+
+  // 4. 模糊边界者：top1 和 top2 差距极小
+  if (gapRatio < 0.08 && topScore > 15) {
+    scores.LIKE = (scores.LIKE || 0) + 5;   // 理中客
+    scores.YUAN = (scores.YUAN || 0) + 3;   // 怨灵
+  }
+
+  // 5. 未答题过多（完成率低）但 entropy 高：摸鱼大师
+  const completionRate = (session.answered || 0) / (session.totalQuestions || 1);
+  if (completionRate < 0.4 && entropy > 0.6) {
+    scores.IMFW = (scores.IMFW || 0) + 6;
+    scores.SLEEP = (scores.SLEEP || 0) + 4;
+  }
+
+  return scores;
+}
+
+/**
  * 按分数排序类型
  */
 export function sortTypesByScore(
@@ -281,35 +384,34 @@ export function sortTypesByScore(
 export function calculateConfidence(
   session: Partial<Session>,
   topScore: number,
-  secondScore: number
+  secondScore: number,
+  entropy: number
 ): number {
-  // RUSHI（几乎没答题）直接最低置信度
   if (session.isRushed) {
     return 0.1;
   }
 
-  // 基础置信度：答完题保底 0.45
   const completionRate = (session.answered || 0) / (session.totalQuestions || 1);
-  let confidence = 0.15 + completionRate * 0.35;
+  let confidence = 0.12 + completionRate * 0.38;
 
-  // 分数差距加成（相对差距更合理）
   const scoreGap = topScore - secondScore;
   const relativeGap = topScore > 0 ? scoreGap / topScore : 0;
   const gapBonus = Math.min(relativeGap * 0.5, 0.35);
   confidence += gapBonus;
 
-  // 矛盾惩罚（按矛盾次数递减）
   const contradictionCount = session.contradictions?.length || 0;
   if (contradictionCount > 0) {
-    confidence -= 0.12 * contradictionCount;
+    confidence -= 0.1 * contradictionCount;
   }
 
-  // 一致性奖励
   if (session.consistencyStreak && session.consistencyStreak >= 5) {
     confidence += 0.12;
   }
 
-  // RAND 给上限限制，体现随机性
+  // 熵值惩罚：越混沌，置信度越低
+  if (entropy > 0.7) confidence -= 0.1;
+  if (entropy > 0.85) confidence -= 0.08;
+
   const maxConfidence = session.isRandom ? 0.32 : 0.96;
 
   return Math.max(0.1, Math.min(maxConfidence, confidence));
@@ -322,20 +424,16 @@ export function calculateResult(
   session: Partial<Session>,
   questions: Question[]
 ): TestResult {
-  // 初始化分数
   let scores = initializeScores();
   
-  // 基础计分
   if (session.answers) {
     scores = calculateBaseScores(session.answers as Map<string, { optionId: string; values?: string[] }>, questions);
   }
   
-  // Layer 3: 时间调整
   if (session.timings) {
     scores = applyTimeAdjustments(scores, session.timings as Map<string, number>);
   }
   
-  // Layer 4: 矛盾检测和惩罚
   let contradictions: Array<[SBTITypeCode, SBTITypeCode]> = [];
   if (session.answers) {
     contradictions = detectContradictions(
@@ -347,7 +445,6 @@ export function calculateResult(
     }
   }
   
-  // Layer 5: 一致性奖励
   let consistencyResult = { hasConsistency: false, consistentType: null as SBTITypeCode | null, streak: 0 };
   if (session.answers) {
     consistencyResult = detectConsistency(
@@ -359,17 +456,23 @@ export function calculateResult(
     }
   }
   
-  // 排序取最高
+  // Layer 6: 混沌画像修正（新增）
+  scores = applyChaosPortraitAdjustments(scores, session, questions);
+  
   const sortedTypes = sortTypesByScore(scores);
   const topType = sortedTypes[0];
   const secondType = sortedTypes[1];
+  const entropy = calculateEntropy(scores);
   
-  // Layer 7: 置信度计算
-  const confidence = calculateConfidence(session, topType.score, secondType.score);
+  const confidence = calculateConfidence(session, topType.score, secondType.score, entropy);
+
+  // 副人格阈值：分数差距 < 35% 时强制出现副人格（之前是 20% -> 0.8 ratio，现在降到 0.65 ratio = 35% gap）
+  const secondaryThreshold = 0.65;
+  const showSecondary = secondType.score / topType.score > secondaryThreshold;
   
   return {
     primaryType: topType.type,
-    secondaryType: secondType.score / topType.score > 0.8 ? secondType.type : null,
+    secondaryType: showSecondary ? secondType.type : null,
     primaryScore: topType.score,
     secondaryScore: secondType.score,
     confidence,
@@ -390,7 +493,7 @@ export function generateRushiResult(
   _total: number
 ): TestResult {
   const scores = initializeScores();
-  scores.RUSHI = 999; // 强制最高
+  scores.RUSHI = 999;
 
   return {
     primaryType: 'RUSHI',
@@ -415,7 +518,6 @@ export function generateRushiResult(
 export function generateRandomResult(
   baseResult: TestResult
 ): TestResult {
-  // 一键乱选不再强行 10%，但上限被 calculateConfidence 限制在 32% 左右
   const randomConfidence = Math.min(baseResult.confidence, 0.25 + Math.random() * 0.07);
   return {
     ...baseResult,

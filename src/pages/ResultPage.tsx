@@ -176,6 +176,30 @@ export default function ResultPage() {
           ))}
         </div>
 
+        {/* Secondary Personality */}
+        {result.secondaryType && !result.isRandom && (
+          <div className="neu-flat p-5 relative overflow-hidden">
+            <h3 className="text-sm font-bold text-center text-[var(--neu-text-soft)] mb-4 uppercase tracking-wide">你的副人格</h3>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="text-center p-4 rounded-xl neu-convex">
+                <p className="text-xs text-[var(--neu-text-soft)] mb-1">主人格</p>
+                <div className="text-3xl font-black text-[var(--neu-text)] mb-1">{result.primaryType}</div>
+                <div className="text-sm font-medium text-[var(--neu-text)]">{TYPE_LIBRARY[result.primaryType].name}</div>
+                <p className="text-xs text-[var(--neu-text-soft)] mt-2">{result.primaryScore.toFixed(0)} 分</p>
+              </div>
+              <div className="text-center p-4 rounded-xl neu-pressed">
+                <p className="text-xs text-[var(--neu-text-soft)] mb-1">副人格</p>
+                <div className="text-3xl font-black text-[var(--neu-text)] mb-1">{result.secondaryType}</div>
+                <div className="text-sm font-medium text-[var(--neu-text)]">{TYPE_LIBRARY[result.secondaryType].name}</div>
+                <p className="text-xs text-[var(--neu-text-soft)] mt-2">{result.secondaryScore.toFixed(0)} 分</p>
+              </div>
+            </div>
+            <p className="text-center text-xs text-[var(--neu-text-soft)] mt-4">
+              你处于 {TYPE_LIBRARY[result.primaryType].name} 与 {TYPE_LIBRARY[result.secondaryType].name} 的叠加态，像一台精神分裂的交换机
+            </p>
+          </div>
+        )}
+
         {/* Dual personality */}
         {result.isRandom && result.pseudoResult && showPseudo && (
           <div className="neu-flat p-5 relative overflow-hidden">
@@ -224,7 +248,7 @@ export default function ResultPage() {
                   </div>
                   <div className="h-4 rounded-full neu-concave overflow-hidden p-0.5">
                     <div
-                      className={`h-full rounded-full transition-all duration-700 ${isPrimary ? 'neu-convex' : 'bg-[var(--neu-text-soft)]/40'}`}
+                      className={`h-full rounded-full transition-all duration-700 ${isPrimary ? 'neu-convex' : type === result.secondaryType ? 'bg-amber-400/60' : 'bg-[var(--neu-text-soft)]/40'}`}
                       style={{ width: `${percentage}%` }}
                     />
                   </div>
