@@ -6,8 +6,16 @@ import {
   Play, Sparkles, Brain, Zap, Target, Shuffle, Info, Flame,
   MessageCircle, Ghost, Cpu, Search, HelpCircle, Code2, Heart,
   Lightbulb, Share2, Fingerprint, ZapOff, Skull, Gamepad2,
-  BatteryCharging, WifiOff, Command, Dice5
+  BatteryCharging, WifiOff, Command, Dice5, Trash2
 } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from '@/components/ui/dialog';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -221,6 +229,7 @@ export default function HomePage() {
   const countTypes = useCountUp(266, 2000);
   const countQuestions = useCountUp(585, 2500);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [showClearDialog, setShowClearDialog] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -274,6 +283,13 @@ export default function HomePage() {
 
   const handleStart = () => {
     navigate('/quiz', { state: { questionCount: selectedCount } });
+  };
+
+  const handleClearCache = () => {
+    localStorage.removeItem('SBTI_QUIZ_PROGRESS');
+    setShowClearDialog(false);
+    navigate('/');
+    window.location.reload();
   };
 
   const featureTilts = [useTilt<HTMLDivElement>(), useTilt<HTMLDivElement>(), useTilt<HTMLDivElement>(), useTilt<HTMLDivElement>()];
@@ -639,10 +655,45 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="py-10 text-center text-[var(--neu-text-soft)] text-xs space-y-2">
+      <footer className="py-10 text-center text-[var(--neu-text-soft)] text-xs space-y-4">
         <p className="font-medium">SBTI-Engine 3.0 · 科学已死，混沌当立</p>
         <p>Built with React + Vite + Tailwind CSS · Deployed on IPFS via Pinme</p>
+        <div className="flex justify-center pt-2">
+          <button
+            onClick={() => setShowClearDialog(true)}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl neu-flat neu-flat-hover neu-flat-active text-xs font-semibold text-rose-500 hover:text-rose-600 transition-colors"
+          >
+            <Trash2 className="w-4 h-4" />
+            清除浏览器缓存
+          </button>
+        </div>
       </footer>
+
+      {/* Clear Cache Dialog */}
+      <Dialog open={showClearDialog} onOpenChange={setShowClearDialog}>
+        <DialogContent className="sm:max-w-md mx-4">
+          <DialogHeader>
+            <DialogTitle className="text-[var(--neu-text)]">清除浏览器缓存</DialogTitle>
+            <DialogDescription className="text-[var(--neu-text-soft)]">
+              此操作将清空本地存储的答题进度、session 种子等所有浏览器缓存数据。清除后页面将重新加载并回到首页。
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter className="sm:justify-end gap-2 mt-4">
+            <button
+              onClick={() => setShowClearDialog(false)}
+              className="px-4 h-10 rounded-xl neu-convex font-medium text-[var(--neu-text)] text-sm"
+            >
+              取消
+            </button>
+            <button
+              onClick={handleClearCache}
+              className="px-4 h-10 rounded-xl neu-flat font-medium text-rose-600 hover:text-rose-700 text-sm"
+            >
+              确定清除
+            </button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
