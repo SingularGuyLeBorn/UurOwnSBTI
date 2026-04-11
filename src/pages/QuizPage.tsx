@@ -55,6 +55,66 @@ function InlineToast({ message, type, onAction, actionText, onClose }: { message
   );
 }
 
+function CurveChart({ history, types }: { history: Array<Record<SBTITypeCode, number>>; types: SBTITypeCode[] }) {
+  if (history.length < 1 || types.length === 0) return null;
+  const width = 600;
+  const height = 180;
+  const padding = { top: 10, right: 10, bottom: 24, left: 32 };
+  const chartW = width - padding.left - padding.right;
+  const chartH = height - padding.top - padding.bottom;
+
+  const maxScore = Math.max(
+    1,
+    ...history.map(scores => Math.max(...types.map(t => scores[t] || 0)))
+  );
+
+  const xFor = (idx: number) => {
+    if (history.length <= 1) return padding.left + chartW / 2;
+    return padding.left + (idx / (history.length - 1)) * chartW;
+  };
+  const yFor = (score: number) => padding.top + chartH - (score / maxScore) * chartH;
+
+  const xTicks = history.length <= 5 ? history.map((_, i) => i) :
+    Array.from({ length: 5 }, (_, i) => Math.round((i / 4) * (history.length - 1)));
+
+  return (
+    <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto">
+      {/* Grid lines */}
+      {[0, 0.25, 0.5, 0.75, 1].map(ratio => {
+        const y = yFor(ratio * maxScore);
+        return (
+          <g key={ratio}>
+            <line x1={padding.left} y1={y} x2={width - padding.right} y2={y} stroke="currentColor" strokeOpacity={0.1} strokeWidth={1} />
+            <text x={padding.left - 6} y={y + 3} textAnchor="end" fontSize={10} fill="var(--neu-text-soft)">{Math.round(ratio * maxScore)}</text>
+          </g>
+        );
+      })}
+      {/* X axis labels */}
+      {xTicks.map(i => (
+        <text key={i} x={xFor(i)} y={height - 4} textAnchor="middle" fontSize={10} fill="var(--neu-text-soft)">Q{i + 1}</text>
+      ))}
+
+      {/* Lines */}
+      {types.map((type, tIdx) => {
+        const hue = (tIdx * 137) % 360;
+        const color = `hsl(${hue}, 70%, 55%)`;
+        const d = history
+          .map((scores, i) => {
+            const x = xFor(i);
+            const y = yFor(scores[type] || 0);
+            return `${i === 0 ? 'M' : 'L'} ${x} ${y}`;
+          })
+          .join(' ');
+        return (
+          <g key={type}>
+            <path d={d} fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
 function getQuestionTypeDesc(type: string): string {
   const singleHints = ['只能选一个，别贪心', '单选，别想太多', '选一个，选完赶紧走', '单选题，别整那些虚的', '选一个，别纠结了'];
   const multiHints = ['这题可以多选，全选也行', '多选，想选几个选几个', '这题不限制，随便选', '多选，别漏了你觉得对的', '可以多选，但别全选啊喂'];
@@ -106,6 +166,9 @@ export default function QuizPage() {
   const [fastClickToast, setFastClickToast] = useState(false);
   const [slowToast, setSlowToast] = useState(false);
   const [isSimulatingRandom, setIsSimulatingRandom] = useState(false);
+  const [predictionMode, setPredictionMode] = useState<'list' | 'curve'>('list');
+  const [predictionLimit, setPredictionLimit] = useState<5 | 10 | 20 | 50 | 100 | 'all'>(5);
+  const [scoreHistory, setScoreHistory] = useState<Array<Record<SBTITypeCode, number>>>([]);
 
   const lastClickTimeRef = useRef<number>(0);
   const fastClickCountRef = useRef<number>(0);
@@ -212,14 +275,27 @@ export default function QuizPage() {
   const progress = questions.length > 0 ? ((currentIndex + 1) / questions.length) * 100 : 0;
   const chaosValue = Math.min(100, (currentIndex / questions.length) * 100);
 
+  // Record score snapshot after each answer change
+  useEffect(() => {
+    if (questions.length === 0 || answers.size === 0) return;
+    const scores = calculateBaseScores(answers, questions);
+    setScoreHistory(prev => {
+      const step = answers.size; // 1-based step count
+      const next = prev.slice(0, step);
+      next[step - 1] = scores;
+      return next;
+    });
+  }, [answers, questions]);
+
   // Live prediction based on answered questions only
-  const liveTop5 = useMemo(() => {
+  const liveTopN = useMemo(() => {
     if (answers.size === 0 || questions.length === 0) return [];
     const scores = calculateBaseScores(answers, questions);
-    const sorted = sortTypesByScore(scores).slice(0, 5);
+    const limit = predictionLimit === 'all' ? Object.keys(scores).length : predictionLimit;
+    const sorted = sortTypesByScore(scores).slice(0, limit);
     const total = sorted.reduce((sum, s) => sum + s.score, 0) || 1;
     return sorted.map(s => ({ ...s, probability: s.score / total }));
-  }, [answers, questions]);
+  }, [answers, questions, predictionLimit]);
 
   const stopSimulation = () => {
     if (simulationTimerRef.current) clearTimeout(simulationTimerRef.current);
@@ -412,32 +488,78 @@ export default function QuizPage() {
       </div>
 
       {/* Live Prediction Panel */}
-      {liveTop5.length > 0 && (
+      {liveTopN.length > 0 && (
         <div className="max-w-2xl mx-auto mb-4">
           <div className="neu-flat p-4">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-bold text-[var(--neu-text-soft)] uppercase tracking-wide">实时人格预测 TOP 5</span>
-              <span className="text-[10px] text-[var(--neu-text-soft)]">基于已答 {answers.size} 题</span>
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+              <span className="text-xs font-bold text-[var(--neu-text-soft)] uppercase tracking-wide">
+                实时人格预测 {predictionLimit === 'all' ? '全部' : `TOP ${predictionLimit}`}
+              </span>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1 neu-concave rounded-lg p-0.5">
+                  <button
+                    onClick={() => setPredictionMode('list')}
+                    className={`px-2 py-1 text-[10px] font-semibold rounded-md transition-all ${predictionMode === 'list' ? 'neu-convex text-[var(--neu-text)]' : 'text-[var(--neu-text-soft)]'}`}
+                  >列表</button>
+                  <button
+                    onClick={() => setPredictionMode('curve')}
+                    className={`px-2 py-1 text-[10px] font-semibold rounded-md transition-all ${predictionMode === 'curve' ? 'neu-convex text-[var(--neu-text)]' : 'text-[var(--neu-text-soft)]'}`}
+                  >曲线</button>
+                </div>
+                <select
+                  value={predictionLimit}
+                  onChange={(e) => setPredictionLimit(e.target.value as any)}
+                  className="h-7 px-2 rounded-lg neu-concave bg-transparent text-[10px] font-semibold text-[var(--neu-text)] outline-none"
+                >
+                  <option value={5}>前 5</option>
+                  <option value={10}>前 10</option>
+                  <option value={20}>前 20</option>
+                  <option value={50}>前 50</option>
+                  <option value={100}>前 100</option>
+                  <option value="all">全部</option>
+                </select>
+              </div>
             </div>
-            <div className="space-y-3">
-              {liveTop5.map((item: { type: SBTITypeCode; score: number; probability: number }, idx: number) => (
-                <div key={item.type} className="flex items-center gap-3">
-                  <span className={`text-xs font-black w-5 ${idx === 0 ? 'text-rose-500' : idx === 1 ? 'text-amber-500' : 'text-[var(--neu-text-soft)]'}`}>{idx + 1}</span>
-                  <div className="flex-1">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm font-bold text-[var(--neu-text)]">{item.type}</span>
-                      <span className="text-xs font-semibold text-[var(--neu-text-soft)]">{(item.probability * 100).toFixed(1)}%</span>
-                    </div>
-                    <div className="h-2 rounded-full neu-concave overflow-hidden p-0.5">
-                      <div
-                        className={`h-full rounded-full transition-all ${idx === 0 ? 'bg-rose-400' : idx === 1 ? 'bg-amber-400' : 'bg-[var(--neu-text-soft)]/50'}`}
-                        style={{ width: `${Math.max(4, item.probability * 100)}%` }}
-                      />
+
+            {predictionMode === 'list' ? (
+              <div className="h-64 overflow-y-auto pr-1 space-y-3">
+                {liveTopN.map((item: { type: SBTITypeCode; score: number; probability: number }, idx: number) => (
+                  <div key={item.type} className="flex items-center gap-3">
+                    <span className={`text-xs font-black w-5 ${idx === 0 ? 'text-rose-500' : idx === 1 ? 'text-amber-500' : 'text-[var(--neu-text-soft)]'}`}>{idx + 1}</span>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm font-bold text-[var(--neu-text)]">{item.type}</span>
+                        <span className="text-xs font-semibold text-[var(--neu-text-soft)]">{(item.probability * 100).toFixed(1)}%</span>
+                      </div>
+                      <div className="h-2 rounded-full neu-concave overflow-hidden p-0.5">
+                        <div
+                          className={`h-full rounded-full transition-all ${idx === 0 ? 'bg-rose-400' : idx === 1 ? 'bg-amber-400' : 'bg-[var(--neu-text-soft)]/50'}`}
+                          style={{ width: `${Math.max(4, item.probability * 100)}%` }}
+                        />
+                      </div>
                     </div>
                   </div>
+                ))}
+              </div>
+            ) : (
+              <div className="h-64 overflow-y-auto pr-1">
+                <CurveChart history={scoreHistory} types={liveTopN.map(i => i.type)} />
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {liveTopN.slice(0, 10).map((item, idx) => {
+                    const hue = (idx * 137) % 360;
+                    return (
+                      <span key={item.type} className="inline-flex items-center gap-1 text-[10px] text-[var(--neu-text-soft)]">
+                        <span className="w-2 h-2 rounded-full" style={{ background: `hsl(${hue}, 70%, 55%)` }} />
+                        {item.type}
+                      </span>
+                    );
+                  })}
+                  {liveTopN.length > 10 && (
+                    <span className="text-[10px] text-[var(--neu-text-soft)]">+{liveTopN.length - 10} 项</span>
+                  )}
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       )}

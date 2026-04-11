@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/dialog';
 import type { TestResult } from '@/types';
 import { TYPE_LIBRARY } from '@/data/types';
-import { generateFullRoast, getConfidenceLabel, getConfidenceDescription } from '@/logic/copywriter';
+import { generateFullRoast, getConfidenceLabel, getConfidenceDescription, getRandomConfidenceDescription, generateRoast } from '@/logic/copywriter';
 import ShareCard from '@/components/ShareCard';
 
 function useCountUp(end: number, duration = 1500) {
@@ -89,7 +89,9 @@ export default function ResultPage() {
 
   const typeInfo = TYPE_LIBRARY[result.primaryType];
   const confidenceLabel = getConfidenceLabel(result.confidence);
-  const confidenceDesc = getConfidenceDescription(result.confidence);
+  const confidenceDesc = result.isRandom
+    ? getRandomConfidenceDescription(result.confidence)
+    : getConfidenceDescription(result.confidence);
   const topDimensions = result.sortedTypes.slice(0, 5);
   const maxScore = topDimensions[0]?.score || 1;
 
@@ -151,7 +153,11 @@ export default function ResultPage() {
               置信度: {animatedConfidence}% ({confidenceLabel})
             </div>
           </div>
-          <p className="text-xs text-[var(--neu-text-soft)]">{confidenceDesc}</p>
+          <div className="text-xs text-[var(--neu-text-soft)] space-y-2 max-w-md mx-auto mt-2">
+            {confidenceDesc.split('\n\n').map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
         </div>
 
         {/* Main SVG Card with Tilt */}
@@ -200,7 +206,7 @@ export default function ResultPage() {
           </div>
         )}
 
-        {/* Dual personality */}
+        {/* Dual personality for random mode */}
         {result.isRandom && result.pseudoResult && showPseudo && (
           <div className="neu-flat p-5 relative overflow-hidden">
             <h3 className="text-lg font-bold text-center text-[var(--neu-text)] mb-4">🎲 一键乱选 · 双生人格</h3>
@@ -224,6 +230,16 @@ export default function ResultPage() {
           </div>
         )}
 
+        {/* Random mode secondary personality roast */}
+        {result.isRandom && result.secondaryType && (
+          <div className="neu-flat p-5 sm:p-6">
+            <h3 className="text-lg font-bold text-[var(--neu-text)] mb-3">🎲 混沌副人格分析 · {TYPE_LIBRARY[result.secondaryType].name}</h3>
+            <p className="text-[var(--neu-text)] leading-relaxed whitespace-pre-wrap font-medium">
+              {generateRoast(result.secondaryType, result.confidence, result.hasContradiction, result.secondaryScore)}
+            </p>
+          </div>
+        )}
+
         {/* Roast */}
         <div className="neu-flat p-5 sm:p-6">
           <h3 className="text-lg font-bold text-[var(--neu-text)] mb-3">分析结果</h3>
@@ -234,7 +250,20 @@ export default function ResultPage() {
 
         {/* Dimensions */}
         <div className="neu-flat p-5 sm:p-6">
-          <h3 className="text-lg font-bold text-[var(--neu-text)] mb-5">维度分析</h3>
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-lg font-bold text-[var(--neu-text)]">维度分析</h3>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-5 text-[10px] sm:text-xs">
+            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full neu-pressed text-[var(--neu-text)]">
+              <span className="w-2 h-2 rounded-full neu-convex" /> 主人格
+            </span>
+            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full neu-pressed text-[var(--neu-text)]">
+              <span className="w-2 h-2 rounded-full bg-amber-400/80" /> 副人格
+            </span>
+            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full neu-pressed text-[var(--neu-text-soft)]">
+              <span className="w-2 h-2 rounded-full bg-[var(--neu-text-soft)]/40" /> 其他维度
+            </span>
+          </div>
           <div className="space-y-5">
             {topDimensions.map(({ type, score }) => {
               const info = TYPE_LIBRARY[type];
