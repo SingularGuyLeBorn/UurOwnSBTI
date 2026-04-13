@@ -1,0 +1,326 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - button "SBTI" [ref=e6] [cursor=pointer]
+      - generic [ref=e7]:
+        - button "人格图鉴" [active] [ref=e8] [cursor=pointer]:
+          - img [ref=e9]
+          - generic [ref=e11]: 人格图鉴
+        - button "返回首页" [ref=e483] [cursor=pointer]:
+          - img [ref=e484]
+          - generic [ref=e487]: 返回首页
+  - main [ref=e12]:
+    - generic [ref=e489]:
+      - button "返回首页" [ref=e490] [cursor=pointer]:
+        - img [ref=e491]
+        - text: 返回首页
+      - generic [ref=e493]:
+        - generic [ref=e494]:
+          - img [ref=e495]
+          - generic [ref=e498]: 全图鉴 · 无隐藏 · 点击卡片看详情
+        - heading "人格大观园" [level=1] [ref=e499]
+        - paragraph [ref=e500]: 收录全部 266 种混沌人格，从攻击性暴徒到赛博幽灵一网打尽
+      - generic [ref=e501]:
+        - generic [ref=e502]:
+          - img [ref=e504]
+          - textbox "搜索人格名称、代码或关键词..." [ref=e507]
+        - paragraph [ref=e508]: 已展示 24 / 266 种人格
+      - generic [ref=e509]:
+        - button "404 点击查看 查无此人 404 Not Found 社交失联 幽灵模式 未发送草稿箱" [ref=e510] [cursor=pointer]:
+          - generic [ref=e511]:
+            - generic [ref=e512]: "404"
+            - generic [ref=e513]: 点击查看
+          - img [ref=e515]:
+            - generic [ref=e516]: "404"
+            - generic [ref=e517]: Not Found
+            - generic [ref=e518]: 该用户不存在
+          - heading "查无此人" [level=3] [ref=e519]
+          - paragraph [ref=e520]: 404 Not Found
+          - generic [ref=e521]:
+            - generic [ref=e522]: 社交失联
+            - generic [ref=e523]: 幽灵模式
+            - generic [ref=e524]: 未发送草稿箱
+        - button "SEXY 点击查看 性感者 Seductive 危险魅力 边界模糊 保护性侵略" [ref=e525] [cursor=pointer]:
+          - generic [ref=e526]:
+            - generic [ref=e527]: SEXY
+            - generic [ref=e528]: 点击查看
+          - img [ref=e530]
+          - heading "性感者" [level=3] [ref=e540]
+          - paragraph [ref=e541]: Seductive
+          - generic [ref=e542]:
+            - generic [ref=e543]: 危险魅力
+            - generic [ref=e544]: 边界模糊
+            - generic [ref=e545]: 保护性侵略
+        - button "IMFW 点击查看 爱咋咋地 Whatever 摆烂仙人 低功耗生存 都行可以没关系" [ref=e546] [cursor=pointer]:
+          - generic [ref=e547]:
+            - generic [ref=e548]: IMFW
+            - generic [ref=e549]: 点击查看
+          - img [ref=e551]:
+            - generic [ref=e552]: ¯\_(ツ)_/¯
+            - generic [ref=e554]: 都行 可以 没关系
+          - heading "爱咋咋地" [level=3] [ref=e555]
+          - paragraph [ref=e556]: Whatever
+          - generic [ref=e557]:
+            - generic [ref=e558]: 摆烂仙人
+            - generic [ref=e559]: 低功耗生存
+            - generic [ref=e560]: 都行可以没关系
+        - button "HITER 点击查看 攻击者 Hiter 战斗爽 键盘成精 逻辑暴力" [ref=e561] [cursor=pointer]:
+          - generic [ref=e562]:
+            - generic [ref=e563]: HITER
+            - generic [ref=e564]: 点击查看
+          - img [ref=e566]:
+            - generic [ref=e568]: 战斗
+            - generic [ref=e569]: 爽
+          - heading "攻击者" [level=3] [ref=e570]
+          - paragraph [ref=e571]: Hiter
+          - generic [ref=e572]:
+            - generic [ref=e573]: 战斗爽
+            - generic [ref=e574]: 键盘成精
+            - generic [ref=e575]: 逻辑暴力
+        - button "WONANG 点击查看 窝囊者 Wonang 内耗之王 事后复盘 当场道歉" [ref=e576] [cursor=pointer]:
+          - generic [ref=e577]:
+            - generic [ref=e578]: WONANG
+            - generic [ref=e579]: 点击查看
+          - img [ref=e581]:
+            - generic [ref=e586]: 对不起...
+          - heading "窝囊者" [level=3] [ref=e589]
+          - paragraph [ref=e590]: Wonang
+          - generic [ref=e591]:
+            - generic [ref=e592]: 内耗之王
+            - generic [ref=e593]: 事后复盘
+            - generic [ref=e594]: 当场道歉
+        - button "SLEEP 点击查看 胆小菇 Scaredy-Shroom 应激性软糯 距离产生勇气 靠近即融化" [ref=e595] [cursor=pointer]:
+          - generic [ref=e596]:
+            - generic [ref=e597]: SLEEP
+            - generic [ref=e598]: 点击查看
+          - img [ref=e600]:
+            - generic [ref=e610]: 别靠近，我会融化
+          - heading "胆小菇" [level=3] [ref=e611]
+          - paragraph [ref=e612]: Scaredy-Shroom
+          - generic [ref=e613]:
+            - generic [ref=e614]: 应激性软糯
+            - generic [ref=e615]: 距离产生勇气
+            - generic [ref=e616]: 靠近即融化
+        - button "GIVEU 点击查看 放弃者 Give Up 完美主义瘫痪 flag殡葬 明天开始" [ref=e617] [cursor=pointer]:
+          - generic [ref=e618]:
+            - generic [ref=e619]: GIVEU
+            - generic [ref=e620]: 点击查看
+          - img [ref=e622]:
+            - generic [ref=e625]: 明天一定
+          - heading "放弃者" [level=3] [ref=e626]
+          - paragraph [ref=e627]: Give Up
+          - generic [ref=e628]:
+            - generic [ref=e629]: 完美主义瘫痪
+            - generic [ref=e630]: flag殡葬
+            - generic [ref=e631]: 明天开始
+        - button "POET 点击查看 诗人 Poet 过度解读 疼痛文学 显微镜看云" [ref=e632] [cursor=pointer]:
+          - generic [ref=e633]:
+            - generic [ref=e634]: POET
+            - generic [ref=e635]: 点击查看
+          - img [ref=e637]:
+            - generic [ref=e639]: 云在哭泣
+          - heading "诗人" [level=3] [ref=e640]
+          - paragraph [ref=e641]: Poet
+          - generic [ref=e642]:
+            - generic [ref=e643]: 过度解读
+            - generic [ref=e644]: 疼痛文学
+            - generic [ref=e645]: 显微镜看云
+        - button "DOGE 点击查看 舔狗 Doge 自我感动 批量深情 流泪复制机" [ref=e646] [cursor=pointer]:
+          - generic [ref=e647]:
+            - generic [ref=e648]: DOGE
+            - generic [ref=e649]: 点击查看
+          - img [ref=e651]:
+            - generic [ref=e658]: 在吗？吃了吗？
+          - heading "舔狗" [level=3] [ref=e661]
+          - paragraph [ref=e662]: Doge
+          - generic [ref=e663]:
+            - generic [ref=e664]: 自我感动
+            - generic [ref=e665]: 批量深情
+            - generic [ref=e666]: 流泪复制机
+        - button "BOSS 点击查看 资本家 Boss 画饼PUA 价值吞噬 赋能抓手" [ref=e667] [cursor=pointer]:
+          - generic [ref=e668]:
+            - generic [ref=e669]: BOSS
+            - generic [ref=e670]: 点击查看
+          - img [ref=e672]:
+            - generic [ref=e675]: 福报
+            - generic [ref=e677]: 💰
+            - generic [ref=e679]: 💰
+          - heading "资本家" [level=3] [ref=e680]
+          - paragraph [ref=e681]: Boss
+          - generic [ref=e682]:
+            - generic [ref=e683]: 画饼PUA
+            - generic [ref=e684]: 价值吞噬
+            - generic [ref=e685]: 赋能抓手
+        - button "NPC 点击查看 路人甲 NPC 存在感量子化 触发式应答 马赛克鬼魂" [ref=e686] [cursor=pointer]:
+          - generic [ref=e687]:
+            - generic [ref=e688]: NPC
+            - generic [ref=e689]: 点击查看
+          - img [ref=e691]:
+            - generic [ref=e694]: "???"
+          - heading "路人甲" [level=3] [ref=e695]
+          - paragraph [ref=e696]: NPC
+          - generic [ref=e697]:
+            - generic [ref=e698]: 存在感量子化
+            - generic [ref=e699]: 触发式应答
+            - generic [ref=e700]: 马赛克鬼魂
+        - button "BUG 点击查看 漏洞者 Bug 熵增实体 混乱制造 意外之王" [ref=e701] [cursor=pointer]:
+          - generic [ref=e702]:
+            - generic [ref=e703]: BUG
+            - generic [ref=e704]: 点击查看
+          - img [ref=e706]:
+            - generic [ref=e710]: Segmentation Fault
+          - heading "漏洞者" [level=3] [ref=e711]
+          - paragraph [ref=e712]: Bug
+          - generic [ref=e713]:
+            - generic [ref=e714]: 熵增实体
+            - generic [ref=e715]: 混乱制造
+            - generic [ref=e716]: 意外之王
+        - button "VIP 点击查看 人上人 Very Important Prick 拼多多贵族 优越感残疾 绿幕抠图" [ref=e717] [cursor=pointer]:
+          - generic [ref=e718]:
+            - generic [ref=e719]: VIP
+            - generic [ref=e720]: 点击查看
+          - img [ref=e722]:
+            - generic [ref=e724]: VIP
+          - heading "人上人" [level=3] [ref=e725]
+          - paragraph [ref=e726]: Very Important Prick
+          - generic [ref=e727]:
+            - generic [ref=e728]: 拼多多贵族
+            - generic [ref=e729]: 优越感残疾
+            - generic [ref=e730]: 绿幕抠图
+        - button "EMO 点击查看 网抑云 Emo 午夜疼痛 定时崩溃 23:00自动开启" [ref=e731] [cursor=pointer]:
+          - generic [ref=e732]:
+            - generic [ref=e733]: EMO
+            - generic [ref=e734]: 点击查看
+          - img [ref=e736]:
+            - generic [ref=e740]: 23:00 自动开启
+          - heading "网抑云" [level=3] [ref=e741]
+          - paragraph [ref=e742]: Emo
+          - generic [ref=e743]:
+            - generic [ref=e744]: 午夜疼痛
+            - generic [ref=e745]: 定时崩溃
+            - generic [ref=e746]: 23:00自动开启
+        - button "CPU 点击查看 PUA大师 CPU Master 煤气灯 精神控制 脑子里拧螺丝" [ref=e747] [cursor=pointer]:
+          - generic [ref=e748]:
+            - generic [ref=e749]: CPU
+            - generic [ref=e750]: 点击查看
+          - img [ref=e752]:
+            - generic [ref=e754]: CPU
+          - heading "PUA大师" [level=3] [ref=e759]
+          - paragraph [ref=e760]: CPU Master
+          - generic [ref=e761]:
+            - generic [ref=e762]: 煤气灯
+            - generic [ref=e763]: 精神控制
+            - generic [ref=e764]: 脑子里拧螺丝
+        - button "KFC 点击查看 复读机 KFC meme寄生 梗小鬼 疯狂星期四" [ref=e765] [cursor=pointer]:
+          - generic [ref=e766]:
+            - generic [ref=e767]: KFC
+            - generic [ref=e768]: 点击查看
+          - img [ref=e770]:
+            - generic [ref=e772]: KFC
+            - generic [ref=e773]: 疯狂星期四
+            - generic [ref=e774]: V我50
+          - heading "复读机" [level=3] [ref=e775]
+          - paragraph [ref=e776]: KFC
+          - generic [ref=e777]:
+            - generic [ref=e778]: meme寄生
+            - generic [ref=e779]: 梗小鬼
+            - generic [ref=e780]: 疯狂星期四
+        - button "DNA 点击查看 宿命论 Destiny 水逆背锅 算命成瘾 八字不合" [ref=e781] [cursor=pointer]:
+          - generic [ref=e782]:
+            - generic [ref=e783]: DNA
+            - generic [ref=e784]: 点击查看
+          - img [ref=e786]:
+            - generic [ref=e789]: 命中注定
+          - heading "宿命论" [level=3] [ref=e790]
+          - paragraph [ref=e791]: Destiny
+          - generic [ref=e792]:
+            - generic [ref=e793]: 水逆背锅
+            - generic [ref=e794]: 算命成瘾
+            - generic [ref=e795]: 八字不合
+        - button "PDF 点击查看 废话者 PDF 信息熵敌人 官僚话术 卡纸打印机" [ref=e796] [cursor=pointer]:
+          - generic [ref=e797]:
+            - generic [ref=e798]: PDF
+            - generic [ref=e799]: 点击查看
+          - img [ref=e801]:
+            - generic [ref=e804]: 卡纸中
+          - heading "废话者" [level=3] [ref=e805]
+          - paragraph [ref=e806]: PDF
+          - generic [ref=e807]:
+            - generic [ref=e808]: 信息熵敌人
+            - generic [ref=e809]: 官僚话术
+            - generic [ref=e810]: 卡纸打印机
+        - button "GIF 点击查看 表情包 GIF 视觉交流 语言退化 狗头表情包成精" [ref=e811] [cursor=pointer]:
+          - generic [ref=e812]:
+            - generic [ref=e813]: GIF
+            - generic [ref=e814]: 点击查看
+          - img [ref=e816]:
+            - generic [ref=e821]: "[doge]"
+          - heading "表情包" [level=3] [ref=e822]
+          - paragraph [ref=e823]: GIF
+          - generic [ref=e824]:
+            - generic [ref=e825]: 视觉交流
+            - generic [ref=e826]: 语言退化
+            - generic [ref=e827]: 狗头表情包成精
+        - button "JPG 点击查看 静态社恐 JPG 表情凝固 高压缩生存 假笑模特" [ref=e828] [cursor=pointer]:
+          - generic [ref=e829]:
+            - generic [ref=e830]: JPG
+            - generic [ref=e831]: 点击查看
+          - img [ref=e833]:
+            - generic [ref=e835]: image.jpg
+            - generic [ref=e836]: "压缩率: 100%"
+          - heading "静态社恐" [level=3] [ref=e837]
+          - paragraph [ref=e838]: JPG
+          - generic [ref=e839]:
+            - generic [ref=e840]: 表情凝固
+            - generic [ref=e841]: 高压缩生存
+            - generic [ref=e842]: 假笑模特
+        - button "FOMO 点击查看 错过焦虑者 FOMO 热点强迫症 刷新成瘾 生怕错过" [ref=e843] [cursor=pointer]:
+          - generic [ref=e844]:
+            - generic [ref=e845]: FOMO
+            - generic [ref=e846]: 点击查看
+          - img [ref=e848]:
+            - generic [ref=e851]: 99+
+            - generic [ref=e852]: 刷新中...
+          - heading "错过焦虑者" [level=3] [ref=e853]
+          - paragraph [ref=e854]: FOMO
+          - generic [ref=e855]:
+            - generic [ref=e856]: 热点强迫症
+            - generic [ref=e857]: 刷新成瘾
+            - generic [ref=e858]: 生怕错过
+        - button "YOLO 点击查看 作死派 YOLO 冲动消费 极限体验 不管明天" [ref=e859] [cursor=pointer]:
+          - generic [ref=e860]:
+            - generic [ref=e861]: YOLO
+            - generic [ref=e862]: 点击查看
+          - img [ref=e864]:
+            - generic [ref=e866]: YOLO
+          - heading "作死派" [level=3] [ref=e867]
+          - paragraph [ref=e868]: YOLO
+          - generic [ref=e869]:
+            - generic [ref=e870]: 冲动消费
+            - generic [ref=e871]: 极限体验
+            - generic [ref=e872]: 不管明天
+        - button "FUDI 点击查看 韭菜 FUD 听风就是雨 贩卖焦虑接盘侠 投资恐慌" [ref=e873] [cursor=pointer]:
+          - generic [ref=e874]:
+            - generic [ref=e875]: FUDI
+            - generic [ref=e876]: 点击查看
+          - img [ref=e878]:
+            - generic [ref=e881]: "-99.99%"
+          - heading "韭菜" [level=3] [ref=e882]
+          - paragraph [ref=e883]: FUD
+          - generic [ref=e884]:
+            - generic [ref=e885]: 听风就是雨
+            - generic [ref=e886]: 贩卖焦虑接盘侠
+            - generic [ref=e887]: 投资恐慌
+        - button "HODL 点击查看 钻石手 HODL 偏执持有 死不放手 囤积癖" [ref=e888] [cursor=pointer]:
+          - generic [ref=e889]:
+            - generic [ref=e890]: HODL
+            - generic [ref=e891]: 点击查看
+          - img [ref=e893]:
+            - generic [ref=e896]: HODL
+          - heading "钻石手" [level=3] [ref=e897]
+          - paragraph [ref=e898]: HODL
+          - generic [ref=e899]:
+            - generic [ref=e900]: 偏执持有
+            - generic [ref=e901]: 死不放手
+            - generic [ref=e902]: 囤积癖
+      - paragraph [ref=e905]: 正在加载更多人格...

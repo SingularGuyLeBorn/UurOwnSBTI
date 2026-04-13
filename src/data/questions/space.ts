@@ -7,10 +7,9 @@ export const SPACE_QUESTIONS: Question[] = [
     text: '如果公司允许自由改造工位，你的第一件事是？',
     options: [
       { id: 'A', text: '安装显示器支架和人体工学椅，打造久坐堡垒', weights: { GONG: 4 } },
-      { id: 'B', text: '铺满绿植和小摆件，建立私人氧气领地', weights: { GONG: 3 } },
-      { id: 'C', text: '加装挡板和收纳柜，拒绝任何人窥视或占用', weights: { GONG: 4 } },
-      { id: 'D', text: '摆上枕头毛毯，让工位也能躺下', weights: { CHUANG: 3 } },
-      { id: 'E', text: '购置顶级升降桌和腰靠，这辈子除了上厕所都不离开工位', weights: { GONG: 5 }, hidden: true },
+      { id: 'B', text: '加装挡板和收纳柜，拒绝任何人窥视或占用', weights: { GONG: 4 } },
+      { id: 'C', text: '在工位周围拉上警戒线，闲人免进', weights: { HITER: 4, GONG: 3, BAOZ: 2 } },
+      { id: 'D', text: '摆上枕头毛毯，让工位也能躺下', weights: { CHUANG: 3 }, hidden: true },
     ],
   },
   {
@@ -19,9 +18,9 @@ export const SPACE_QUESTIONS: Question[] = [
     text: '同事没打招呼就把东西堆在了你的工位上，你会？',
     options: [
       { id: 'A', text: '当场划出楚河汉界，明确告知这是私人领地', weights: { GONG: 4 } },
-      { id: 'B', text: '默默把东西推回去，但心里非常不舒服', weights: { GONG: 3 } },
-      { id: 'C', text: '用绿植和支架筑起防御工事，让对方知难而退', weights: { GONG: 4 } },
-      { id: 'D', text: '无所谓，反正我也不常坐在这里', weights: { YUE: 2 } },
+      { id: 'B', text: '直接把他的东西扔进垃圾桶', weights: { BAOZ: 4, HITER: 3, FENN: 2 } },
+      { id: 'C', text: '贴上纸条：再乱放我就卖了', weights: { HITER: 4, CHAO: 3, TROLL: 2 } },
+      { id: 'D', text: '用绿植和支架筑起防御工事，让对方知难而退', weights: { GONG: 4 }, hidden: true },
     ],
   },
   {
@@ -31,8 +30,8 @@ export const SPACE_QUESTIONS: Question[] = [
     options: [
       { id: 'A', text: '被被窝封印，起不来一点，谁也拉不动', weights: { CHUANG: 4 } },
       { id: 'B', text: '醒了，但决定翻个身继续在床上办公', weights: { CHUANG: 4 } },
-      { id: 'C', text: '挣扎着起来，但目的是为了去买更贵的床品', weights: { CHUANG: 3 } },
-      { id: 'D', text: '已经起床在厕所里思考人生了', weights: { CES: 3 } },
+      { id: 'C', text: '把闹钟全砸了，谁也别想叫醒我', weights: { BAOZ: 4, HITER: 3, XIAN: 2 } },
+      { id: 'D', text: '醒了，但只是为了确认今天不用上班', weights: { XIAN: 4, IMFW: 3, CHU: 2 }, hidden: true },
     ],
   },
   {
@@ -42,9 +41,8 @@ export const SPACE_QUESTIONS: Question[] = [
     options: [
       { id: 'A', text: '投资万元四件套和羽绒被，打造五星酒店睡眠体验', weights: { CHUANG: 4 } },
       { id: 'B', text: '安装床上桌和懒人支架，实现24小时床上办公娱乐', weights: { CHUANG: 4 } },
-      { id: 'C', text: '换成智能床垫，随时监测睡眠质量', weights: { XIN: 2 } },
-      { id: 'D', text: '把床垫焊死在地上，安装马桶和冰箱，这辈子不离开床', weights: { CHUANG: 5 }, hidden: true },
-      { id: 'E', text: '无所谓，有张床能睡就行', weights: { WU: 1 } },
+      { id: 'C', text: '在床上装个马桶和冰箱，这辈子不离开', weights: { CHUANG: 4, XIAN: 3, IMFW: 2 } },
+      { id: 'D', text: '把卧室门焊死，谁也别想进来', weights: { HITER: 4, GONG: 3, BAOZ: 2 }, hidden: true },
     ],
   },
   {
@@ -54,8 +52,8 @@ export const SPACE_QUESTIONS: Question[] = [
     options: [
       { id: 'A', text: '带薪拉屎，顺便刷完一集综艺', weights: { CES: 4 } },
       { id: 'B', text: '坐着发呆，思考人生意义和职业规划', weights: { CES: 4 } },
-      { id: 'C', text: '快速解决，因为担心手机没电没信号', weights: { CES: 3 } },
-      { id: 'D', text: '从不逗留，厕所只是功能场所', weights: { LOUTI: 1 } },
+      { id: 'C', text: '在隔间里贴满励志标语，打造我的精神家园', weights: { CES: 4, TROLL: 3, CHAO: 2 } },
+      { id: 'D', text: '把厕所当家，一天去八次', weights: { IMFW: 4, XIAN: 3, CES: 2 }, hidden: true },
     ],
   },
   {
@@ -64,9 +62,9 @@ export const SPACE_QUESTIONS: Question[] = [
     text: '当你发现厕所隔间的手机快没电时，你的反应是？',
     options: [
       { id: 'A', text: '立刻结束战斗，没有电量无法安心思考', weights: { CES: 4 } },
-      { id: 'B', text: '陷入焦虑，开始数瓷砖转移注意力', weights: { CES: 3 } },
-      { id: 'C', text: '蹲到腿麻也不愿出去，宁愿在隔间里进行无手机冥想', weights: { CES: 5 }, hidden: true },
-      { id: 'D', text: '无所谓，正好专心解决生理问题', weights: { GONG: 1 } },
+      { id: 'B', text: '蹲到腿麻也不愿出去，宁愿在隔间里进行无手机冥想', weights: { CES: 5 } },
+      { id: 'C', text: '在隔间门上刻诗，留下我的存在证明', weights: { POET: 4, CES: 3, TROLL: 2 } },
+      { id: 'D', text: '大喊：谁有充电宝！江湖救急！', weights: { HITER: 4, BAOZ: 3, TROLL: 2 }, hidden: true },
     ],
   },
   {
@@ -76,8 +74,8 @@ export const SPACE_QUESTIONS: Question[] = [
     options: [
       { id: 'A', text: '立刻掏出手机假装看消息，避免眼神接触', weights: { DIANT: 4 } },
       { id: 'B', text: '盯着楼层数字，心里默默倒计时', weights: { DIANT: 4 } },
-      { id: 'C', text: '躲在角落，通过镜面门检查自己的仪容', weights: { DIANT: 3 } },
-      { id: 'D', text: '面无表情，内心毫无波澜', weights: { DITIE: 2 } },
+      { id: 'C', text: '主动搭话：你也在这栋楼上班？', weights: { HITER: 4, BOSS: 3, TROLL: 2 } },
+      { id: 'D', text: '盯着陌生人看直到他先移开视线', weights: { HITER: 4, BAOZ: 3, CHAO: 2 }, hidden: true },
     ],
   },
   {
@@ -86,9 +84,9 @@ export const SPACE_QUESTIONS: Question[] = [
     text: '你要去18楼，但电梯里已经站满了人，你会？',
     options: [
       { id: 'A', text: '等下一班，宁愿迟到也不想面对拥挤和尴尬', weights: { DIANT: 4 } },
-      { id: 'B', text: '硬着头皮进去，面朝角落假装看手机', weights: { DIANT: 4 } },
-      { id: 'C', text: '盯着楼层键焦虑到抖腿，每层停都是煎熬', weights: { DIANT: 3 } },
-      { id: 'D', text: '算了，转身去楼梯间，反正不想等', weights: { LOUTI: 3 } },
+      { id: 'B', text: '大声说：麻烦往里挤挤，我赶时间', weights: { HITER: 4, BAOZ: 3, FENN: 2 } },
+      { id: 'C', text: '用屁股把最后一个人拱出去', weights: { BAOZ: 4, HITER: 3, TROLL: 2 } },
+      { id: 'D', text: '算了，转身去楼梯间，反正不想等', weights: { LOUTI: 3 }, hidden: true },
     ],
   },
   {
@@ -98,9 +96,8 @@ export const SPACE_QUESTIONS: Question[] = [
     options: [
       { id: 'A', text: '果断转身去楼梯间，不想浪费生命在等电梯上', weights: { LOUTI: 4 } },
       { id: 'B', text: '一边等一边深蹲热身，随时准备爬楼', weights: { LOUTI: 3 } },
-      { id: 'C', text: '一口气爬15楼，虽然气喘吁吁但很爽，电梯是什么不认识', weights: { LOUTI: 5 }, hidden: true },
-      { id: 'D', text: '继续等，反正爬楼梯会膝盖痛', weights: { DIANT: 2 } },
-      { id: 'E', text: '打电话给老板说要迟到，躲在厕所里', weights: { CES: 1 } },
+      { id: 'C', text: '在电梯口贴告示：本电梯已坏，请走楼梯', weights: { TROLL: 4, CHAO: 3, HITER: 2 } },
+      { id: 'D', text: '直接推开门挤进去：不好意思我怀孕了', weights: { TROLL: 4, BAOZ: 3, HITER: 2 }, hidden: true },
     ],
   },
   {
@@ -110,9 +107,8 @@ export const SPACE_QUESTIONS: Question[] = [
     options: [
       { id: 'A', text: '气喘吁吁，但内心充满成就感', weights: { LOUTI: 4 } },
       { id: 'B', text: '膝盖隐隐作痛，但下次高峰期还爬', weights: { LOUTI: 4 } },
-      { id: 'C', text: '满头大汗觉得减肥有望，但腿已经不属于自己', weights: { LOUTI: 4 } },
-      { id: 'D', text: '后悔没等电梯，在楼道里瘫坐五分钟', weights: { DIANT: 2 } },
-      { id: 'E', text: '呼吸平稳，10楼只是每日热身', weights: { DITIE: 2 } },
+      { id: 'C', text: '爬到5楼坐电梯，假装自己一直爬的', weights: { BIAO: 4, TROLL: 3, JING2: 2 } },
+      { id: 'D', text: '在楼道里大喊：还有谁！', weights: { HITER: 4, BAOZ: 3, TROLL: 2 }, hidden: true },
     ],
   },
   {
@@ -122,8 +118,8 @@ export const SPACE_QUESTIONS: Question[] = [
     options: [
       { id: 'A', text: '戴上耳机，用音乐隔绝整个世界', weights: { DITIE: 4 } },
       { id: 'B', text: '目光锁定每一个座位，随时准备冲刺', weights: { DITIE: 4 } },
-      { id: 'C', text: '紧贴车门，祈祷下一站快点到人少的地方', weights: { DIANT: 2 } },
-      { id: 'D', text: '开始观察车厢里每个人的鞋子和穿搭', weights: { CES: 1 } },
+      { id: 'C', text: '故意大声咳嗽，制造个人空间', weights: { HITER: 4, TROLL: 3, CHAO: 2 } },
+      { id: 'D', text: '对旁边的人说：你踩到我脚了（其实没有）', weights: { TROLL: 4, HITER: 3, BAOZ: 2 }, hidden: true },
     ],
   },
   {
@@ -132,10 +128,9 @@ export const SPACE_QUESTIONS: Question[] = [
     text: '末班车即将发车，而你还在换乘通道里狂奔，你会？',
     options: [
       { id: 'A', text: '拼尽全力冲刺，绝对不能错过末班车', weights: { DITIE: 4 } },
-      { id: 'B', text: '一边跑一边刷手机查末班车实时动态', weights: { DITIE: 3 } },
-      { id: 'C', text: '戴上降噪耳机把自己焊死在换乘通道里，末班车是什么不知道', weights: { DITIE: 5 }, hidden: true },
-      { id: 'D', text: '如果赶不上就打车，但心在滴血', weights: { WU: 2 } },
-      { id: 'E', text: '干脆放弃，在地铁站里流浪一夜', weights: { DITIE: 4 } },
+      { id: 'B', text: '干脆放弃，在地铁站里流浪一夜', weights: { DITIE: 4 } },
+      { id: 'C', text: '扒住车门不让自己被夹出去', weights: { BAOZ: 4, HITER: 3, TROLL: 2 } },
+      { id: 'D', text: '戴上降噪耳机把自己焊死在换乘通道里，末班车是什么不知道', weights: { DITIE: 5 }, hidden: true },
     ],
   },
   {
@@ -144,10 +139,9 @@ export const SPACE_QUESTIONS: Question[] = [
     text: '房东突然发来消息说要涨租，你的第一反应是？',
     options: [
       { id: 'A', text: '开始计算押金能不能cover违约金', weights: { YUE: 4 } },
-      { id: 'B', text: '感到强烈的漂泊感和不安全感', weights: { YUE: 4 } },
-      { id: 'C', text: '连夜收拾行李准备再次搬家，合租的浴室还没排到队', weights: { YUE: 5 }, hidden: true },
-      { id: 'D', text: '立刻打开租房APP寻找下一个落脚点', weights: { YUE: 3 } },
-      { id: 'E', text: '算了，买房才能解决根本问题', weights: { WU: 3 } },
+      { id: 'B', text: '连夜收拾行李准备再次搬家，合租的浴室还没排到队', weights: { YUE: 5 } },
+      { id: 'C', text: '回房东：涨租？那我把墙皮带走抵房租', weights: { HITER: 4, CHAO: 3, TROLL: 2 } },
+      { id: 'D', text: "连夜在墙上写满'此屋有鬼'再搬走", weights: { TROLL: 4, HEI2: 3, BAOZ: 2 }, hidden: true },
     ],
   },
   {
@@ -156,9 +150,9 @@ export const SPACE_QUESTIONS: Question[] = [
     text: '合租室友又在客厅大声打电话，你会？',
     options: [
       { id: 'A', text: '躲进自己房间，感叹合租的尴尬和没有隐私', weights: { YUE: 4 } },
-      { id: 'B', text: '打开门理论，捍卫自己最后的一点空间', weights: { GONG: 3 } },
-      { id: 'C', text: '戴上耳机假装听不见，把自己隔绝起来', weights: { DITIE: 2 } },
-      { id: 'D', text: '默默打开租房网站看整租房源', weights: { YUE: 4 } },
+      { id: 'B', text: '开门怒吼：这是客厅不是你家卧室！', weights: { BAOZ: 4, HITER: 3, FENN: 2 } },
+      { id: 'C', text: '把他的通话录下来第二天公放', weights: { TROLL: 4, HEI2: 3, HITER: 2 } },
+      { id: 'D', text: '默默打开租房网站看整租房源', weights: { YUE: 4 }, hidden: true },
     ],
   },
   {
@@ -167,12 +161,9 @@ export const SPACE_QUESTIONS: Question[] = [
     text: '刷到房价又涨了的新闻，你的内心OS是？',
     options: [
       { id: 'A', text: '房价PTSD发作，感到深深焦虑', weights: { WU: 4 } },
-      { id: 'B', text: '算了，租房也挺好，反正没有归属感', weights: { WU: 4 } },
-      { id: 'C', text: '这辈子都不可能买房了，搬家搬到麻木，纸箱就是我的家', weights: { WU: 5 }, hidden: true },
-      { id: 'D', text: '立刻关掉手机，眼不见为净', weights: { CHUANG: 2 } },
-      { id: 'E', text: '开始计算还要攒多少年首付', weights: { WU: 3 } },
-      { id: 'F', text: '还好我已经买了，坐等升值', weights: { FANG: 4, LICAI: 3 } },
-      { id: 'G', text: '赶紧发给没买房的朋友安慰一下', weights: { TROLL: 3, YINY: 2 } },
+      { id: 'B', text: '这辈子都不可能买房了，搬家搬到麻木，纸箱就是我的家', weights: { WU: 5 } },
+      { id: 'C', text: '在新闻下面评论：房子都卖给鬼住吗', weights: { HITER: 4, CHAO: 3, EMO: 2 } },
+      { id: 'D', text: '把房价新闻转发到家族群并@父母', weights: { TROLL: 4, HITER: 3, CHAO: 2 }, hidden: true },
     ],
   },
   {
@@ -181,9 +172,9 @@ export const SPACE_QUESTIONS: Question[] = [
     text: '房东通知你下个月必须搬走，你的第一反应是？',
     options: [
       { id: 'A', text: '焦虑爆发，开始疯狂找房和打包行李', weights: { WU: 4 } },
-      { id: 'B', text: '感到没有归属感，想要一个自己的家', weights: { WU: 4 } },
-      { id: 'C', text: '淡定联系搬家公司，反正已经习惯了', weights: { YUE: 3 } },
-      { id: 'D', text: '考虑要不要回老家，逃离高房价', weights: { WU: 3 } },
+      { id: 'B', text: '淡定联系搬家公司，反正已经习惯了', weights: { YUE: 3 } },
+      { id: 'C', text: '把房东的电话挂到同性恋交友网站', weights: { TROLL: 4, HEI2: 3, HITER: 2 } },
+      { id: 'D', text: '在房子里贴满符咒：谁住谁倒霉', weights: { TROLL: 4, HEI2: 3, BAOZ: 2 }, hidden: true }
     ],
   },
 ];

@@ -8,9 +8,9 @@ export const WORK_QUESTIONS: Question[] = [
     options: [
       { id: "A", text: "立刻爬起来改", weights: { SERF: 4, BOSS: 2 } },
       { id: "B", text: "已读不回，假装 asleep", weights: { GHOST: 4, IMFW: 3 } },
-      { id: "C", text: "截图发朋友圈阴阳", weights: { YINY: 4, CHAO: 3 } },
-      { id: "D", text: "回复：好的，然后继续睡", weights: { NPC: 3, XIAN: 3 } },
-      { id: "E", text: "直接在群里发辞职信", weights: { HOUJ: 4, BAOZ: 3 } }
+      { id: "C", text: "直接在群里发辞职信", weights: { HOUJ: 4, BAOZ: 3 } },
+      { id: "D", text: "@老板：加班费结一下", weights: { HITER: 4, CHAO: 3, FENN: 2 } },
+      { id: "E", text: "已读不回，但发朋友圈骂", weights: { YINY: 4, CHAO: 3, GHOST: 2 }, hidden: true }
     ]
   },
   {
@@ -19,10 +19,10 @@ export const WORK_QUESTIONS: Question[] = [
     text: "周一早上开会，领导说\"我简单说两句\"，结果讲了两个小时，你会？",
     options: [
       { id: "A", text: "认真做笔记，时不时点头", weights: { SERF: 4, NPC: 3 } },
-      { id: "B", text: "打开手机刷招聘软件", weights: { RUSHI: 4, HOUJ: 2 } },
-      { id: "C", text: "在笔记本上画领导肖像（带角和尾巴）", weights: { TROLL: 4, MIDI: 3 } },
-      { id: "D", text: "灵魂出窍，眼神呆滞但保持微笑", weights: { SLEEP: 4, KONG: 3 } },
-      { id: "E", text: "举手打断：领导，我有个会要冲突了", weights: { HITER: 4, BOSS: 3 } }
+      { id: "B", text: "在笔记本上画领导肖像（带角和尾巴）", weights: { TROLL: 4, MIDI: 3 } },
+      { id: "C", text: "举手打断：领导，我有个会要冲突了", weights: { HITER: 4, BOSS: 3 } },
+      { id: "D", text: "在群里发：领导，您这两句讲了120分钟", weights: { HITER: 4, CHAO: 3, TROLL: 2 } },
+      { id: "E", text: "假装晕倒，被抬出会议室", weights: { BUG: 4, TROLL: 3, SLEEP: 2 }, hidden: true }
     ]
   },
   {
@@ -32,10 +32,9 @@ export const WORK_QUESTIONS: Question[] = [
     options: [
       { id: "A", text: "当场翻出聊天记录对线", weights: { HITER: 4, RUSHI: 3 } },
       { id: "B", text: "笑笑不说话，会后写小作文挂他", weights: { YINY: 4, CHAO: 3 } },
-      { id: "C", text: "默默接受，反正解释也没用", weights: { NPC: 4, SERF: 3 } },
-      { id: "D", text: "直接崩溃大哭让所有人尴尬", weights: { EMO: 4, WEMO: 3 } },
-      { id: "E", text: "优雅地说：那我们一起复盘一下时间线", weights: { BOSS: 4, DYOR: 3 } },
-      { id: "F", text: "开除老板，让公司上市", weights: { BOSS: 5 }, hidden: true }
+      { id: "C", text: "优雅地说：那我们一起复盘一下时间线", weights: { BOSS: 4, DYOR: 3 } },
+      { id: "D", text: "当场哭给他看，谁也别想好过", weights: { EMO: 4, WEMO: 3, BAOZ: 2 } },
+      { id: "E", text: "开除老板，让公司上市", weights: { BOSS: 5 }, hidden: true }
     ]
   },
   {
@@ -45,9 +44,9 @@ export const WORK_QUESTIONS: Question[] = [
     options: [
       { id: "A", text: "拍胸脯说保证完成", weights: { SERF: 4, NPC: 3 } },
       { id: "B", text: "反问：那工资也涨200%吗", weights: { HITER: 4, RUSHI: 3 } },
-      { id: "C", text: "当场打开招聘软件刷职位", weights: { GHOST: 4, FOMO: 2 } },
-      { id: "D", text: "微笑着说\"我尽量\"然后摆烂", weights: { IMFW: 4, XIAN: 3 } },
-      { id: "E", text: "认真拆解目标做可行性分析", weights: { BOSS: 4, CODE: 3 } }
+      { id: "C", text: "微笑着说\"我尽量\"然后摆烂", weights: { IMFW: 4, XIAN: 3 } },
+      { id: "D", text: "冷笑：KPI涨200%，你当我是许愿池里的王八？", weights: { HITER: 4, CHAO: 3, BAOZ: 2 } },
+      { id: "E", text: "当场打开劳动法查加班补偿", weights: { PDF: 4, HITER: 3, RUSHI: 2 }, hidden: true }
     ]
   },
   {
@@ -55,12 +54,10 @@ export const WORK_QUESTIONS: Question[] = [
     type: "single",
     text: "发现同事工资比你高50%但活儿比你少，你会？",
     options: [
-      { id: "A", text: "截图保存，找HR讨说法", weights: { BOSS: 4, HITER: 3 } },
-      { id: "B", text: "开始明目张胆摸鱼，按薪出工", weights: { IMFW: 4, NPC: 3 } },
-      { id: "C", text: "发朋友圈仅对他可见阴阳怪气", weights: { YINY: 4, CHAO: 3 } },
-      { id: "D", text: "陷入自我怀疑是不是我不配", weights: { EMO: 4, WONANG: 3 } },
-      { id: "E", text: "默默更新简历准备跳槽", weights: { GHOST: 4, RUSHI: 3 } },
-      { id: "F", text: "发朋友圈让全公司看到工资条对比", weights: { BIAO: 5 }, hidden: true }
+      { id: "A", text: "开始明目张胆摸鱼，按薪出工", weights: { IMFW: 4, NPC: 3 } },
+      { id: "B", text: "发朋友圈让全公司看到工资条对比", weights: { BIAO: 5 } },
+      { id: "C", text: "开始给他的工作埋雷", weights: { HEI2: 4, CPU: 3, TROLL: 2 } },
+      { id: "D", text: "陷入自我怀疑？我怀疑公司是不是快倒闭了", weights: { HITER: 4, CHAO: 3, BAOZ: 2 }, hidden: true }
     ]
   },
   {
@@ -70,9 +67,9 @@ export const WORK_QUESTIONS: Question[] = [
     options: [
       { id: "A", text: "年轻人就该多奋斗，完全接受", weights: { SERF: 4, NPC: 3 } },
       { id: "B", text: "看加班费给多少", weights: { BOSS: 4, FUDI: 3 } },
-      { id: "C", text: "微笑说接受，入职后看情况跑路", weights: { TROLL: 4, YINY: 3 } },
-      { id: "D", text: "直接说：不接受，下一家", weights: { HITER: 4, RUSHI: 3 } },
-      { id: "E", text: "反问：贵司股东接受996分红吗", weights: { CHAO: 4, HITER: 3 } }
+      { id: "C", text: "直接说：不接受，下一家", weights: { HITER: 4, RUSHI: 3 } },
+      { id: "D", text: "反问：贵司股东接受996分红吗", weights: { CHAO: 4, HITER: 3 } },
+      { id: "E", text: "我是来面试的，不是来卖命的", weights: { HITER: 4, BAOZ: 3, CHAO: 2 }, hidden: true }
     ]
   },
   {
@@ -83,9 +80,8 @@ export const WORK_QUESTIONS: Question[] = [
       { id: "A", text: "立刻打开电脑开始肝", weights: { SERF: 4, BOSS: 2 } },
       { id: "B", text: "已读不回，到点拎包走人", weights: { GHOST: 4, IMFW: 3 } },
       { id: "C", text: "回复：好的，但明天下班前给", weights: { BOSS: 4, HITER: 3 } },
-      { id: "D", text: "在群里问：这个需求很急吗", weights: { CHAO: 3, YINY: 3 } },
-      { id: "E", text: "假装没看到，明天说手机没电了", weights: { NPC: 4, BUG: 3 } },
-      { id: "F", text: "执行默认程序，继续打工", weights: { NPC: 5 }, hidden: true }
+      { id: "D", text: "在群里@老板：明天给不了，要加钱", weights: { HITER: 4, BOSS: 3, CHAO: 2 } },
+      { id: "E", text: "假装没看到，明天说手机没电了", weights: { NPC: 4, BUG: 3 }, hidden: true }
     ]
   },
   {
@@ -95,9 +91,9 @@ export const WORK_QUESTIONS: Question[] = [
     options: [
       { id: "A", text: "买降噪耳机和香薰强行适应", weights: { NORM: 4, BOSS: 2 } },
       { id: "B", text: "每天带薪拉屎报复性蹲坑", weights: { TROLL: 4, IMFW: 3 } },
-      { id: "C", text: "找行政理论要求换位置", weights: { HITER: 4, RUSHI: 3 } },
-      { id: "D", text: "把工位布置成厕所主题风", weights: { SHENJ: 4, BUG: 3 } },
-      { id: "E", text: "开始怀疑这是逼我离职的阴谋", weights: { CPU: 4, WONANG: 3 } }
+      { id: "C", text: "把工位布置成厕所主题风", weights: { SHENJ: 4, BUG: 3 } },
+      { id: "D", text: "每次有人上厕所就大声说'欢迎光临'", weights: { HITER: 4, TROLL: 3, CHAO: 2 } },
+      { id: "E", text: "在工位贴告示：本岗不提供嗅觉服务", weights: { HITER: 4, BAOZ: 3, YINY: 2 }, hidden: true }
     ]
   },
   {
@@ -106,10 +102,10 @@ export const WORK_QUESTIONS: Question[] = [
     text: "年会抽奖你抽到了\"与CEO共进午餐\"，你的真实反应是？",
     options: [
       { id: "A", text: "狂喜，这是表现的好机会", weights: { SERF: 4, BOSS: 2 } },
-      { id: "B", text: "表面感恩，内心想死的笑容", weights: { NPC: 4, YINY: 3 } },
-      { id: "C", text: "当场把奖品转让出去", weights: { GHOST: 4, IMFW: 3 } },
-      { id: "D", text: "在午餐时直接谈加薪", weights: { HITER: 4, BOSS: 3 } },
-      { id: "E", text: "食物中毒请假躲过这一劫", weights: { BUG: 4, TROLL: 3 } }
+      { id: "B", text: "当场把奖品转让出去", weights: { GHOST: 4, IMFW: 3 } },
+      { id: "C", text: "在午餐时直接谈加薪", weights: { HITER: 4, BOSS: 3 } },
+      { id: "D", text: "问CEO：您吃人吗？不吃我就不去了", weights: { HITER: 4, CHAO: 3, TROLL: 2 } },
+      { id: "E", text: "在午餐时表演一个当场辞职", weights: { HOUJ: 4, BAOZ: 3, HITER: 2 }, hidden: true }
     ]
   },
   {
@@ -117,12 +113,11 @@ export const WORK_QUESTIONS: Question[] = [
     type: "single",
     text: "同事在会议室大声吃螺蛳粉，熏得你想吐，你会？",
     options: [
-      { id: "A", text: "默默打开窗户透气", weights: { NORM: 4, GHOST: 3 } },
-      { id: "B", text: "当众说：这味道有点像厕所炸了", weights: { CHAO: 4, HITER: 3 } },
-      { id: "C", text: "第二天带榴莲来以毒攻毒", weights: { TROLL: 4, HOUJ: 3 } },
-      { id: "D", text: "发消息给行政投诉", weights: { BOSS: 3, PDF: 3 } },
-      { id: "E", text: "戴上口罩继续开会", weights: { NPC: 4, SERF: 3 } },
-      { id: "F", text: "先emo三个小时再回复", weights: { WEMO: 5 }, hidden: true }
+      { id: "A", text: "当众说：这味道有点像厕所炸了", weights: { CHAO: 4, HITER: 3 } },
+      { id: "B", text: "第二天带榴莲来以毒攻毒", weights: { TROLL: 4, HOUJ: 3 } },
+      { id: "C", text: "发消息给行政投诉", weights: { BOSS: 3, PDF: 3 } },
+      { id: "D", text: "当场打开窗户大喊：生化武器袭击", weights: { HITER: 4, BAOZ: 3, TROLL: 2 } },
+      { id: "E", text: "戴上口罩继续开会", weights: { NPC: 4, SERF: 3 }, hidden: true }
     ]
   },
   {
@@ -132,9 +127,9 @@ export const WORK_QUESTIONS: Question[] = [
     options: [
       { id: "A", text: "点头称是，内心翻白眼", weights: { NPC: 4, YINY: 3 } },
       { id: "B", text: "反问：那您当年也不看钱吗", weights: { HITER: 4, CHAO: 3 } },
-      { id: "C", text: "认真思考他的话有没有道理", weights: { DEEP: 4, NORM: 3 } },
-      { id: "D", text: "打开手机银行查看余额确认自己确实需要钱", weights: { FUDI: 4, BOSS: 2 } },
-      { id: "E", text: "把这句话截图存进\"老板语录\"文件夹", weights: { CPU: 4, TROLL: 3 } }
+      { id: "C", text: "打开手机银行查看余额确认自己确实需要钱", weights: { FUDI: 4, BOSS: 2 } },
+      { id: "D", text: "冷笑：您当年要是看钱，现在也不会只会画饼", weights: { HITER: 4, CHAO: 3, BAOZ: 2 } },
+      { id: "E", text: "把这句话截图存进\"老板语录\"文件夹", weights: { CPU: 4, TROLL: 3 }, hidden: true }
     ]
   },
   {
@@ -142,12 +137,11 @@ export const WORK_QUESTIONS: Question[] = [
     type: "single",
     text: "你的请假申请被驳回了三次，理由是\"项目太忙\"，你会？",
     options: [
-      { id: "A", text: "继续申请第四次", weights: { SERF: 4, NPC: 3 } },
-      { id: "B", text: "直接旷工，爱扣扣吧", weights: { HOUJ: 4, BAOZ: 3 } },
-      { id: "C", text: "把工作交接好然后直接走", weights: { RUSHI: 4, HITER: 3 } },
-      { id: "D", text: "请病假，去医院开个证明", weights: { TROLL: 4, BOSS: 2 } },
-      { id: "E", text: "在工位上哭到领导同意为止", weights: { EMO: 4, WEMO: 3 } },
-      { id: "F", text: "原地离职，人间蒸发", weights: { GHOST: 5 }, hidden: true }
+      { id: "A", text: "直接旷工，爱扣扣吧", weights: { HOUJ: 4, BAOZ: 3 } },
+      { id: "B", text: "把工作交接好然后直接走", weights: { RUSHI: 4, HITER: 3 } },
+      { id: "C", text: "在工位上哭到领导同意为止", weights: { EMO: 4, WEMO: 3 } },
+      { id: "D", text: "原地离职，人间蒸发", weights: { GHOST: 5 } },
+      { id: "E", text: "请病假去面试，被老板在医院偶遇", weights: { TROLL: 4, BUG: 3, JING2: 2 }, hidden: true }
     ]
   },
   {
@@ -158,9 +152,8 @@ export const WORK_QUESTIONS: Question[] = [
       { id: "A", text: "积极参与，趁机拍领导马屁", weights: { SERF: 4, BOSS: 2 } },
       { id: "B", text: "当天\"发烧\"请假", weights: { BUG: 4, TROLL: 3 } },
       { id: "C", text: "去了但全程摆烂装死", weights: { IMFW: 4, SLEEP: 3 } },
-      { id: "D", text: "在群里直接说周末要陪家人", weights: { HITER: 4, NORM: 3 } },
-      { id: "E", text: "报名但当天睡过头", weights: { RAND: 4, SLEEP: 3 } },
-      { id: "F", text: "请假说自己已经买了去外地的机票", weights: { YOLO: 3, GEZI: 2 } }
+      { id: "D", text: "在群里说：周末团建是违法的，我不去", weights: { HITER: 4, PDF: 3, CHAO: 2 } },
+      { id: "E", text: "去了，但在拓展时故意扭伤脚", weights: { TROLL: 4, BUG: 3, SLEEP: 2 }, hidden: true }
     ]
   },
   {
@@ -168,11 +161,11 @@ export const WORK_QUESTIONS: Question[] = [
     type: "single",
     text: "发现公司电脑被监控了，包括你的聊天记录和浏览历史，你会？",
     options: [
-      { id: "A", text: "立刻卸载所有私人软件", weights: { BOSS: 3, DYOR: 3 } },
-      { id: "B", text: "故意搜索\"如何劳动仲裁\"\"哪家公司待遇好\"", weights: { CHAO: 4, HITER: 3 } },
-      { id: "C", text: "无所谓，反正我也没秘密", weights: { NPC: 4, IMFW: 3 } },
-      { id: "D", text: "感到被侵犯，准备收集证据仲裁", weights: { PDF: 4, BOSS: 3 } },
-      { id: "E", text: "开始用公司电脑刷招聘网站", weights: { GHOST: 4, RUSHI: 3 } }
+      { id: "A", text: "故意搜索\"如何劳动仲裁\"\"哪家公司待遇好\"", weights: { CHAO: 4, HITER: 3 } },
+      { id: "B", text: "感到被侵犯，准备收集证据仲裁", weights: { PDF: 4, BOSS: 3 } },
+      { id: "C", text: "开始用公司电脑刷招聘网站", weights: { GHOST: 4, RUSHI: 3 } },
+      { id: "D", text: "在聊天记录里发：公司监控员工，违法吗", weights: { HITER: 4, PDF: 3, CHAO: 2 } },
+      { id: "E", text: "无所谓，反正我的秘密就是我想辞职", weights: { NPC: 4, IMFW: 3, HITER: 2 }, hidden: true }
     ]
   },
   {
@@ -182,10 +175,9 @@ export const WORK_QUESTIONS: Question[] = [
     options: [
       { id: "A", text: "微笑着说\"好的我改回第一版\"", weights: { NPC: 4, SERF: 3 } },
       { id: "B", text: "把18版全部发群里问\"您确定吗\"", weights: { HITER: 4, TROLL: 3 } },
-      { id: "C", text: "内心崩溃但表面平静", weights: { EMO: 4, WEMO: 3 } },
-      { id: "D", text: "直接说：早干嘛去了", weights: { RUSHI: 4, HOUJ: 3 } },
-      { id: "E", text: "早就留好了第一版，一键恢复", weights: { BOSS: 4, CODE: 3 } },
-      { id: "F", text: "阴阳怪气到甲方怀疑人生", weights: { CHAO: 5 }, hidden: true }
+      { id: "C", text: "直接说：早干嘛去了", weights: { RUSHI: 4, HOUJ: 3 } },
+      { id: "D", text: "把18版合并发给甲方并配文：您的时间很值钱吗", weights: { HITER: 4, CHAO: 3, BAOZ: 2 } },
+      { id: "E", text: "阴阳怪气到甲方怀疑人生", weights: { CHAO: 5 }, hidden: true }
     ]
   },
   {
@@ -193,11 +185,10 @@ export const WORK_QUESTIONS: Question[] = [
     type: "single",
     text: "同事天天蹭你的车上下班但从不提油钱，你会？",
     options: [
-      { id: "A", text: "委婉暗示最近油价涨了", weights: { YINY: 4, BOSS: 2 } },
-      { id: "B", text: "直接说：拼车群里的规矩是AA油费", weights: { HITER: 4, BOSS: 3 } },
-      { id: "C", text: "找借口说最近不开车了", weights: { TROLL: 4, BUG: 3 } },
-      { id: "D", text: "算了，不好意思开口", weights: { WONANG: 4, NPC: 3 } },
-      { id: "E", text: "每次放他喜欢的歌折磨他", weights: { SHENJ: 4, CPU: 3 } }
+      { id: "A", text: "直接说：拼车群里的规矩是AA油费", weights: { HITER: 4, BOSS: 3 } },
+      { id: "B", text: "每次放他喜欢的歌折磨他", weights: { SHENJ: 4, CPU: 3 } },
+      { id: "C", text: "直接锁车：油费先结一下", weights: { HITER: 4, BAOZ: 3, XIAOQI: 2 } },
+      { id: "D", text: "把他扔在半路：车坏了，你自己走吧", weights: { HITER: 4, TROLL: 3, CHAO: 2 }, hidden: true }
     ]
   },
   {
@@ -205,12 +196,10 @@ export const WORK_QUESTIONS: Question[] = [
     type: "single",
     text: "老板在办公室大声打电话骂客户，整个楼层都听得见，你会？",
     options: [
-      { id: "A", text: "戴上耳机假装没听见", weights: { GHOST: 4, IMFW: 3 } },
-      { id: "B", text: "录音发给闺蜜当八卦素材", weights: { CPU: 4, TROLL: 3 } },
-      { id: "C", text: "感到尴尬，想找个地缝钻进去", weights: { EMO: 4, WEMO: 3 } },
-      { id: "D", text: "觉得他很有魄力，崇拜", weights: { SERF: 4, BOSS: 2 } },
-      { id: "E", text: "在群里发：老板今天火气好大", weights: { YINY: 4, CHAO: 3 } },
-      { id: "F", text: "烦了，爷不干了", weights: { RUSHI: 5 }, hidden: true }
+      { id: "A", text: "录音发给闺蜜当八卦素材", weights: { CPU: 4, TROLL: 3 } },
+      { id: "B", text: "在群里发：老板今天火气好大", weights: { YINY: 4, CHAO: 3 } },
+      { id: "C", text: "大声鼓掌：骂得好，再多骂两句", weights: { HITER: 4, TROLL: 3, CHAO: 2 } },
+      { id: "D", text: "烦了，爷不干了", weights: { RUSHI: 5 }, hidden: true }
     ]
   },
   {
@@ -218,11 +207,11 @@ export const WORK_QUESTIONS: Question[] = [
     type: "single",
     text: "你的年终奖只有一桶食用油，你会？",
     options: [
-      { id: "A", text: "感恩公司，至少比没有强", weights: { SERF: 4, NPC: 3 } },
-      { id: "B", text: "拍照发朋友圈配文\"一年的汗水\"", weights: { YINY: 4, CHAO: 3 } },
-      { id: "C", text: "当场把油送给保洁阿姨", weights: { HITER: 4, BOSS: 2 } },
-      { id: "D", text: "开始更新简历", weights: { GHOST: 4, RUSHI: 3 } },
-      { id: "E", text: "在年会上问：请问可以折现吗", weights: { HITER: 4, FUDI: 3 } }
+      { id: "A", text: "拍照发朋友圈配文\"一年的汗水\"", weights: { YINY: 4, CHAO: 3 } },
+      { id: "B", text: "当场把油送给保洁阿姨", weights: { HITER: 4, BOSS: 2 } },
+      { id: "C", text: "在年会上问：请问可以折现吗", weights: { HITER: 4, FUDI: 3 } },
+      { id: "D", text: "把油桶摔在地上：我一年就值这点东西？", weights: { BAOZ: 4, HITER: 3, FENN: 2 } },
+      { id: "E", text: "拍照发小红书：曝光这家黑心公司", weights: { BIAO: 4, FENN: 3, MO: 2 }, hidden: true }
     ]
   },
   {
@@ -233,8 +222,9 @@ export const WORK_QUESTIONS: Question[] = [
       { id: "A", text: "我太追求完美了", weights: { NPC: 4, SERF: 3 } },
       { id: "B", text: "我脾气不太好，但这不影响工作", weights: { HITER: 4, HOUJ: 3 } },
       { id: "C", text: "我不擅长撒谎，比如现在这个问题", weights: { CHAO: 4, HITER: 3 } },
-      { id: "D", text: "认真思考后给出一个真实的缺点", weights: { NORM: 4, DEEP: 3 } },
-      { id: "E", text: "反问：贵司能接受员工有缺点吗", weights: { BOSS: 4, RUSHI: 3 } }
+      { id: "D", text: "反问：贵司能接受员工有缺点吗", weights: { BOSS: 4, RUSHI: 3 } },
+      { id: "E", text: "我最大的缺点是看不上贵司", weights: { HITER: 4, CHAO: 3, VIP: 2 } },
+      { id: "F", text: "我的缺点是太优秀，容易让同事自卑", weights: { ZIL: 4, BIAO: 3, VIP: 2 }, hidden: true }
     ]
   },
   {
@@ -245,9 +235,8 @@ export const WORK_QUESTIONS: Question[] = [
       { id: "A", text: "立刻排查定位问题通宵修复", weights: { BOSS: 4, CODE: 3 } },
       { id: "B", text: "说这是测试环境问题，不信再看", weights: { TROLL: 4, BUG: 3 } },
       { id: "C", text: "甩锅给写这个模块的同事", weights: { CPU: 4, YINY: 3 } },
-      { id: "D", text: "提议延期上线", weights: { BOSS: 3, PDF: 3 } },
-      { id: "E", text: "假装自己也慌了其实早就知道", weights: { NPC: 4, GHOST: 3 } },
-      { id: "F", text: "把公司服务器格式化", weights: { HUIM: 5 }, hidden: true }
+      { id: "D", text: "把公司服务器格式化", weights: { HUIM: 5 } },
+      { id: "E", text: "说这是feature不是bug，上线再说", weights: { TROLL: 4, CHAO: 3, HITER: 2 }, hidden: true }
     ]
   },
   {
@@ -256,10 +245,10 @@ export const WORK_QUESTIONS: Question[] = [
     text: "领导在朋友圈点赞了你的辞职信截图（你忘了屏蔽他），你会？",
     options: [
       { id: "A", text: "秒删朋友圈然后装死", weights: { GHOST: 4, BUG: 3 } },
-      { id: "B", text: "主动找他聊，顺势摊牌", weights: { BOSS: 4, HITER: 3 } },
-      { id: "C", text: "把辞职信提前交了", weights: { RUSHI: 4, HOUJ: 3 } },
-      { id: "D", text: "解释说发着玩的", weights: { TROLL: 4, YINY: 3 } },
-      { id: "E", text: "无所谓，反正本来就要走", weights: { IMFW: 4, XIAN: 3 } }
+      { id: "B", text: "把辞职信提前交了", weights: { RUSHI: 4, HOUJ: 3 } },
+      { id: "C", text: "无所谓，反正本来就要走", weights: { IMFW: 4, XIAN: 3 } },
+      { id: "D", text: "回赞他的裁员通知", weights: { HITER: 4, CHAO: 3, TROLL: 2 } },
+      { id: "E", text: "发朋友圈：被老板点赞了，受宠若惊", weights: { YINY: 4, CHAO: 3, BIAO: 2 }, hidden: true }
     ]
   },
   {
@@ -270,9 +259,8 @@ export const WORK_QUESTIONS: Question[] = [
       { id: "A", text: "笑着说没关系，心里记仇", weights: { YINY: 4, NPC: 3 } },
       { id: "B", text: "要求她赔一个新键盘", weights: { BOSS: 4, HITER: 3 } },
       { id: "C", text: "把她的咖啡也碰洒", weights: { TROLL: 4, HOUJ: 3 } },
-      { id: "D", text: "默默擦干继续工作", weights: { SERF: 4, NPC: 3 } },
-      { id: "E", text: "借机申请换台新电脑", weights: { BOSS: 3, DYOR: 3 } },
-      { id: "F", text: "在工位上睡着", weights: { SLEEP: 5 }, hidden: true }
+      { id: "D", text: "把咖啡倒在她键盘上：不好意思，手滑", weights: { HITER: 4, TROLL: 3, BAOZ: 2 } },
+      { id: "E", text: "借机申请换台新电脑", weights: { BOSS: 3, DYOR: 3 }, hidden: true }
     ]
   },
   {
@@ -282,9 +270,9 @@ export const WORK_QUESTIONS: Question[] = [
     options: [
       { id: "A", text: "乖乖去拍证件照换上", weights: { SERF: 4, NPC: 3 } },
       { id: "B", text: "P一张证件照但眼睛是闭着的", weights: { SHENJ: 4, TROLL: 3 } },
-      { id: "C", text: "拒绝，说侵犯个人形象权", weights: { HITER: 4, BOSS: 3 } },
-      { id: "D", text: "用十年前的证件照糊弄", weights: { BUG: 4, IMFW: 3 } },
-      { id: "E", text: "把头像P成遗照风格", weights: { EMO: 4, WEMO: 3 } }
+      { id: "C", text: "把头像P成遗照风格", weights: { EMO: 4, WEMO: 3 } },
+      { id: "D", text: "换上领导的证件照", weights: { TROLL: 4, HITER: 3, CHAO: 2 } },
+      { id: "E", text: "在群里问：换头像加工资吗", weights: { HITER: 4, CHAO: 3, YINY: 2 }, hidden: true }
     ]
   },
   {
@@ -294,9 +282,8 @@ export const WORK_QUESTIONS: Question[] = [
     options: [
       { id: "A", text: "在群里@他：这不是我的周报吗", weights: { HITER: 4, RUSHI: 3 } },
       { id: "B", text: "下周在周报里埋雷让他翻车", weights: { CPU: 4, TROLL: 3 } },
-      { id: "C", text: "私聊领导说明情况", weights: { BOSS: 4, PDF: 3 } },
-      { id: "D", text: "算了，抄我也是认可我", weights: { WONANG: 4, NPC: 3 } },
-      { id: "E", text: "把他的错误也一起抄回来", weights: { BUG: 4, SHENJ: 3 } }
+      { id: "C", text: "把他的错误也一起抄回来", weights: { BUG: 4, SHENJ: 3 } },
+      { id: "D", text: "冷笑：抄吧，反正我的周报也是抄的", weights: { CHAO: 4, HITER: 3, TROLL: 2 }, hidden: true }
     ]
   },
   {
@@ -305,11 +292,10 @@ export const WORK_QUESTIONS: Question[] = [
     text: "老板在群里发了一个50秒的语音，你会？",
     options: [
       { id: "A", text: "立刻转文字看完回复收到", weights: { SERF: 4, BOSS: 2 } },
-      { id: "B", text: "等别人回了再跟着回", weights: { NPC: 4, DOUB: 3 } },
-      { id: "C", text: "直接回复：老板我在开会不方便听语音", weights: { HITER: 4, TROLL: 3 } },
-      { id: "D", text: "根本不听，反正不会是什么好事", weights: { IMFW: 4, GHOST: 3 } },
-      { id: "E", text: "耐心听完并做笔记", weights: { NORM: 4, PDF: 3 } },
-      { id: "F", text: "选钝角", weights: { DUNJ: 5 }, hidden: true }
+      { id: "B", text: "直接回复：老板我在开会不方便听语音", weights: { HITER: 4, TROLL: 3 } },
+      { id: "C", text: "根本不听，反正不会是什么好事", weights: { IMFW: 4, GHOST: 3 } },
+      { id: "D", text: "在群里发：有事发文字，别发语音", weights: { HITER: 4, BAOZ: 3, CHAO: 2 } },
+      { id: "E", text: "选钝角", weights: { DUNJ: 5 }, hidden: true }
     ]
   },
   {

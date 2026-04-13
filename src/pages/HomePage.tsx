@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type RefObject } from 'react';
+import { useEffect, useRef, useState, Suspense, lazy, type RefObject } from 'react';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -18,6 +18,8 @@ import {
 } from '@/components/ui/dialog';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const HeroScene = lazy(() => import('@/components/HeroScene'));
 
 const QUESTION_COUNTS = [
   { value: 5, label: '极速' },
@@ -298,7 +300,10 @@ export default function HomePage() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Hero */}
-      <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-4">
+      <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-4 overflow-hidden">
+        <Suspense fallback={null}>
+          <HeroScene />
+        </Suspense>
         <div className="text-center z-10 max-w-4xl mx-auto">
           <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-[var(--neu-text-soft)] mb-6 animate-fadeInUp">
             科学已死 · 混沌当立
@@ -336,7 +341,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--neu-text-soft)] animate-float">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-[var(--neu-text-soft)] animate-float">
           <span className="text-[10px] tracking-widest uppercase">Scroll</span>
           <div className="w-6 h-10 rounded-full neu-concave flex items-start justify-center pt-2">
             <div className="w-1 h-2 rounded-full bg-[var(--neu-text-soft)] animate-bounce" />

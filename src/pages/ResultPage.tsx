@@ -9,9 +9,9 @@ import {
   DialogTitle,
   DialogFooter,
 } from '@/components/ui/dialog';
-import type { TestResult } from '@/types';
+import type { TestResult, SBTITypeCode } from '@/types';
 import { TYPE_LIBRARY } from '@/data/types';
-import { generateFullRoast, getConfidenceLabel, getConfidenceDescription, getRandomConfidenceDescription, generateRoast } from '@/logic/copywriter';
+import { generateFullRoast, getConfidenceLabel, getConfidenceDescription, getRandomConfidenceDescription } from '@/logic/copywriter';
 import ShareCard from '@/components/ShareCard';
 
 function useCountUp(end: number, duration = 1500) {
@@ -69,27 +69,32 @@ export default function ResultPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const result = location.state?.result as TestResult | undefined;
-  const [showPseudo, setShowPseudo] = useState(false);
   const [showShareCard, setShowShareCard] = useState(false);
   const [showEmailDialog, setShowEmailDialog] = useState(false);
   const [email, setEmail] = useState('');
-  const roast = result ? generateFullRoast(result) : '';
+  const [activeSource, setActiveSource] = useState<SBTITypeCode | null>(null);
   const confidencePct = result ? Math.round(result.confidence * 100) : 0;
   const animatedConfidence = useCountUp(confidencePct, 1500);
 
   useEffect(() => {
     if (!result) { navigate('/'); return; }
-    if (result.isRandom && result.pseudoResult) {
-      const timer = setTimeout(() => setShowPseudo(true), 1000);
-      return () => clearTimeout(timer);
-    }
   }, [result, navigate]);
 
   if (!result) return null;
 
-  const typeInfo = TYPE_LIBRARY[result.primaryType];
+  const isRandom = result.isRandom;
+  const hybrid = result.hybridType;
+
+  // Main displayed identity
+  const mainCode = isRandom && hybrid ? hybrid.code : result.primaryType;
+  const mainName = isRandom && hybrid ? hybrid.name : TYPE_LIBRARY[result.primaryType].name;
+  const mainEnglish = isRandom && hybrid ? hybrid.englishName : TYPE_LIBRARY[result.primaryType].englishName;
+  const mainSvg = isRandom && hybrid ? hybrid.svgDescription : TYPE_LIBRARY[result.primaryType].svgDescription;
+  const mainKeywords = isRandom && hybrid ? hybrid.keywords : TYPE_LIBRARY[result.primaryType].keywords;
+  const mainRoast = isRandom && hybrid ? hybrid.roast : generateFullRoast(result);
+
   const confidenceLabel = getConfidenceLabel(result.confidence);
-  const confidenceDesc = result.isRandom
+  const confidenceDesc = isRandom
     ? getRandomConfidenceDescription(result.confidence)
     : getConfidenceDescription(result.confidence);
   const topDimensions = result.sortedTypes.slice(0, 5);
@@ -105,13 +110,13 @@ export default function ResultPage() {
       alert('请输入有效的邮箱地址');
       return;
     }
-    const subject = encodeURIComponent(`我的 SBTI 测试结果：${result.primaryType}-${typeInfo.name}`);
+    const subject = encodeURIComponent(`我的 SBTI 测试结果：${mainCode}-${mainName}`);
     const bodyLines = [
-      `你的 SBTI 类型：${result.primaryType} - ${typeInfo.name}`,
+      `你的 SBTI 类型：${mainCode} - ${mainName}`,
       `置信度：${confidencePct}%（${confidenceLabel}）`,
       ``,
       `【分析结果】`,
-      roast,
+      mainRoast,
       ``,
       `【维度分析 TOP 5】`,
       ...topDimensions.map(({ type, score }) => `${TYPE_LIBRARY[type].name} (${type})：${score.toFixed(0)}`),
@@ -125,9 +130,13 @@ export default function ResultPage() {
   };
 
   const handleShare = () => {
-    const text = `我的SBTI类型是【${result.primaryType}-${typeInfo.name}】，置信度${confidencePct}%！快来测测你是什么贵物~`;
+    const text = `我的SBTI类型是【${mainCode}-${mainName}】，置信度${confidencePct}%！快来测测你是什么贵物~`;
     if (navigator.share) navigator.share({ title: 'SBTI-Engine 3.0', text, url: window.location.href });
     else { navigator.clipboard.writeText(text + ' ' + window.location.href); alert('已复制到剪贴板！'); }
+  };
+
+  const toggleSource = (code: SBTITypeCode) => {
+    setActiveSource(prev => (prev === code ? null : code));
   };
 
   const mainCardRef = useTilt<HTMLDivElement>();
@@ -139,13 +148,21 @@ export default function ResultPage() {
       <div className="max-w-2xl mx-auto pt-4 space-y-6">
         {/* Header */}
         <div className="text-center space-y-2">
+          {isRandom && (
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full neu-pressed text-[10px] font-semibold text-rose-500 mb-1">
+              <span>🎲</span> 混沌模式 · 三体缝合
+            </div>
+          )}
           <p className="text-sm text-[var(--neu-text-soft)] tracking-wide">你的 SBTI 类型是</p>
           <div className="text-6xl sm:text-7xl md:text-8xl font-black tracking-tighter text-[var(--neu-text)] animate-float">
-            {result.primaryType}
+            {mainCode}
           </div>
           <div className="text-xl sm:text-2xl font-bold text-[var(--neu-text)]">
-            {typeInfo.name}
+            {mainName}
           </div>
+          {!isRandom && (
+            <p className="text-sm text-[var(--neu-text-soft)]">{mainEnglish}</p>
+          )}
 
           <div className="mt-4 flex justify-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full neu-convex text-sm font-medium text-[var(--neu-text)]">
@@ -169,21 +186,21 @@ export default function ResultPage() {
           <div
             className="w-40 h-40 sm:w-56 sm:h-56"
             style={{ filter: 'drop-shadow(0 10px 20px rgba(163,177,198,0.5))' }}
-            dangerouslySetInnerHTML={{ __html: typeInfo.svgDescription }}
+            dangerouslySetInnerHTML={{ __html: mainSvg }}
           />
         </div>
 
         {/* Keywords */}
         <div className="flex flex-wrap justify-center gap-2">
-          {typeInfo.keywords.map((keyword, index) => (
+          {mainKeywords.map((keyword, index) => (
             <span key={index} className="px-3 py-1.5 text-sm rounded-full neu-pressed text-[var(--neu-text)]">
               {keyword}
             </span>
           ))}
         </div>
 
-        {/* Secondary Personality */}
-        {result.secondaryType && !result.isRandom && (
+        {/* Normal mode: Secondary Personality */}
+        {result.secondaryType && !isRandom && (
           <div className="neu-flat p-5 relative overflow-hidden">
             <h3 className="text-sm font-bold text-center text-[var(--neu-text-soft)] mb-4 uppercase tracking-wide">你的副人格</h3>
             <div className="grid grid-cols-2 gap-4">
@@ -206,45 +223,57 @@ export default function ResultPage() {
           </div>
         )}
 
-        {/* Dual personality for random mode */}
-        {result.isRandom && result.pseudoResult && showPseudo && (
+        {/* Random mode: 3-source breakdown */}
+        {isRandom && hybrid && (
           <div className="neu-flat p-5 relative overflow-hidden">
-            <h3 className="text-lg font-bold text-center text-[var(--neu-text)] mb-4">🎲 一键乱选 · 双生人格</h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="text-center p-4 rounded-xl neu-pressed">
-                <p className="text-xs text-[var(--neu-text-soft)] mb-1">混沌人格</p>
-                <div className="text-3xl font-black text-[var(--neu-text)] mb-1">{result.primaryType}</div>
-                <div className="text-sm font-medium text-[var(--neu-text)]">{TYPE_LIBRARY[result.primaryType].name}</div>
-                <p className="text-xs text-[var(--neu-text-soft)] mt-2">量子叠加态</p>
-              </div>
-              <div className="text-center p-4 rounded-xl neu-convex">
-                <p className="text-xs text-[var(--neu-text-soft)] mb-1">随机选后的人格</p>
-                <div className="text-3xl font-black text-[var(--neu-text)] mb-1">{result.pseudoResult}</div>
-                <div className="text-sm font-medium text-[var(--neu-text)]">{TYPE_LIBRARY[result.pseudoResult].name}</div>
-                <p className="text-xs text-[var(--neu-text-soft)] mt-2">坍缩后的你</p>
-              </div>
+            <h3 className="text-sm font-bold text-center text-[var(--neu-text-soft)] mb-4 uppercase tracking-wide">🧬 人格来源 · 三体拆解</h3>
+            <div className="grid grid-cols-3 gap-3">
+              {hybrid.components.map((comp) => (
+                <button
+                  key={`${comp.code}-${comp.role}`}
+                  onClick={() => toggleSource(comp.code)}
+                  className={`text-center p-3 rounded-xl transition-all ${
+                    activeSource === comp.code ? 'neu-pressed' : 'neu-convex'
+                  }`}
+                >
+                  <div className="text-[10px] text-[var(--neu-text-soft)] mb-1 truncate">{comp.role}</div>
+                  <div className="text-xl font-black text-[var(--neu-text)] mb-0.5">{comp.code}</div>
+                  <div className="text-xs font-medium text-[var(--neu-text)] truncate">{comp.name}</div>
+                  <div className="w-3 h-3 rounded-full mx-auto mt-2" style={{ backgroundColor: comp.color }} />
+                </button>
+              ))}
             </div>
             <p className="text-center text-xs text-[var(--neu-text-soft)] mt-4">
-              如果当初认真选，你可能会是「{TYPE_LIBRARY[result.pseudoResult].name}」
+              点击卡片展开各来源人格的独立分析
             </p>
           </div>
         )}
 
-        {/* Random mode secondary personality roast */}
-        {result.isRandom && result.secondaryType && (
-          <div className="neu-flat p-5 sm:p-6">
-            <h3 className="text-lg font-bold text-[var(--neu-text)] mb-3">🎲 混沌副人格分析 · {TYPE_LIBRARY[result.secondaryType].name}</h3>
-            <p className="text-[var(--neu-text)] leading-relaxed whitespace-pre-wrap font-medium">
-              {generateRoast(result.secondaryType, result.confidence, result.hasContradiction, result.secondaryScore)}
-            </p>
-          </div>
-        )}
+        {/* Random mode: active source roast (only one at a time) */}
+        {isRandom && hybrid && activeSource && (() => {
+          const comp = hybrid.components.find(c => c.code === activeSource);
+          if (!comp) return null;
+          const roast = hybrid.componentRoasts[comp.code] || '';
+          return (
+            <div key={`${comp.code}-${comp.role}`} className="neu-flat p-5 sm:p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-3 h-3 rounded-full" style={{ backgroundColor: comp.color }} />
+                <h3 className="text-lg font-bold text-[var(--neu-text)]">{comp.role} · {comp.name}</h3>
+              </div>
+              <p className="text-[var(--neu-text)] leading-relaxed whitespace-pre-wrap font-medium">
+                {roast}
+              </p>
+            </div>
+          );
+        })()}
 
-        {/* Roast */}
+        {/* Main Roast */}
         <div className="neu-flat p-5 sm:p-6">
-          <h3 className="text-lg font-bold text-[var(--neu-text)] mb-3">分析结果</h3>
+          <h3 className="text-lg font-bold text-[var(--neu-text)] mb-3">
+            {isRandom ? '混沌分析' : '分析结果'}
+          </h3>
           <p className="text-[var(--neu-text)] leading-relaxed whitespace-pre-wrap font-medium">
-            {roast}
+            {mainRoast}
           </p>
         </div>
 

@@ -1,4 +1,5 @@
 import type { SBTITypeCode, Session, TestResult, Question } from '@/types';
+import { generateHybridType } from './hybrid';
 
 // 所有类型代码
 const ALL_TYPE_CODES: SBTITypeCode[] = [
@@ -513,17 +514,28 @@ export function generateRushiResult(
 }
 
 /**
- * 强制RAND结果（但保留伪结果）
+ * 强制RAND结果（但保留纯结果与混合结果）
  */
 export function generateRandomResult(
-  baseResult: TestResult
+  pureResult: TestResult,
+  mixedResult: TestResult
 ): TestResult {
-  const randomConfidence = Math.min(baseResult.confidence, 0.25 + Math.random() * 0.07);
+  const randomConfidence = Math.min(mixedResult.confidence, 0.25 + Math.random() * 0.07);
+  const hybrid = generateHybridType(
+    'RAND',
+    pureResult.primaryType,
+    mixedResult.primaryType,
+    mixedResult.confidence,
+    mixedResult.hasContradiction,
+    mixedResult.allScores
+  );
   return {
-    ...baseResult,
+    ...mixedResult,
     primaryType: 'RAND',
-    pseudoResult: baseResult.primaryType,
+    secondaryType: pureResult.primaryType,
+    pseudoResult: mixedResult.primaryType,
     confidence: Math.max(0.12, randomConfidence),
-    isRandom: true
+    isRandom: true,
+    hybridType: hybrid,
   };
 }

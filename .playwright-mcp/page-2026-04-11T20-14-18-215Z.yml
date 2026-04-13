@@ -1,0 +1,371 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - button "SBTI" [ref=e6] [cursor=pointer]
+      - button "人格图鉴" [ref=e8] [cursor=pointer]:
+        - img [ref=e9]
+        - generic [ref=e11]: 人格图鉴
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - paragraph [ref=e16]: 科学已死 · 混沌当立
+          - heading "S B T I" [level=1] [ref=e17]:
+            - generic [ref=e18]: S
+            - generic [ref=e19]: B
+            - generic [ref=e20]: T
+            - generic [ref=e21]: I
+          - paragraph [ref=e22]: 基于混沌算法的0种人格测试系统
+          - generic [ref=e23]:
+            - generic [ref=e24]:
+              - generic [ref=e25]: "0"
+              - generic [ref=e26]: 人格类型
+            - generic [ref=e27]:
+              - generic [ref=e28]: "1"
+              - generic [ref=e29]: 混沌题库
+        - generic [ref=e31]: Scroll
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - img [ref=e38]
+          - generic [ref=e41]: 选择你的探索深度
+        - heading "准备进入混沌人格宇宙？" [level=2] [ref=e42]
+        - generic [ref=e43]:
+          - button "5 极速" [ref=e44] [cursor=pointer]:
+            - generic [ref=e45]: "5"
+            - generic [ref=e46]: 极速
+          - button "10 快速" [ref=e47] [cursor=pointer]:
+            - generic [ref=e48]: "10"
+            - generic [ref=e49]: 快速
+          - button "15 标准" [ref=e50] [cursor=pointer]:
+            - generic [ref=e51]: "15"
+            - generic [ref=e52]: 标准
+          - button "20 详细" [ref=e53] [cursor=pointer]:
+            - generic [ref=e54]: "20"
+            - generic [ref=e55]: 详细
+          - button "30 深度" [ref=e56] [cursor=pointer]:
+            - generic [ref=e57]: "30"
+            - generic [ref=e58]: 深度
+          - button "50 地狱" [ref=e59] [cursor=pointer]:
+            - generic [ref=e60]: "50"
+            - generic [ref=e61]: 地狱
+          - button "100 自虐" [ref=e62] [cursor=pointer]:
+            - generic [ref=e63]: "100"
+            - generic [ref=e64]: 自虐
+          - button "200 究极" [ref=e65] [cursor=pointer]:
+            - generic [ref=e66]: "200"
+            - generic [ref=e67]: 究极
+          - button "500 癫狂" [ref=e68] [cursor=pointer]:
+            - generic [ref=e69]: "500"
+            - generic [ref=e70]: 癫狂
+        - button "开始测试" [ref=e71] [cursor=pointer]:
+          - img [ref=e72]
+          - text: 开始测试
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - heading "人格大观园" [level=2] [ref=e77]
+          - paragraph [ref=e78]: 从攻击性暴徒到赛博幽灵，266 种类型里总有一款让你汗流浃背
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - generic [ref=e81]: "0"
+            - generic [ref=e82]: 人格类型
+          - generic [ref=e83]:
+            - generic [ref=e84]: "2"
+            - generic [ref=e85]: 混沌题库
+          - generic [ref=e86]:
+            - generic [ref=e87]: "1"
+            - generic [ref=e88]: 今日确诊
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - img [ref=e93]
+              - generic [ref=e95]: HOUJ
+            - heading "吼叫者" [level=3] [ref=e96]
+            - paragraph [ref=e97]: 分贝即正义，行走的喇叭
+          - generic [ref=e98]:
+            - generic [ref=e99]:
+              - img [ref=e101]
+              - generic [ref=e103]: YINY
+            - heading "阴阳师" [level=3] [ref=e104]
+            - paragraph [ref=e105]: 表面笑嘻嘻，记仇三年
+          - generic [ref=e106]:
+            - generic [ref=e107]:
+              - img [ref=e109]
+              - generic [ref=e111]: IMFW
+            - heading "爱咋咋地" [level=3] [ref=e112]
+            - paragraph [ref=e113]: 摆烂仙人，量子隧穿式躺平
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - img [ref=e117]
+              - generic [ref=e119]: DUNJ
+            - heading "钝角" [level=3] [ref=e120]
+            - paragraph [ref=e121]: 九十三度，没有意义就是意义
+          - generic [ref=e122]:
+            - generic [ref=e123]:
+              - img [ref=e125]
+              - generic [ref=e128]: NPC
+            - heading "NPC" [level=3] [ref=e129]
+            - paragraph [ref=e130]: 背景板成精，人机感拉满
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - img [ref=e134]
+              - generic [ref=e138]: KEYB
+            - heading "键盘战神" [level=3] [ref=e139]
+            - paragraph [ref=e140]: 线上战神，句句带妈
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - img [ref=e144]
+              - generic [ref=e149]: BAOZ
+            - heading "暴躁者" [level=3] [ref=e150]
+            - paragraph [ref=e151]: 易燃易爆炸，人间煤气罐
+          - generic [ref=e152]:
+            - generic [ref=e153]:
+              - img [ref=e155]
+              - generic [ref=e160]: HUIM
+            - heading "毁灭者" [level=3] [ref=e161]
+            - paragraph [ref=e162]: 玉石俱焚，掀桌专业户
+          - generic [ref=e163]:
+            - generic [ref=e164]:
+              - img [ref=e166]
+              - generic [ref=e168]: GELI
+            - heading "哥布林" [level=3] [ref=e169]
+            - paragraph [ref=e170]: 阴暗角落里爬行
+          - generic [ref=e171]:
+            - generic [ref=e172]:
+              - img [ref=e174]
+              - generic [ref=e178]: SLEEP
+            - heading "睡莲" [level=3] [ref=e179]
+            - paragraph [ref=e180]: 低电量生存模式
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - img [ref=e184]
+              - generic [ref=e191]: "404"
+            - heading "404" [level=3] [ref=e192]
+            - paragraph [ref=e193]: 查无此人，链接已失效
+          - generic [ref=e194]:
+            - generic [ref=e195]:
+              - img [ref=e197]
+              - generic [ref=e199]: BOSS
+            - heading "资本型" [level=3] [ref=e200]
+            - paragraph [ref=e201]: 画饼 PUA，赋能抓手
+        - generic [ref=e203]:
+          - generic [ref=e205]:
+            - generic [ref=e206]: HOUJ 吼叫者
+            - generic [ref=e207]: YINY 阴阳师
+            - generic [ref=e208]: IMFW 爱咋咋地
+            - generic [ref=e209]: DUNJ 钝角
+            - generic [ref=e210]: NPC 背景板
+            - generic [ref=e211]: KEYB 键盘战神
+            - generic [ref=e212]: BAOZ 暴躁者
+            - generic [ref=e213]: HUIM 毁灭者
+            - generic [ref=e214]: GELI 哥布林
+            - generic [ref=e215]: SLEEP 睡莲
+            - generic [ref=e216]: 404 查无此人
+            - generic [ref=e217]: BOSS 资本型
+            - generic [ref=e218]: WONANG 窝囊者
+            - generic [ref=e219]: HITER 攻击者
+            - generic [ref=e220]: SEXY 性感者
+            - generic [ref=e221]: RAND 随便者
+            - generic [ref=e222]: RUSHI 爷不玩了
+            - generic [ref=e223]: YITP 依托答辩
+            - generic [ref=e224]: SHUS 鼠鼠
+            - generic [ref=e225]: TAIK 泰裤辣
+            - generic [ref=e226]: BABI 芭比Q
+            - generic [ref=e227]: WEMO 我emo了
+            - generic [ref=e228]: MALO 吗喽
+            - generic [ref=e229]: XIAN 咸鱼
+            - generic [ref=e230]: KFC 疯狂星期四
+            - generic [ref=e231]: DOGE 狗头
+            - generic [ref=e232]: EMO emo怪
+            - generic [ref=e233]: HOUJ 吼叫者
+            - generic [ref=e234]: YINY 阴阳师
+            - generic [ref=e235]: IMFW 爱咋咋地
+            - generic [ref=e236]: DUNJ 钝角
+            - generic [ref=e237]: NPC 背景板
+            - generic [ref=e238]: KEYB 键盘战神
+            - generic [ref=e239]: BAOZ 暴躁者
+            - generic [ref=e240]: HUIM 毁灭者
+            - generic [ref=e241]: GELI 哥布林
+            - generic [ref=e242]: SLEEP 睡莲
+            - generic [ref=e243]: 404 查无此人
+            - generic [ref=e244]: BOSS 资本型
+            - generic [ref=e245]: WONANG 窝囊者
+            - generic [ref=e246]: HITER 攻击者
+            - generic [ref=e247]: SEXY 性感者
+            - generic [ref=e248]: RAND 随便者
+            - generic [ref=e249]: RUSHI 爷不玩了
+            - generic [ref=e250]: YITP 依托答辩
+            - generic [ref=e251]: SHUS 鼠鼠
+            - generic [ref=e252]: TAIK 泰裤辣
+            - generic [ref=e253]: BABI 芭比Q
+            - generic [ref=e254]: WEMO 我emo了
+            - generic [ref=e255]: MALO 吗喽
+            - generic [ref=e256]: XIAN 咸鱼
+            - generic [ref=e257]: KFC 疯狂星期四
+            - generic [ref=e258]: DOGE 狗头
+            - generic [ref=e259]: EMO emo怪
+          - generic [ref=e261]:
+            - generic [ref=e262]: EMO emo怪
+            - generic [ref=e263]: DOGE 狗头
+            - generic [ref=e264]: KFC 疯狂星期四
+            - generic [ref=e265]: XIAN 咸鱼
+            - generic [ref=e266]: MALO 吗喽
+            - generic [ref=e267]: WEMO 我emo了
+            - generic [ref=e268]: BABI 芭比Q
+            - generic [ref=e269]: TAIK 泰裤辣
+            - generic [ref=e270]: SHUS 鼠鼠
+            - generic [ref=e271]: YITP 依托答辩
+            - generic [ref=e272]: RUSHI 爷不玩了
+            - generic [ref=e273]: RAND 随便者
+            - generic [ref=e274]: SEXY 性感者
+            - generic [ref=e275]: HITER 攻击者
+            - generic [ref=e276]: WONANG 窝囊者
+            - generic [ref=e277]: BOSS 资本型
+            - generic [ref=e278]: 404 查无此人
+            - generic [ref=e279]: SLEEP 睡莲
+            - generic [ref=e280]: GELI 哥布林
+            - generic [ref=e281]: HUIM 毁灭者
+            - generic [ref=e282]: BAOZ 暴躁者
+            - generic [ref=e283]: KEYB 键盘战神
+            - generic [ref=e284]: NPC 背景板
+            - generic [ref=e285]: DUNJ 钝角
+            - generic [ref=e286]: IMFW 爱咋咋地
+            - generic [ref=e287]: YINY 阴阳师
+            - generic [ref=e288]: HOUJ 吼叫者
+            - generic [ref=e289]: EMO emo怪
+            - generic [ref=e290]: DOGE 狗头
+            - generic [ref=e291]: KFC 疯狂星期四
+            - generic [ref=e292]: XIAN 咸鱼
+            - generic [ref=e293]: MALO 吗喽
+            - generic [ref=e294]: WEMO 我emo了
+            - generic [ref=e295]: BABI 芭比Q
+            - generic [ref=e296]: TAIK 泰裤辣
+            - generic [ref=e297]: SHUS 鼠鼠
+            - generic [ref=e298]: YITP 依托答辩
+            - generic [ref=e299]: RUSHI 爷不玩了
+            - generic [ref=e300]: RAND 随便者
+            - generic [ref=e301]: SEXY 性感者
+            - generic [ref=e302]: HITER 攻击者
+            - generic [ref=e303]: WONANG 窝囊者
+            - generic [ref=e304]: BOSS 资本型
+            - generic [ref=e305]: 404 查无此人
+            - generic [ref=e306]: SLEEP 睡莲
+            - generic [ref=e307]: GELI 哥布林
+            - generic [ref=e308]: HUIM 毁灭者
+            - generic [ref=e309]: BAOZ 暴躁者
+            - generic [ref=e310]: KEYB 键盘战神
+            - generic [ref=e311]: NPC 背景板
+            - generic [ref=e312]: DUNJ 钝角
+            - generic [ref=e313]: IMFW 爱咋咋地
+            - generic [ref=e314]: YINY 阴阳师
+            - generic [ref=e315]: HOUJ 吼叫者
+        - paragraph [ref=e318]: “你的人生不是轨道，是旷野上的乱葬岗。”
+        - generic [ref=e319]:
+          - button "查看全部 127 种人格" [ref=e320] [cursor=pointer]
+          - paragraph [ref=e321]: 还有 115 种人格等待你的发掘 · 包括「依托答辩」「史莱姆」「API 接口」「Git 冲突」等赛博奇行种
+      - generic [ref=e325]:
+        - generic [ref=e326]:
+          - generic [ref=e327]:
+            - img [ref=e328]
+            - generic [ref=e330]: 关于项目
+          - heading "科学已死， 混沌当立" [level=2] [ref=e331]:
+            - text: 科学已死，
+            - text: 混沌当立
+          - paragraph [ref=e332]: SBTI-Engine 诞生于对无聊测试的反抗。我们相信，人类的网络人格从来不是 16 种颜色可以概括的。你可能在凌晨三点化身「键盘战神」，在白天却是兢兢业业的「NPC」，偶尔还想做一只「哥布林」阴暗爬行。
+          - paragraph [ref=e333]: 于是我们打造了这款混沌测试：266 种互联网原生人格、585 道带着 meme 气息的题目、7 层混合计分逻辑。没有标准答案，只有更荒诞、更真实的你。
+        - generic [ref=e334]:
+          - generic [ref=e335]:
+            - generic [ref=e336]:
+              - img [ref=e337]
+              - heading "探索精神" [level=3] [ref=e340]
+            - paragraph [ref=e341]: 不贴标签，而是描绘光谱。从经典 MBTI 的废墟中长出更野性的分类法。
+          - generic [ref=e342]:
+            - generic [ref=e343]:
+              - img [ref=e344]
+              - heading "自嘲与攻击性" [level=3] [ref=e346]
+            - paragraph [ref=e347]: 题库不回避辱骂、阴阳和崩溃。毕竟互联网上，谁还没当过几次「依托答辩」呢？
+          - generic [ref=e348]:
+            - generic [ref=e349]:
+              - img [ref=e350]
+              - heading "开源与共创" [level=3] [ref=e356]
+            - paragraph [ref=e357]: 项目开源，欢迎提交新的人格类型、题目和槽位文案。混沌宇宙需要更多贵物。
+      - generic [ref=e359]:
+        - generic [ref=e360]:
+          - heading "不只是测试" [level=2] [ref=e361]
+          - paragraph [ref=e362]: 一次深入灵魂的混沌探索，266 种人格类型等你解锁
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - img [ref=e366]
+            - heading "127 种人格" [level=3] [ref=e374]
+            - paragraph [ref=e375]: 亚文化型 + AI 型 + 抽象贵物全覆盖
+          - generic [ref=e376]:
+            - img [ref=e378]
+            - heading "7 层逻辑" [level=3] [ref=e380]
+            - paragraph [ref=e381]: 跳过 / 乱选 / 时间 / 矛盾 / 一致性 / 陷阱 / 置信度
+          - generic [ref=e382]:
+            - img [ref=e384]
+            - heading "585 道智能题" [level=3] [ref=e388]
+            - paragraph [ref=e389]: 单选 / 多选混合，含隐藏选项
+          - generic [ref=e390]:
+            - img [ref=e392]
+            - heading "随机文案" [level=3] [ref=e398]
+            - paragraph [ref=e399]: Mad Libs 风格槽位填充，每次独一无二
+      - generic [ref=e401]:
+        - generic [ref=e402]:
+          - heading "题库风格" [level=2] [ref=e403]
+          - paragraph [ref=e404]: 585 道混沌拷问，从经典 meme 到攻击性辱骂全覆盖
+        - generic [ref=e405]:
+          - generic [ref=e406]:
+            - img [ref=e408]
+            - heading "攻击性 meme" [level=3] [ref=e410]
+            - paragraph [ref=e411]:
+              - text: 「遇到傻逼同事，你的首选应对方式是？」
+              - text: 「有人当面骂你，你会？」
+            - paragraph [ref=e412]: 不回避冲突场景，选项从「当场吼回去」到「记仇三年」，直面你的阴暗面。
+          - generic [ref=e413]:
+            - img [ref=e415]
+            - heading "自嘲式荒诞" [level=3] [ref=e424]
+            - paragraph [ref=e425]:
+              - text: 「如果把你比作技术组件，你是？」
+              - text: 「别人问你为什么单身，你会？」
+            - paragraph [ref=e426]: Cache 失效、Git 冲突、钝角、依托答辩……用互联网黑话解剖人格。
+          - generic [ref=e427]:
+            - img [ref=e429]
+            - heading "经典混沌题" [level=3] [ref=e431]
+            - paragraph [ref=e432]: 单选 / 多选 / 填空题混合出击，部分题目藏有「植物系隐藏选项」。
+            - paragraph [ref=e433]: 支持一键乱选（RAND）与烦了爷不玩了（RUSHI）两种混沌操作。
+      - generic [ref=e435]:
+        - generic [ref=e436]:
+          - heading "常见问题" [level=2] [ref=e437]
+          - paragraph [ref=e438]: 一些你可能想知道的事
+        - generic [ref=e439]:
+          - generic [ref=e440]:
+            - button "SBTI 是什么？" [ref=e441] [cursor=pointer]:
+              - generic [ref=e442]: SBTI 是什么？
+              - img [ref=e443]
+            - generic [ref=e447]: SBTI（Shit But True Identity）是一款基于混沌算法的趣味人格测试。我们不追求传统心理学的严谨科学，而是拥抱互联网精神世界的复杂、矛盾与荒诞。
+          - generic [ref=e448]:
+            - button "测试结果准吗？" [ref=e449] [cursor=pointer]:
+              - generic [ref=e450]: 测试结果准吗？
+              - img [ref=e451]
+            - generic [ref=e454]: 仅供娱乐。但有趣的是，很多人反馈“被骂到了”。毕竟 266 种类型里，总有一种能精准戳中你的赛博画像。
+          - generic [ref=e455]:
+            - button "为什么题目看起来很有攻击性？" [ref=e456] [cursor=pointer]:
+              - generic [ref=e457]: 为什么题目看起来很有攻击性？
+              - img [ref=e458]
+            - generic [ref=e461]: 这是 SBTI 3.0 的刻意设计。题目融合了中文互联网的攻击性 meme、自嘲文化与亚文化梗，让测试过程本身就像一场人格搏击。
+          - generic [ref=e462]:
+            - button "可以分享结果给朋友吗？" [ref=e463] [cursor=pointer]:
+              - generic [ref=e464]: 可以分享结果给朋友吗？
+              - img [ref=e465]
+            - generic [ref=e468]: 当然可以！结果页支持一键分享，还可以生成精美的分享卡片，方便你在朋友圈、小红书、微博继续“丢人”。
+      - generic [ref=e470]:
+        - button "现在就测" [ref=e471] [cursor=pointer]:
+          - img [ref=e472]
+          - text: 现在就测
+        - paragraph [ref=e474]: v3.0.0 · 结果仅供娱乐 · 基于混沌算法生成
+      - generic [ref=e475]:
+        - paragraph [ref=e476]: SBTI-Engine 3.0 · 科学已死，混沌当立
+        - paragraph [ref=e477]: Built with React + Vite + Tailwind CSS · Deployed on IPFS via Pinme
+        - button "清除浏览器缓存" [ref=e479] [cursor=pointer]:
+          - img [ref=e480]
+          - text: 清除浏览器缓存

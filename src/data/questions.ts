@@ -15,6 +15,7 @@ import { LITERATURE_QUESTIONS } from './questions/literature';
 import { TECH_QUESTIONS } from './questions/tech';
 import { EMOTION_QUESTIONS } from './questions/emotion';
 import { ABSURD_QUESTIONS } from './questions/absurd';
+import { ATTACK_QUESTIONS } from './questions/attack';
 import { EXTRA_COVERAGE_QUESTIONS } from './questions/extra_coverage';
 
 /**
@@ -39,6 +40,7 @@ export const QUESTION_LIBRARY: Question[] = [
   ...TECH_QUESTIONS,
   ...EMOTION_QUESTIONS,
   ...ABSURD_QUESTIONS,
+  ...ATTACK_QUESTIONS,
   ...EXTRA_COVERAGE_QUESTIONS,
 {
     id: "Q_single_001",

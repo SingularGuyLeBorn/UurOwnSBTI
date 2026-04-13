@@ -1,12 +1,14 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, SkipForward, Dice5, HelpCircle, AlertCircle, Clock, CheckCircle2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, SkipForward, Dice5, HelpCircle, AlertCircle, Clock, CheckCircle2, Pause, Play } from 'lucide-react';
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@/components/ui/select';
 import type { Question, SBTITypeCode } from '@/types';
 import { QUESTION_LIBRARY, sampleQuestions } from '@/data/questions';
 import { calculateResult, generateRushiResult, generateRandomResult, calculateBaseScores, sortTypesByScore } from '@/logic/scoring';
 
 interface Answer {
   optionId: string;
+  selector?: 'user' | 'random';
 }
 
 const STORAGE_KEY = 'SBTI_QUIZ_PROGRESS';
@@ -55,6 +57,24 @@ function InlineToast({ message, type, onAction, actionText, onClose }: { message
   );
 }
 
+function smoothPath(points: { x: number; y: number }[]) {
+  if (points.length === 0) return '';
+  if (points.length === 1) return `M ${points[0].x} ${points[0].y}`;
+  const d = [`M ${points[0].x} ${points[0].y}`];
+  for (let i = 0; i < points.length - 1; i++) {
+    const p0 = points[i === 0 ? 0 : i - 1];
+    const p1 = points[i];
+    const p2 = points[i + 1];
+    const p3 = points[i + 2] || p2;
+    const cp1x = p1.x + (p2.x - p0.x) / 6;
+    const cp1y = p1.y + (p2.y - p0.y) / 6;
+    const cp2x = p2.x - (p3.x - p1.x) / 6;
+    const cp2y = p2.y - (p3.y - p1.y) / 6;
+    d.push(`C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`);
+  }
+  return d.join(' ');
+}
+
 function CurveChart({ history, types }: { history: Array<Record<SBTITypeCode, number>>; types: SBTITypeCode[] }) {
   if (history.length < 1 || types.length === 0) return null;
   const width = 600;
@@ -98,13 +118,11 @@ function CurveChart({ history, types }: { history: Array<Record<SBTITypeCode, nu
       {types.map((type, tIdx) => {
         const hue = (tIdx * 137) % 360;
         const color = `hsl(${hue}, 70%, 55%)`;
-        const d = history
-          .map((scores, i) => {
-            const x = xFor(i);
-            const y = yFor(scores[type] || 0);
-            return `${i === 0 ? 'M' : 'L'} ${x} ${y}`;
-          })
-          .join(' ');
+        const pts = history.map((scores, i) => ({
+          x: xFor(i),
+          y: yFor(scores[type] || 0),
+        }));
+        const d = smoothPath(pts);
         return (
           <g key={type}>
             <path d={d} fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
@@ -166,6 +184,7 @@ export default function QuizPage() {
   const [fastClickToast, setFastClickToast] = useState(false);
   const [slowToast, setSlowToast] = useState(false);
   const [isSimulatingRandom, setIsSimulatingRandom] = useState(false);
+  const [isSimulationPaused, setIsSimulationPaused] = useState(false);
   const [predictionMode, setPredictionMode] = useState<'list' | 'curve'>('list');
   const [predictionLimit, setPredictionLimit] = useState<5 | 10 | 20 | 50 | 100 | 'all'>(5);
   const [scoreHistory, setScoreHistory] = useState<Array<Record<SBTITypeCode, number>>>([]);
@@ -187,7 +206,11 @@ export default function QuizPage() {
           if (parsed.questions && parsed.questions.length > 0) {
             setQuestions(parsed.questions);
             setCurrentIndex(parsed.currentIndex || 0);
-            setAnswers(new Map(Object.entries(parsed.answers || {})));
+            const restored = new Map<string, Answer>();
+            Object.entries(parsed.answers || {}).forEach(([k, v]: [string, any]) => {
+              restored.set(k, { ...v, selector: v.selector || 'user' });
+            });
+            setAnswers(restored);
             setTimings(new Map(Object.entries(parsed.timings || {})));
             if (parsed.revealedHidden) setRevealedHidden(new Set(parsed.revealedHidden));
             return;
@@ -230,6 +253,7 @@ export default function QuizPage() {
   // Random simulation engine
   useEffect(() => {
     if (!isSimulatingRandom) return;
+    if (isSimulationPaused) return;
     const q = questions[currentIndex];
     if (!q) {
       setIsSimulatingRandom(false);
@@ -252,12 +276,12 @@ export default function QuizPage() {
     const newAnswers = new Map(answers);
     if (q.type === 'single' && q.options && q.options.length > 0) {
       const idx = Math.floor(Math.random() * q.options.length);
-      newAnswers.set(q.id, { optionId: q.options[idx].id });
+      newAnswers.set(q.id, { optionId: q.options[idx].id, selector: 'random' });
     } else if (q.type === 'multi' && q.options && q.options.length > 0) {
       const num = Math.floor(Math.random() * q.options.length) + 1;
       const shuffled = [...q.options].sort(() => Math.random() - 0.5);
       const selected = shuffled.slice(0, num);
-      newAnswers.set(q.id, { optionId: selected.map(s => s.id).join(',') });
+      newAnswers.set(q.id, { optionId: selected.map(s => s.id).join(','), selector: 'random' });
     }
     setAnswers(newAnswers);
     simulationTimerRef.current = setTimeout(() => {
@@ -269,7 +293,7 @@ export default function QuizPage() {
       }
     }, 700);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isSimulatingRandom, currentIndex, questions]);
+  }, [isSimulatingRandom, isSimulationPaused, currentIndex, questions]);
 
   const currentQuestion = questions[currentIndex];
   const progress = questions.length > 0 ? ((currentIndex + 1) / questions.length) * 100 : 0;
@@ -300,6 +324,15 @@ export default function QuizPage() {
   const stopSimulation = () => {
     if (simulationTimerRef.current) clearTimeout(simulationTimerRef.current);
     setIsSimulatingRandom(false);
+    setIsSimulationPaused(false);
+  };
+
+  const togglePauseSimulation = () => {
+    setIsSimulationPaused(prev => {
+      const next = !prev;
+      if (next && simulationTimerRef.current) clearTimeout(simulationTimerRef.current);
+      return next;
+    });
   };
 
   const checkFastClick = () => {
@@ -334,7 +367,7 @@ export default function QuizPage() {
     checkFastClick();
     if (!currentQuestion) return;
     const newAnswers = new Map(answers);
-    newAnswers.set(currentQuestion.id, { optionId });
+    newAnswers.set(currentQuestion.id, { optionId, selector: 'user' });
     setAnswers(newAnswers);
     autoAdvance();
   };
@@ -348,7 +381,7 @@ export default function QuizPage() {
     let selectedIds = current ? current.optionId.split(',').filter(Boolean) : [];
     if (selectedIds.includes(optionId)) selectedIds = selectedIds.filter(id => id !== optionId);
     else selectedIds.push(optionId);
-    newAnswers.set(currentQuestion.id, { optionId: selectedIds.join(',') });
+    newAnswers.set(currentQuestion.id, { optionId: selectedIds.join(','), selector: 'user' });
     setAnswers(newAnswers);
   };
 
@@ -406,6 +439,7 @@ export default function QuizPage() {
     const message = '系统将模拟你的操作，逐题随机选择剩余 ' + remainingCount + ' 道题的答案。\n\n完成后获得【混沌人格】判定。\n\n是否继续？';
     if (typeof window !== 'undefined' && window.confirm) {
       if (!window.confirm(message)) return;
+      setIsSimulationPaused(false);
       setIsSimulatingRandom(true);
     }
   };
@@ -416,12 +450,12 @@ export default function QuizPage() {
     const newAnswers = new Map(answers);
     if (currentQuestion.type === 'single' && currentQuestion.options && currentQuestion.options.length > 0) {
       const randomIndex = Math.floor(Math.random() * currentQuestion.options.length);
-      newAnswers.set(currentQuestion.id, { optionId: currentQuestion.options[randomIndex].id });
+      newAnswers.set(currentQuestion.id, { optionId: currentQuestion.options[randomIndex].id, selector: 'random' });
     } else if (currentQuestion.type === 'multi' && currentQuestion.options && currentQuestion.options.length > 0) {
       const num = Math.floor(Math.random() * currentQuestion.options.length) + 1;
       const shuffled = [...currentQuestion.options].sort(() => Math.random() - 0.5);
       const selected = shuffled.slice(0, num);
-      newAnswers.set(currentQuestion.id, { optionId: selected.map(s => s.id).join(',') });
+      newAnswers.set(currentQuestion.id, { optionId: selected.map(s => s.id).join(','), selector: 'random' });
     }
     setAnswers(newAnswers);
     setSlowToast(false);
@@ -436,9 +470,15 @@ export default function QuizPage() {
     };
     let result;
     if (isRushed && answers.size / questions.length < 0.5) result = generateRushiResult(answers.size, questions.length);
-    else {
+    else if (isRandom) {
+      const pureAnswers = new Map<string, Answer>();
+      answers.forEach((a, qid) => { if (a.selector !== 'random') pureAnswers.set(qid, a); });
+      const pureSession = { ...session, answers: pureAnswers };
+      const pureResult = calculateResult(pureSession, questions);
+      const mixedResult = calculateResult(session, questions);
+      result = generateRandomResult(pureResult, mixedResult);
+    } else {
       result = calculateResult(session, questions);
-      if (isRandom) result = generateRandomResult(result);
     }
     result.sessionSeed = sessionSeed;
     navigate('/result', { state: { result } });
@@ -492,9 +532,14 @@ export default function QuizPage() {
         <div className="max-w-2xl mx-auto mb-4">
           <div className="neu-flat p-4">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-              <span className="text-xs font-bold text-[var(--neu-text-soft)] uppercase tracking-wide">
-                实时人格预测 {predictionLimit === 'all' ? '全部' : `TOP ${predictionLimit}`}
-              </span>
+              <div>
+                <span className="text-xs font-bold text-[var(--neu-text-soft)] uppercase tracking-wide">
+                  实时人格预测 {predictionLimit === 'all' ? '全部' : `TOP ${predictionLimit}`}
+                </span>
+                <p className="text-[10px] text-[var(--neu-text-soft)]/80 mt-0.5 leading-tight">
+                  基于已答题目实时估算各人格匹配概率，0% 表示当前得分与目标人格方向无关联
+                </p>
+              </div>
               <div className="flex items-center gap-2">
                 <div className="flex items-center gap-1 neu-concave rounded-lg p-0.5">
                   <button
@@ -506,18 +551,22 @@ export default function QuizPage() {
                     className={`px-2 py-1 text-[10px] font-semibold rounded-md transition-all ${predictionMode === 'curve' ? 'neu-convex text-[var(--neu-text)]' : 'text-[var(--neu-text-soft)]'}`}
                   >曲线</button>
                 </div>
-                <select
-                  value={predictionLimit}
-                  onChange={(e) => setPredictionLimit(e.target.value as any)}
-                  className="h-7 px-2 rounded-lg neu-concave bg-transparent text-[10px] font-semibold text-[var(--neu-text)] outline-none"
+                <Select
+                  value={String(predictionLimit)}
+                  onValueChange={(v) => setPredictionLimit(v === 'all' ? 'all' : Number(v) as any)}
                 >
-                  <option value={5}>前 5</option>
-                  <option value={10}>前 10</option>
-                  <option value={20}>前 20</option>
-                  <option value={50}>前 50</option>
-                  <option value={100}>前 100</option>
-                  <option value="all">全部</option>
-                </select>
+                  <SelectTrigger className="h-7 px-2 text-[10px] font-semibold min-w-[4.5rem]">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="5">前 5</SelectItem>
+                    <SelectItem value="10">前 10</SelectItem>
+                    <SelectItem value="20">前 20</SelectItem>
+                    <SelectItem value="50">前 50</SelectItem>
+                    <SelectItem value="100">前 100</SelectItem>
+                    <SelectItem value="all">全部</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
             </div>
 
@@ -534,7 +583,7 @@ export default function QuizPage() {
                       <div className="h-2 rounded-full neu-concave overflow-hidden p-0.5">
                         <div
                           className={`h-full rounded-full transition-all ${idx === 0 ? 'bg-rose-400' : idx === 1 ? 'bg-amber-400' : 'bg-[var(--neu-text-soft)]/50'}`}
-                          style={{ width: `${Math.max(4, item.probability * 100)}%` }}
+                          style={{ width: `${item.probability * 100}%` }}
                         />
                       </div>
                     </div>
@@ -567,14 +616,19 @@ export default function QuizPage() {
       {/* Simulation banner */}
       {isSimulatingRandom && (
         <div className="max-w-2xl mx-auto mb-4">
-          <div className="p-4 rounded-xl neu-pressed border-l-4 border-l-fuchsia-500 flex items-center justify-between">
+          <div className="p-4 rounded-xl neu-pressed border-l-4 border-l-fuchsia-500 flex items-center justify-between gap-3">
             <div className="flex items-center gap-2 text-fuchsia-700">
-              <Dice5 className="w-5 h-5 animate-spin" />
-              <span className="text-sm font-semibold">正在混沌选择中…</span>
+              <Dice5 className={`w-5 h-5 ${isSimulationPaused ? '' : 'animate-spin'}`} />
+              <span className="text-sm font-semibold">{isSimulationPaused ? '混沌选择已暂停' : '正在混沌选择中…'}</span>
             </div>
-            <button onClick={stopSimulation} className="px-3 py-1.5 rounded-lg neu-convex text-xs font-semibold text-[var(--neu-text)]">
-              停止并查看结果
-            </button>
+            <div className="flex items-center gap-2">
+              <button onClick={togglePauseSimulation} className="px-3 py-1.5 rounded-lg neu-convex text-xs font-semibold text-[var(--neu-text)]">
+                {isSimulationPaused ? <><Play className="w-3.5 h-3.5 inline-block mr-1" />继续</> : <><Pause className="w-3.5 h-3.5 inline-block mr-1" />暂停</>}
+              </button>
+              <button onClick={() => { stopSimulation(); finishTest(false, true); }} className="px-3 py-1.5 rounded-lg neu-flat text-xs font-semibold text-[var(--neu-text)]">
+                停止并查看结果
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -619,7 +673,7 @@ export default function QuizPage() {
             return (
               <button
                 key={option.id}
-                disabled={isSimulatingRandom}
+                disabled={isSimulatingRandom && !isSimulationPaused}
                 onClick={() => handleSingleSelect(option.id)}
                 className={`w-full flex items-center gap-3 p-4 rounded-xl text-left transition-all disabled:opacity-60 ${
                   active
@@ -647,7 +701,7 @@ export default function QuizPage() {
                 return (
                   <button
                     key={option.id}
-                    disabled={isSimulatingRandom}
+                    disabled={isSimulatingRandom && !isSimulationPaused}
                     onClick={() => handleMultiSelect(option.id)}
                     className={`w-full flex items-center gap-3 p-4 rounded-xl text-left transition-all disabled:opacity-60 ${
                       isSelected ? 'neu-pressed text-[var(--neu-text)]' : 'neu-flat neu-flat-hover neu-flat-active text-[var(--neu-text)]'
@@ -664,7 +718,7 @@ export default function QuizPage() {
               })}
               <button
                 onClick={handleMultiConfirm}
-                disabled={!canProceed() || isSimulatingRandom}
+                disabled={!canProceed() || (isSimulatingRandom && !isSimulationPaused)}
                 className="w-full h-12 rounded-xl neu-convex neu-convex-hover neu-convex-active disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-[var(--neu-text)]"
               >
                 确认选择
@@ -698,7 +752,7 @@ export default function QuizPage() {
         <div className="flex justify-center gap-3 py-2">
           <button
             onClick={handlePrev}
-            disabled={currentIndex === 0 || isSimulatingRandom}
+            disabled={currentIndex === 0 || (isSimulatingRandom && !isSimulationPaused)}
             className="flex items-center gap-1 px-5 py-2.5 rounded-xl neu-flat neu-flat-hover neu-flat-active disabled:opacity-40 disabled:cursor-not-allowed text-sm font-medium text-[var(--neu-text)]"
           >
             <ChevronLeft className="w-4 h-4" />上一题
@@ -712,7 +766,7 @@ export default function QuizPage() {
           </button>
           <button
             onClick={handleDirectResult}
-            disabled={isSimulatingRandom || answers.size === 0}
+            disabled={(isSimulatingRandom && !isSimulationPaused) || answers.size === 0}
             className="flex items-center gap-1 px-5 py-2.5 rounded-xl neu-convex neu-convex-hover neu-convex-active disabled:opacity-40 disabled:cursor-not-allowed text-sm font-semibold text-emerald-600 hover:text-emerald-700"
           >
             <CheckCircle2 className="w-4 h-4" />直接看结果
@@ -723,7 +777,7 @@ export default function QuizPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
           <div className="neu-flat p-4">
             <div className="flex items-center gap-2 flex-wrap">
-              <button onClick={handleSkip} disabled={isSimulatingRandom} className="flex items-center gap-1 px-4 py-2 rounded-xl neu-convex text-sm font-semibold text-rose-600 hover:text-rose-700 transition-colors disabled:opacity-50">
+              <button onClick={handleSkip} disabled={isSimulatingRandom && !isSimulationPaused} className="flex items-center gap-1 px-4 py-2 rounded-xl neu-convex text-sm font-semibold text-rose-600 hover:text-rose-700 transition-colors disabled:opacity-50">
                 <SkipForward className="w-4 h-4" />
                 烦了，爷不玩了
               </button>

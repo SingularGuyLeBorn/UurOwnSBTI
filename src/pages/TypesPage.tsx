@@ -89,10 +89,11 @@ export default function TypesPage() {
 
   useEffect(() => {
     if (!loaderRef.current) return;
+    const total = entries.length;
     const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, entries.length));
+      (obsEntries) => {
+        if (obsEntries[0].isIntersecting) {
+          setVisibleCount((prev) => Math.min(prev + BATCH_SIZE, total));
         }
       },
       { rootMargin: '200px' }
@@ -177,7 +178,12 @@ export default function TypesPage() {
               <div
                 className="w-20 h-20 mx-auto mb-4 rounded-full neu-concave flex items-center justify-center overflow-hidden"
                 dangerouslySetInnerHTML={{
-                  __html: type.svgDescription.replace(/<svg/, '<svg class="w-16 h-16"')
+                  __html: type.svgDescription
+                    .replace(/<animate[^>]*\/?>/g, '')
+                    .replace(/<animateTransform[^>]*\/?>/g, '')
+                    .replace(/<\/animate>/g, '')
+                    .replace(/<\/animateTransform>/g, '')
+                    .replace(/<svg/, '<svg class="w-16 h-16"')
                 }}
               />
 

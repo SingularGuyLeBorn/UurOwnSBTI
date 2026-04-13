@@ -88,6 +88,22 @@ export interface Session {
 }
 
 // 测试结果
+export interface HybridType {
+  code: 'MIX';
+  name: string;
+  englishName: string;
+  keywords: string[];
+  svgDescription: string;
+  roast: string;
+  componentRoasts: Record<SBTITypeCode, string>;
+  components: Array<{
+    code: SBTITypeCode;
+    name: string;
+    role: string;
+    color: string;
+  }>;
+}
+
 export interface TestResult {
   primaryType: SBTITypeCode;
   secondaryType: SBTITypeCode | null;
@@ -101,6 +117,7 @@ export interface TestResult {
   hasContradiction: boolean;
   hasConsistency: boolean;
   pseudoResult?: SBTITypeCode;
+  hybridType?: HybridType;
   answered?: number;
   totalQuestions?: number;
   sessionSeed?: string;
